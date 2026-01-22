@@ -1,0 +1,72 @@
+{
+    "menu": {
+        "item1": {
+            "title": "Home",
+            "route": "#home"
+        },
+        "item2": {
+            "title": "Portfolio",
+            "route": "#portfolio"
+        },
+        "item3": {
+            "title": "About",
+            "route": "#about"
+        },
+        "item4": {
+            "title": "Services",
+            "route": "#services"
+        },
+        "item5": {
+            "title": "Contact",
+            "route": "#contact"
+        }
+    },
+    "hero": {
+        "cta": "About me",
+        "title": "Hey, I'm Carlos Neto",
+        "subtitle": "Logic Designer & Creative Developer",
+        "text": "My mission is to turn complex ideas into simple, beautiful digital solutions.",
+        "button": "MY SERVICES",
+        "button_resume": "DOWNLOAD RESUME"
+    },
+    "portfolio": {
+        "title": "Latest Works",
+        "button": "See More"
+    },
+    "clients": {
+        "title": "Partners who trust me"
+    },
+    "about": {
+        "title": "About",
+        "subtitle": "Passion, Creativity, and Code",
+        "tools": "Proficiency on the following tools and stacks...",
+        "cta_1": "Contact",
+        "cta_2": "LinkedIn",
+        "cta_2_link": "https://www.linkedin.com/in/carlosbezerraneto/"
+    },
+    "services": {
+        "title": "Services",
+        "subtitle": "I specialize in transforming creative ideas into digital realities",
+        "text": "Whether you're looking for a sleek, modern website or a complex web application, I have the skills and experience to bring your vision to life.",
+        "service_1": {
+            "icon": "carlos-icon:graphic-design",
+            "title": "Graphic Design.",
+            "text": "Branding and illustration."
+        },
+        "service_2": {
+            "icon": "carlos-icon:web-design",
+            "title": "Web & Product Design.",
+            "text": "UX/UI Design and Web Development"
+        },
+        "service_3": {
+            "icon": "carlos-icon:mobile-apps",
+            "title": "Mobile Apps.",
+            "text": "Mobile Application Design and Development."
+        }
+    },
+    "contact": {
+        "title": "Let's make magic happen!",
+        "subtitle": "From initial concept to final product, I strive for excellence in every project. Let's make something great together. Hit me up and let's kick off your project now!",
+        "cta": "Get in Touch"
+    }
+}

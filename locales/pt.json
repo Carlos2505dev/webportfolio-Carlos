@@ -1,0 +1,72 @@
+{
+    "menu": {
+        "item1": {
+            "title": "Início",
+            "route": "#home"
+        },
+        "item2": {
+            "title": "Portfólio",
+            "route": "#portfolio"
+        },
+        "item3": {
+            "title": "Sobre",
+            "route": "#about"
+        },
+        "item4": {
+            "title": "Serviços",
+            "route": "#services"
+        },
+        "item5": {
+            "title": "Contato",
+            "route": "#contact"
+        }
+    },
+    "hero": {
+        "cta": "Sobre",
+        "title": "Oi, sou Carlos Neto",
+        "subtitle": "Designer Lógico & Dev. Criativo",
+        "text": "Minha missão é tornar idéias complexas em soluções digitais intuitivas e atraentes.",
+        "button": "MEUS SERVIÇOS",
+        "button_resume": "BAIXAR CURRÍCULO"
+    },
+    "portfolio": {
+        "title": "Últimos Trabalhos",
+        "button": "Veja Mais"
+    },
+    "clients": {
+        "title": "Parceiros que confiam no meu trabalho"
+    },
+    "about": {
+        "title": "Sobre",
+        "subtitle": "Paixão, Criatividade, e Código",
+        "tools": "Proficiência nas seguintes ferramentas e linguagens...",
+        "cta_1": "Contato",
+        "cta_2": "LinkedIn",
+        "cta_2_link": "https://www.linkedin.com/in/carlosbezerraneto/"
+    },
+    "services": {
+        "title": "Serviços",
+        "subtitle": "Sou especializado em transformar idéias criativas em realidades digitais",
+        "text": "Se você está em busca de um site elegante e moderno ou de uma aplicação web complexa, tenho as habilidades e a experiência necessárias para transformar sua visão em realidade.",
+        "service_1": {
+            "icon": "carlos-icon:graphic-design",
+            "title": "Design Gráfico.",
+            "text": "Branding e ilustrações."
+        },
+        "service_2": {
+            "icon": "carlos-icon:web-design",
+            "title": "Web & Product Design.",
+            "text": "UX/UI Design e Desenvolvimento Web."
+        },
+        "service_3": {
+            "icon": "carlos-icon:mobile-apps",
+            "title": "Aplicativos Móveis.",
+            "text": "Design e Desenvolvimento de Aplicativos."
+        }
+    },
+    "contact": {
+        "title": "Vamos fazer a mágica acontecer!",
+        "subtitle": "Desde o conceito inicial até o produto final, busco a excelência em cada projeto. Vamos criar algo incrível juntos. Entre em contato e vamos dar início ao seu projeto agora mesmo!",
+        "cta": "Entre em contato"
+    }
+}

@@ -23,11 +23,11 @@
     "@vueuse/core": "^12.5.0",
     "@vueuse/nuxt": "^12.5.0",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
+    "eslint": "^9.18.0",
+    "eslint-plugin-vue": "^9.14.1",
     "nuxt": "^3.15.1",
     "nuxt-icon": "^1.0.0-beta.7",
-    "sass-embedded": "^1.83.4",
-    "eslint": "^9.18.0",
-    "eslint-plugin-vue": "^9.14.1"
+    "sass-embedded": "^1.83.4"
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^6.0.3",

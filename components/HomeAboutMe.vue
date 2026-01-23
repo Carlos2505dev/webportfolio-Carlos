@@ -16,11 +16,11 @@
                     <figure class="about__section__container__columns__avatar__image">
 
                         <NuxtImg v-if="colorMode.value == 'dark'" alt="Cristopher Martins"
-                            src="/images/crismartins_avatar_v2.png" width="800px" height="800px" format="webp"
+                            src="/images/darkmode.png" width="800px" height="800px" format="webp"
                             densities="x1 x2" quality="100" />
 
                         <NuxtImg v-if="colorMode.value == 'light'" alt="Cristopher Martins"
-                            src="/images/crismartins_avatar_v3.png" width="800px" height="800px" format="webp"
+                            src="/images/lightmode.png" width="800px" height="800px" format="webp"
                             densities="x1 x2" quality="100" />
 
                         <strong class="about__section__container__columns__avatar__image__areas logic">

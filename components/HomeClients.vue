@@ -28,15 +28,10 @@
 import { reactive, useI18n } from '#imports'
 const { locale } = useI18n()
 const clients = reactive([
-    {name: 'Balance of Nature', image: 'images/clients/balance_of_nature.png'},
-    {name: 'Frontall USA', image: 'images/clients/frontall_usa.png'},
-    {name: 'Ahoy by Belago', image: 'images/clients/ahoy.png'},
-    {name: 'ICI', image: 'images/clients/ici.png'},
-    {name: 'Belago', image: 'images/clients/belago.png'},
-    {name: 'Ebanx', image: 'images/clients/ebanx.png'},
-    {name: 'Onr', image: 'images/clients/onr.png'},
-    {name: 'Páprica', image: 'images/clients/paprica.png'},
-    {name: 'Visionnaire', image: 'images/clients/visionnaire.png'}
+    { name: 'AME', image: 'images/clients/AME.png' },
+    { name: 'Enjoy Brasil', image: 'images/clients/Enjoy Brasil.png' },
+    { name: 'InoveTech', image: 'images/clients/InoveTech.png' },
+    { name: 'Meu-Mana', image: 'images/clients/Meu-Mana.png' }
 ])
 
 const client = reactive({
@@ -124,8 +119,7 @@ const client = reactive({
                     max-width: 100px;
                 }
                 figure{
-                    opacity: 0.6;
-                    filter: var(--logo_filters);
+                    opacity: 1;
                     transition: $transition_default;
                     display: block;
                     img{
@@ -133,9 +127,6 @@ const client = reactive({
                         max-height: 100px;
                         width: auto;
                         height: auto;
-                    }
-                    &:hover{
-                        opacity: 1;
                     }
                 }
             }

@@ -2,7 +2,6 @@
     <footer class="footer section">
         <div class="footer__copyright container">
             <p>
-                <AppIcon IconName="carlos-icon:cristoon" />
                 {{ locale == 'en' ? 'Proudly designed and developed by' : 'Orgulhosamente criado e desenvolvido por' }}
                 <NuxtLink aria-label="About" to="/#about">Carlos Neto</NuxtLink>
             </p>
@@ -47,7 +46,7 @@ const contact = reactive({
             justify-content: center;
         }
         p{
-            font-size:$size_12px;
+            font-size:$size_16px;
             text-align: center;
             padding: 0;
             display: flex;
@@ -57,7 +56,7 @@ const contact = reactive({
                     justify-content: center;
             }
             i{
-                font-size: $size_24px;
+                font-size: $size_20px;
             }
             a{
                 &:hover{

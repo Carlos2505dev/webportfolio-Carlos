@@ -35,6 +35,11 @@
                         <AppIcon IconName="bxl:instagram-alt" /> <span class="visually-hidden">Instagram</span>
                     </NuxtLink>
                 </li>
+                <li class="contact__cta__social__item">
+                    <NuxtLink aria-label="Whatsapp" to="https://wa.me/5571987848522" target="_new">
+                        <AppIcon IconName="bxl:whatsapp" /> <span class="visually-hidden">Whatsapp</span>
+                    </NuxtLink>
+                </li>
             </ul>
         </div>
     </section>

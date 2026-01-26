@@ -2,7 +2,7 @@
     <section class="contact section">
         <div class="contact__cta">
             <div class="contact__cta__logo">
-                <AppIcon IconName="carlos-icon:logo-symbol-outline" />
+                <NuxtImg src="/images/logo_cn.png" alt="Logo Carlos Neto" width="100" height="100" />
             </div>
             <h2 class="contact__cta__title large-title">
                 {{ $t(contact.title) }}
@@ -77,9 +77,11 @@ const contact = reactive({
         &__logo{
             color: var(--pure_black);
             padding-block: 40px;
-            i {
+            img {
                 animation: rotate 4s infinite linear;
-                font-size: 100px;
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
             }
         }
         &__title{

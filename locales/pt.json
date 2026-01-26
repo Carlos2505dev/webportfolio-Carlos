@@ -23,7 +23,7 @@
     },
     "hero": {
         "cta": "Sobre",
-        "title": "Oi, sou Carlos Neto",
+        "title": "Oi, sou Carlos <br class='desktop-break' />Neto",
         "subtitle": "Designer Lógico & Dev. Criativo",
         "text": "Minha missão é tornar idéias complexas em soluções digitais intuitivas e atraentes.",
         "button": "MEUS SERVIÇOS",

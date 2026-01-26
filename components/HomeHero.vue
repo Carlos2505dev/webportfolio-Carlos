@@ -5,20 +5,37 @@
             <div class="hero__section__container__greetings">
                 <div class="hero__section__container__greetings__avatar">
                     <NuxtLink :aria-label="$t(heroHome.cta)" to="/#about">
-                        <NuxtImg alt="Carlos Neto" src="/images/carlosbezerra.png" width="200px"
+                        <NuxtImg alt="Foto de Carlos Neto" src="/images/carlosbezerra.png" width="200px"
                             height="200px" format="webp" quality="100" densities="x1 x2" preload />
                     </NuxtLink>
                 </div>
             </div>
             <div class="hero__section__container__text">
                 <div class="hero__section__container__text">
-                    <h1 class="hero__section__container__text__name small-title">
-                        {{ $t(heroHome.title) }}
-                    </h1>
+                    <h1 class="hero__section__container__text__name small-title" v-html="$t(heroHome.title)"></h1>
                 </div>
                 <div class="hero__section__container__text__wrapper">
                     <h2 class="hero__section__container__text__wrapper__title gradient-font">
-                        {{ $t(heroHome.subTitle) }}
+                        <template v-if="locale === 'pt'">
+                            Designer 
+                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
+                                <TextType :text="logicTermsPt" :typingSpeed="70" :pauseDuration="3000" showCursor cursorCharacter="|" />
+                            </ShinyText>
+                            & Dev. 
+                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
+                                <TextType :text="creativeTermsPt" :typingSpeed="70" :pauseDuration="3000" :initialDelay="1000" showCursor cursorCharacter="|" />
+                            </ShinyText>
+                        </template>
+                        <template v-else>
+                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
+                                <TextType :text="logicTermsEn" :typingSpeed="70" :pauseDuration="3000" showCursor cursorCharacter="|" />
+                            </ShinyText>
+                            Designer & 
+                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
+                                <TextType :text="creativeTermsEn" :typingSpeed="70" :pauseDuration="3000" :initialDelay="1000" showCursor cursorCharacter="|" />
+                            </ShinyText>
+                            Developer
+                        </template>
                     </h2>
                     <div class="hero__section__container__text__wrapper__buttons">
                         <AppButton :aria-label="$t(heroHome.button)" hasLink="/#services" class="primary">
@@ -37,7 +54,14 @@
 </template>
   
 <script setup>
-import { reactive } from '#imports'
+import { reactive, ref, useI18n } from '#imports'
+
+const { locale } = useI18n()
+
+const logicTermsPt = ["Visionário", "Focado", "Metódico", "Lógico"]
+const creativeTermsPt = ["Prático", "Inovador", "Criativo", "Funcional"]
+const logicTermsEn = ["Visionary", "Focused", "Methodical", "Logical"]
+const creativeTermsEn = ["Practical", "Innovative", "Creative", "Functional"]
 
 const stackLogos = ref([
     { logo: 'devicon:figma', name: 'Figma' },
@@ -168,6 +192,10 @@ const heroHome = reactive({
         &__wrapper{
             position: relative;
             z-index: 2;
+            flex: 1;
+            @media(max-width: $br_tablet){
+                flex: none;
+            }
             &__title{
                 margin-block: 4px;
                 font-size: $size_72px;
@@ -184,6 +212,10 @@ const heroHome = reactive({
                 flex-wrap: wrap;
                 gap: 16px;
                 margin-top: 40px;
+                justify-content: center;
+                @media(max-width: $br_tablet){
+                    justify-content: flex-start;
+                }
             }
             .button{
                 i{
@@ -213,6 +245,12 @@ const heroHome = reactive({
             justify-content: flex-end;
             gap: 12px;
         }
+    }
+}
+:deep(.desktop-break) {
+    display: block;
+    @media(max-width: $br_mobile) {
+        display: none;
     }
 }
 </style>

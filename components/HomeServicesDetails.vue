@@ -4,7 +4,7 @@
             <div class="about__skills__container__image">
                 <picture class="about__skills__container__image__picture">
 
-                    <AppIcon IconName="carlos-icon:logo-symbol-outline" />
+                    <NuxtImg src="/images/logo_cn.png" alt="Logo Carlos Neto" />
                     
 
                 </picture>
@@ -39,9 +39,11 @@ const { locale } = useI18n()
             &__picture{
                 // box-shadow: 0 0 80px 40px var(--secondary);
                 
-                i {
+                img {
                     animation: rotate 4s infinite linear;
-                    font-size: 280px;
+                    width: 280px;
+                    height: 280px;
+                    object-fit: contain;
                 }
             }
         }

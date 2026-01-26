@@ -24,7 +24,7 @@
                 >
                     <figure class="hero__section__container__presentation__button__avatar">
                         <NuxtImg 
-                            alt="Cristopher Martins"
+                            alt="Foto de Carlos Neto"
                             src="/images/cristoon.svg"
                             width="60px"
                             height="84px"

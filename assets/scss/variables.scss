@@ -1,10 +1,8 @@
 //fonts
-@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Mohave:ital,wght@0,300..700;1,300..700&family=Outfit:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Mohave:ital,wght@0,300..700;1,300..700&display=swap');
 $font_primary: "Anybody", sans-serif;
 $font_secondary: "Mohave", sans-serif;
-$font_tertiary: "Outfit", sans-serif;
-
-
+$font_tertiary: "Lexend", sans-serif;
 
 //font sizes
 $size_4px: 0.25rem;
@@ -30,9 +28,9 @@ $size_72px: 4.5rem;
 $size_76px: 4.75rem;
 $size_80px: 5rem;
 
-//colors
 html.light-theme {
     --primary: #8AED13;
+    --primary_dark: #518d03;
     --secondary: #5413ED;
     --tertiary: #4C4C64;
     --text_color: #131315;
@@ -54,6 +52,7 @@ html.light-theme {
 
 html.dark-theme {
     --primary: #8AED13;
+    --primary_dark: #8AED13;
     --secondary: #5413ED;
     --tertiary: #4C4C64;
     --text_color: #FAFAFA;

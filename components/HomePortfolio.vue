@@ -22,7 +22,12 @@
                                     <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
 
                                     <!-- Show a placeholder while loading -->
-                                    <AppIcon v-else IconName="carlos-icon:logo-symbol-outline" />
+                                    <img 
+                                        v-else 
+                                        src="~/assets/carlos-icons/logo-symbol-outline.png" 
+                                        class="placeholder-logo" 
+                                        alt="Carregando..."
+                                    />
                                     <!-- <img v-else src="https://placehold.co/400x400" alt="placeholder" /> -->
                                 </NuxtImg>
                             </picture>
@@ -348,9 +353,11 @@ initializeModalFromQuery()
                                 transition: $transition_default;
                                 display: block;
                             }
-                            i {
-                                height: 380px;
-                                font-size: 100px;
+                            .placeholder-logo {
+                                height: 100px;
+                                width: 100px;
+                                margin-block: 140px;
+                                object-fit: contain;
                                 animation: rotate 2s infinite linear;
                             }
                         }

@@ -36,12 +36,13 @@
                         <NuxtImg :alt="item.name" :src="item.image" sizes="100vw sm:600px md:600px lg:1280px"
                             quality="100" densities="x1 x2" :custom="true" loading="lazy"
                             v-slot="{ src, isLoaded, imgAttrs }">
-                            <!-- Show the actual image when loaded -->
                             <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
-
-                            <!-- Show a placeholder while loading -->
-                            <AppIcon v-else IconName="carlos-icon:logo-symbol-outline" />
-                            <!-- <img v-else src="https://placehold.co/400x400" alt="placeholder" /> -->
+                            <img 
+                                v-else 
+                                src="~/assets/carlos-icons/logo-symbol-outline.png" 
+                                class="placeholder-logo" 
+                                alt="Carregando..."
+                            />
                         </NuxtImg>
                         <figcaption>
                             {{ item.title }}
@@ -111,7 +112,6 @@ function closeModal(){
                     flex-wrap: wrap;
                 
                     &__item {
-                        // background-color: var(--text_color_transparent);
                         color: var(--text_color);
                         border-radius: 8px;
                         padding: 4px 8px;
@@ -185,7 +185,6 @@ function closeModal(){
                 max-width: fit-content;
                 figure{
                     img{
-                        // background-color: var(--text_color_transparent);
                         border-radius: 8px;
                         max-width: 100%;
                         display: inline-block;
@@ -198,9 +197,11 @@ function closeModal(){
                         max-width: 600px;
                         color: var(--text_color);
                     }
-                    i {
-                        height: 380px;
-                        font-size: 100px;
+                    .placeholder-logo {
+                        height: 100px;
+                        width: 100px;
+                        margin-block: 140px;
+                        object-fit: contain;
                         animation: rotate 2s infinite linear;
                     }
                 }

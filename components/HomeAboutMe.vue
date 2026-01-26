@@ -15,11 +15,11 @@
                 <div class="about__section__container__columns__avatar">
                     <figure class="about__section__container__columns__avatar__image">
 
-                        <NuxtImg v-if="colorMode.value == 'dark'" alt="Cristopher Martins"
+                        <NuxtImg v-if="colorMode.value == 'dark'" alt="Foto de Carlos Neto"
                             src="/images/darkmode.png" width="800px" height="800px" format="webp"
                             densities="x1 x2" quality="100" />
 
-                        <NuxtImg v-if="colorMode.value == 'light'" alt="Cristopher Martins"
+                        <NuxtImg v-if="colorMode.value == 'light'" alt="Foto de Carlos Neto"
                             src="/images/lightmode.png" width="800px" height="800px" format="webp"
                             densities="x1 x2" quality="100" />
 
@@ -105,11 +105,11 @@
 </template>
 
 <script setup>
-import { ref, useI18n, reactive } from '#imports'
+import { ref, useI18n, reactive, computed } from '#imports'
 
 const colorMode = useColorMode()
 const { locale } = useI18n()
-const stackLogos = ref([
+const stackLogos = computed(() => [
     {logo: 'devicon:figma', name: 'Figma'},
     {logo: 'devicon:canva', name: 'Canva'},
     {logo: 'devicon:javascript', name: 'Javascript'},
@@ -117,13 +117,14 @@ const stackLogos = ref([
     {logo: 'devicon:html5', name: 'HTML 5'},
     {logo: 'devicon:css3', name: 'CSS 3'},
     {logo: 'devicon:react', name: 'React.JS'},
-    {logo: 'logos:expo-icon', name: 'Expo'},
+    {logo: colorMode.value === 'dark' ? 'simple-icons:expo' : 'logos:expo-icon', name: 'Expo'},
     {logo: 'devicon:tailwindcss', name: 'Tailwind CSS'},
+    {logo: 'devicon:sass', name: 'Sass'},
     {logo: 'logos:supabase-icon', name: 'Supabase'},
     {logo: 'logos:visual-studio-code', name: 'Visual Studio Code'},
     {logo: 'devicon:git', name: 'Git'},
-    {logo: 'devicon:github', name: 'GitHub'},
-    {logo: 'logos:openai-icon', name: 'ChatGPT'},
+    {logo: colorMode.value === 'dark' ? 'simple-icons:github' : 'devicon:github', name: 'GitHub'},
+    {logo: colorMode.value === 'dark' ? 'simple-icons:openai' : 'logos:openai-icon', name: 'ChatGPT'},
     {logo: 'carlos-icon:claude-color', name: 'Claude Code'},
     {logo: 'simple-icons:cursor', name: 'Cursor'},
     {logo: 'carlos-icon:antigravity', name: 'Google Antigravity'}

@@ -2,11 +2,11 @@
     
     <div class="language__switcher" >
         <button 
-            :aria-label="langCookie == 'pt' ? 'Português' : 'English'"
+            :aria-label="locale == 'pt' ? 'Português' : 'English'"
             class="language__switcher__button" 
             @click="changeLang"
         >
-            <span v-html="langCookie == 'pt' ? 'POR' : 'ENG'" />
+            <span v-html="locale == 'pt' ? 'POR' : 'ENG'" />
             <AppIcon IconName="ph:caret-down-bold" />
         </button>
         <div 
@@ -16,7 +16,7 @@
             @click="changeLang"
         >
             <ul>
-                <li :class="langCookie == 'en' ? 'active' : 'inactive' ">
+                <li :class="locale == 'en' ? 'active' : 'inactive' ">
                     <label for="en" title="English">
                         ENG
                         <AppIcon IconName="circle-flags:us" />
@@ -30,7 +30,7 @@
                         />
                     </label>
                 </li>
-                <li :class="langCookie == 'pt' ? 'active' : 'inactive'">
+                <li :class="locale == 'pt' ? 'active' : 'inactive'">
                     <label for="pt" title="Português">
                         POR
                         <AppIcon IconName="circle-flags:br" />

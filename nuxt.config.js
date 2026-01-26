@@ -9,7 +9,13 @@ export default defineNuxtConfig({
         head: {
             charset: 'UTF-8',
             viewport: 'width=device-width, initial-scale=1.0',
-            title: 'Cristopher Martins Designer & Developer'
+            title: 'Carlos Neto - Developer Fullstack & Designer',
+            meta: [
+                { name: 'description', content: 'Portfólio de Carlos Neto - Developer Fullstack & Designer. Confira meus projetos e habilidades.' }
+            ],
+            link: [
+                { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+            ]
         },
         //project pages & layout transitions
         pageTransition: {
@@ -56,7 +62,8 @@ export default defineNuxtConfig({
             VueI18nVitePlugin({
                 include: [
                     resolve(dirname(fileURLToPath(import.meta.url)), './locales/*.json')
-                ]
+                ],
+                strictMessage: false
             })
         ]
     },

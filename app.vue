@@ -8,12 +8,10 @@
 import { useSeoMeta } from '#imports';
 
 useSeoMeta({
-    title: 'Carlos Neto - Designer & Developer',
-    ogTitle: 'Carlos Neto - Designer & Developer',
-    description:
-        "As a seasoned designer and frontend developer with over a decade of experience in the technology sector, I am dedicated to consistently delivering excellence to my clients. On my website, you will discover a portfolio showcasing projects I've had the privilege of working on, as well as an overview of the technology services I offer.",
-    ogDescription:
-        "As a seasoned designer and frontend developer with over a decade of experience in the technology sector, I am dedicated to consistently delivering excellence to my clients. On my website, you will discover a portfolio showcasing projects I've had the privilege of working on, as well as an overview of the technology services I offer.",
+    title: 'Carlos Neto - Developer Fullstack & Designer',
+    ogTitle: 'Carlos Neto - Developer Fullstack & Designer',
+    description: 'Portfolio de Carlos Neto - Developer Fullstack e Designer.',
+    ogDescription: 'Portfolio de Carlos Neto - Developer Fullstack e Designer.',
     ogImage: '/images/avatar_website.png',
     twitterCard: 'summary_large_image',
 })

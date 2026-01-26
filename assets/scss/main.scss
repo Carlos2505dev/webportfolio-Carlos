@@ -1,4 +1,4 @@
-html{
+html {
     scroll-behavior: smooth;
     // &.dark-theme{
     //     body{
@@ -8,7 +8,8 @@ html{
     //     }
     // }
 }
-body{
+
+body {
     transition: all 0.4s ease;
     margin: 0;
     padding: 0;
@@ -24,113 +25,131 @@ body{
     // @media(max-width: $br_mobile){
     //     background-image: none;
     // }
-    
-    *{
+
+    * {
         box-sizing: border-box;
     }
-    
-    h1,h2,h3,h4,h5,h6{
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: $font_primary;
         font-weight: 600;
     }
-    
-    a{
+
+    a {
         transition: $transition_default;
         text-decoration: none;
         color: var(--primary);
     }
-    button{
+
+    button {
         cursor: pointer;
     }
-    button, input, textarea{
+
+    button,
+    input,
+    textarea {
         font-family: $font_secondary;
     }
 
-    img{
+    img {
         max-width: 100%;
     }
-    figure{
+
+    figure {
         margin: 0;
     }
 
-    .small-title{
+    .small-title {
         text-transform: uppercase;
         // letter-spacing: 0.4rem;
         font-size: $size_24px;
         margin-block: 4px;
         font-weight: 400;
         font-family: $font_secondary;
-        @media(max-width: $br_mobile){
+
+        @media(max-width: $br_mobile) {
             font-size: $size_20px;
         }
     }
-    .large-title{
+
+    .large-title {
         margin-block: 4px;
         font-size: $size_40px;
         font-weight: 400;
         line-height: $size_52px;
-        @media(max-width: $br_mobile){
+
+        @media(max-width: $br_mobile) {
             font-size: $size_40px;
         }
     }
-    .section{
+
+    .section {
         padding: 0 40px;
-        @media(max-width: $br_tablet){
+
+        @media(max-width: $br_tablet) {
             padding: 0 20px;
         }
     }
-    .container{
+
+    .container {
         width: 100%;
         max-width: 1280px;
         margin: auto;
-        &__fluid{
+
+        &__fluid {
             width: 100%;
             max-width: 100%;
         }
     }
 
-    ul{
+    ul {
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
-    .gradient-font{
+    .gradient-font {
         background-color: var(--primary);
         background-image: var(--primary_gradient);
-        
+
         background-size: 100%;
         background-repeat: repeat;
 
         background-clip: text;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
+        -webkit-text-fill-color: transparent;
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
     }
 
-    *:focus{
+    *:focus {
         outline-color: transparent;
     }
 
-    // *::selection {
-    //     background-color: var(--secondary);
-    //     color: var(--pure_white);
-    //     -webkit-text-fill-color: unset; 
-    //     -moz-text-fill-color: unset;
-    // }
+    *::selection {
+        background-color: var(--primary);
+        color: var(--pure_black);
+    }
+
     /* width */
     ::-webkit-scrollbar {
         width: 10px;
+
         &-track {
             background: transparent;
         }
-    
+
         &-thumb {
             background-color: var(--text_color_transparent);
             border-radius: 20px;
             cursor: pointer;
             transition: $transition_default;
+
             &:hover {
                 background-color: var(--text_color_smooth);
             }
@@ -141,70 +160,122 @@ body{
 
 //animations
 @keyframes rotate {
-    0%{
+    0% {
         rotate: 0deg;
     }
-    100%{
+
+    100% {
         rotate: 360deg;
     }
 }
 
 @keyframes pulse {
-    0%{
-        box-shadow: 0 0 0 0 rgba(#4C4C64, 0.2),0 0 0 0 rgba(#4C4C64, 0.2);
+    0% {
+        box-shadow: 0 0 0 0 rgba(#4C4C64, 0.2), 0 0 0 0 rgba(#4C4C64, 0.2);
     }
-    50%{
+
+    50% {
         box-shadow: 0 0 0 8px rgba(#4C4C64, 0.2), 0 0 0 16px rgba(#4C4C64, 0.2);
     }
-    100%{
-        box-shadow: 0 ;
+
+    100% {
+        box-shadow: 0;
     }
 }
+
 @keyframes rotating {
-    0%{
+    0% {
         rotate: 0deg;
     }
-    40%{
+
+    40% {
         rotate: 180deg;
     }
-    60%{
+
+    60% {
         rotate: 180deg;
     }
-    100%{
+
+    100% {
         rotate: 360deg;
     }
 }
 
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
 }
-  
-  /* The typewriter cursor effect */
+
+/* The typewriter cursor effect */
 @keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: var(--primary) }
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--primary)
+    }
 }
 
 @keyframes shake {
-    0% { transform: translate(0.04em, 0.04em) rotate(0deg); }
-    10% { transform: translate(-0.04em, -0.04em) rotate(-1deg); }
-    20% { transform: translate(-0.04em, 0em) rotate(1deg); }
-    30% { transform: translate(0.04em, 0.04em) rotate(0deg); }
-    40% { transform: translate(0.04em, -0.04em) rotate(1deg); }
-    50% { transform: translate(-0.04em, 0.04em) rotate(-1deg); }
-    60% { transform: translate(-0.04em, 0.04em) rotate(0deg); }
-    70% { transform: translate(0.04em, 0.04em) rotate(-1deg); }
-    80% { transform: translate(-0.04em, -0.04em) rotate(1deg); }
-    90% { transform: translate(0.04em, 0.04em) rotate(0deg); }
-    100% { transform: translate(0.04em, -0.04em) rotate(-1deg); }
+    0% {
+        transform: translate(0.04em, 0.04em) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-0.04em, -0.04em) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-0.04em, 0em) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(0.04em, 0.04em) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(0.04em, -0.04em) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-0.04em, 0.04em) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-0.04em, 0.04em) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(0.04em, 0.04em) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-0.04em, -0.04em) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(0.04em, 0.04em) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0.04em, -0.04em) rotate(-1deg);
+    }
 }
 
-@keyframes fade{
+@keyframes fade {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -292,7 +363,7 @@ from, to { border-color: transparent }
 
 
 //accessibility
-.visually-hidden{
+.visually-hidden {
     position: absolute;
     opacity: 0;
 }

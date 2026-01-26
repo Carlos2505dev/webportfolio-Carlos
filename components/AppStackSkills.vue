@@ -112,6 +112,7 @@ function showAll(){
             border-radius: 20px;
             background-color: var(--text_color_transparent);
             border: 1px solid var(--text_color_transparent);
+            color: var(--text_color);
             box-shadow: 0 4px 20px 0 var(--text_color_transparent), inset 8px -12px 32px 0 var(--bg_color);
             &.no-bg{
                 background-color: transparent;

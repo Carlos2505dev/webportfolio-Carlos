@@ -10,7 +10,13 @@
                 :class="{ 'active' : sectionVisible == $t(item.route) }" 
                 :to="{ path: '/', hash: $t(item.route)}"
             >
-                <AppIcon :IconName="item.icon" />
+                <NuxtImg 
+                    v-if="item.isImage" 
+                    src="/images/logo_cn.png" 
+                    alt="Logo Carlos Neto" 
+                    class="menu-logo-img"
+                />
+                <AppIcon v-else :IconName="item.icon" />
                 <span>{{ $t(item.title) }}</span>
             </nuxt-link>
         </li>
@@ -71,7 +77,7 @@ const menuItems = reactive([
         route: 'menu.item4.route'
     },
     {
-        icon: 'carlos-icon:logo-symbol',
+        isImage: true,
         title: 'menu.item5.title', 
         route: 'menu.item5.route'
     }
@@ -112,8 +118,10 @@ const menuItems = reactive([
                     padding:12px 8px 0 8px;
                     border-radius: 40px;
                 }
-                i{
-                    font-size: $size_24px;
+                
+                // Estilo geral para icones e imagem
+                i, .menu-logo-img{
+                    font-size: $size_24px; // Para ícones
                     display: none;
                     @media(max-width: $br_mobile){
                         display: flex;
@@ -123,6 +131,13 @@ const menuItems = reactive([
                         padding-bottom: 12px;
                         min-width: 28px;
                     }
+                }
+
+                // Ajuste específico para imagem
+                .menu-logo-img {
+                    width: 24px;
+                    height: 24px;
+                    object-fit: contain;
                 }
                 
                 span{
@@ -168,11 +183,18 @@ const menuItems = reactive([
                 }
             }
                         &:last-child {
-                            i {
+                            i, .menu-logo-img {
                                 background-color: var(--primary);
                                 padding: 4px;
                                 border-radius: 50%;
-                                font-size: $size_16px;
+                                font-size: $size_16px; /* Ajuste para o ícone */
+                                
+                                // Ajustes para a imagem dentro do circulo
+                                &.menu-logo-img {
+                                    width: 24px;
+                                    height: 24px;
+                                    padding: 2px; // Pequeno ajuste de padding para a imagem não tocar as bordas
+                                }
                             }
                         }
         }

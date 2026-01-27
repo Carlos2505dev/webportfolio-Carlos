@@ -5,15 +5,20 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from '#imports';
+import { useSeoMeta, useI18n } from '#imports';
+
+const { t } = useI18n()
 
 useSeoMeta({
-    title: 'Carlos Neto - Developer Fullstack & Designer',
-    ogTitle: 'Carlos Neto - Developer Fullstack & Designer',
-    description: 'Portfolio de Carlos Neto - Developer Fullstack e Designer.',
-    ogDescription: 'Portfolio de Carlos Neto - Developer Fullstack e Designer.',
+    title: () => t('seo.title'),
+    ogTitle: () => t('seo.title'),
+    description: () => t('seo.description'),
+    ogDescription: () => t('seo.description'),
+    keywords: () => t('seo.keywords'),
     ogImage: '/images/avatar_website.png',
     twitterCard: 'summary_large_image',
+    ogType: 'website',
+    author: 'Carlos Neto',
 })
 </script>
 

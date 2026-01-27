@@ -34,9 +34,9 @@
 import { reactive, useI18n } from '#imports'
 const { locale } = useI18n()
 const clients = reactive([
-    { name: 'AME', image: 'images/clients/AME.png', active: false },
+    { name: 'AME - Academia Ministerial do Espírito', image: 'images/clients/AME.png', active: false },
     { name: 'Enjoy Brasil', image: 'images/clients/Enjoy Brasil.png', active: false },
-    { name: 'InoveTech', image: 'images/clients/InoveTech.png', active: false },
+    { name: 'InoveTech - Conectando Ideias Inovadoras', image: 'images/clients/InoveTech.png', active: false },
     { name: 'Meu Maná', image: 'images/clients/Meu-Mana.png', active: false },
     { name: 'Confeitaria Dolce Amore', image: 'images/clients/DolceAmore.png', active: false },
 ])

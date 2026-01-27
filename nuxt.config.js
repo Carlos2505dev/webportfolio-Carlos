@@ -9,13 +9,14 @@ export default defineNuxtConfig({
         head: {
             charset: 'UTF-8',
             viewport: 'width=device-width, initial-scale=1.0',
-            title: 'Carlos Neto - Developer Fullstack & Designer',
+            title: 'Carlos Neto | Developer Fullstack & Designer',
             meta: [
-                { name: 'description', content: 'Portfólio de Carlos Neto - Developer Fullstack & Designer. Confira meus projetos e habilidades.' }
+                { name: 'description', content: 'Portfólio de Carlos Neto - Developer Fullstack & Designer. Especialista em criar experiências digitais únicas.' },
+                { name: 'theme-color', content: '#000000' },
+                { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }
             ],
             link: [
-                { rel: 'icon', type: 'image/png', href: '/favicon.png' }
-            ]
+                { rel: 'icon', type: 'image/png', href: '/favicon.png' }]
         },
         //project pages & layout transitions
         pageTransition: {

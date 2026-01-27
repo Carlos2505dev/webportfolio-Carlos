@@ -38,7 +38,7 @@
     },
     "about": {
         "title": "About",
-        "subtitle": "Passion, Creativity, and Code",
+        "subtitle": "Design, Creativity and Code.",
         "tools": "Proficiency on the following tools and stacks...",
         "cta_1": "Contact",
         "cta_2": "LINKEDIN",
@@ -68,5 +68,10 @@
         "title": "Let's make magic happen!",
         "subtitle": "From initial concept to final product, I strive for excellence in every project. Let's make something great together. Hit me up and let's kick off your project now!",
         "cta": "Get in Touch"
+    },
+    "seo": {
+        "title": "Carlos Neto | Fullstack Developer & UI/UX Designer",
+        "description": "Explore the portfolio of Carlos Neto, Fullstack Developer and UI/UX Designer. Specialist in end-to-end digital solutions, blending creative design and robust development to deliver websites and apps that turn ideas into real impact.",
+        "keywords": "carlos neto, fullstack developer, ui ux designer, dev portfolio, web development, website creation, app design, freelancer developer, ui ux portfolio, frontend development, backend development, vuejs developer, nuxt developer, react developer, mobile development, freelancer, system development, responsive design, figma prototyping, digital consulting, javascript developer, typescript developer, rest api, supabase developer, react native developer, digital creative, agile development, professional landing pages"
     }
 }

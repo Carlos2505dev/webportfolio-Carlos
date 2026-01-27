@@ -31,7 +31,7 @@
                     </NuxtLink>
                 </li>
                 <li class="contact__cta__social__item">
-                    <NuxtLink aria-label="Instagram" to="https://www.instagram.com/crismart_design_dev" target="_new">
+                    <NuxtLink aria-label="Instagram" to="https://www.instagram.com/carlos_neto2007/" target="_new">
                         <AppIcon IconName="bxl:instagram-alt" /> <span class="visually-hidden">Instagram</span>
                     </NuxtLink>
                 </li>

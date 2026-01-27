@@ -44,40 +44,28 @@
 
                 <div v-if="locale == 'en'" class="about__section__container__columns__text">
                     <p>
-                        Hi, I’m Cristopher—a seasoned <strong>Designer and Frontend Engineer</strong> from Brazil 🇧🇷
-                        with <strong>over 12 years of experience</strong>. With a strong focus on UI/UX development, I
-                        blend design and technology to craft cohesive and impactful projects that help businesses excel
-                        in the digital world.
+                        Hello, I’m Carlos Neto, a <strong>Fullstack Developer and Designer</strong>, with practical experience in <strong>end-to-end digital solution development</strong>. My passion for uniting design and code allows me to create digital solutions that not only work but also delight and solve real problems, helping projects come to life in the digital environment.
                     </p>
                     <br />
                     <p>
-                        I specialize in designing and developing beautiful, user-friendly, and responsive websites and
-                        applications. My keen eye for detail and commitment to innovation allow me to transform ideas
-                        into intuitive and engaging digital experiences.
+                        I specialize in developing modern and responsive interfaces for web and mobile, always focusing on user experience and visual clarity. My careful eye for information organization and results-oriented mindset allow me to transform needs into functional, intuitive, and visually harmonious products.
                     </p>
                     <br />
                     <p>
-                        By combining creativity with technical expertise, I deliver solutions that not only captivate
-                        users but also drive results. Let’s collaborate to create something exceptional!
+                        Combining creativity, logical reasoning, and attention to detail, I deliver solutions that unite purpose, usability, and real impact. Let’s collaborate and transform ideas into projects that make a difference.
                     </p>
                 </div>
                 <div v-else class="about__section__container__columns__text">
                     <p>
-                        Olá, eu sou o Cristopher um <strong>Designer e Engenheiro Frontend</strong> experiente com
-                        <strong>mais de 12 anos de experiência</strong>. Com um forte foco no desenvolvimento voltado
-                        para <strong>UI/UX</strong>, eu combino design e tecnologia para criar projetos coesos e
-                        impactantes que ajudam empresas a se destacarem no mundo digital.
+                        Olá, eu sou o Carlos Neto, um <strong>Desenvolvedor Fullstack e Designer</strong>, com experiência prática no <strong>desenvolvimento de soluções digitais de ponta a ponta</strong>. Minha paixão por unir design e código me permite criar soluções digitais que não apenas funcionam, mas também encantam e resolvem problemas reais, ajudando projetos a ganharem vida no ambiente digital.
                     </p>
                     <br />
                     <p>
-                        Sou especializado no design e desenvolvimento de sites e aplicações bonitas, intuitivas e
-                        responsivas. Meu olhar atento aos detalhes e comprometimento com a inovação me permitem
-                        transformar ideias em experiências digitais intuitivas e envolventes.
+                        Sou especializado no desenvolvimento de interfaces modernas e responsivas para web e mobile, sempre com foco na experiência do usuário e na clareza visual. Meu olhar cuidadoso para organização da informação e minha mentalidade orientada a resultados me permitem transformar necessidades em produtos funcionais, intuitivos e visualmente harmoniosos.
                     </p>
                     <br />
                     <p>
-                        Combinando criatividade e expertise técnica, entrego soluções que não apenas cativam os
-                        usuários, mas também geram resultados. Vamos colaborar e criar algo excepcional juntos!
+                        Combinando criatividade, raciocínio lógico e atenção aos detalhes, entrego soluções que unem propósito, usabilidade e impacto real. Vamos colaborar e transformar ideias em projetos que fazem a diferença.
                     </p>
                 </div>
 

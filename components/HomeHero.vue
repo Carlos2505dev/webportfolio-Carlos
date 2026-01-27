@@ -5,8 +5,8 @@
             <div class="hero__section__container__greetings">
                 <div class="hero__section__container__greetings__avatar">
                     <NuxtLink :aria-label="$t(heroHome.cta)" to="/#about">
-                        <NuxtImg alt="Foto de Carlos Neto" src="/images/carlosbezerra.png" width="200px"
-                            height="200px" format="webp" quality="100" densities="x1 x2" preload />
+                        <NuxtImg alt="Foto de Carlos Neto" src="/images/carlosbezerra.png" width="200"
+                            height="200" format="webp" quality="100" densities="x1 x2" />
                     </NuxtLink>
                 </div>
             </div>

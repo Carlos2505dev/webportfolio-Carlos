@@ -25,7 +25,7 @@
         "cta": "Sobre",
         "title": "Oi, sou Carlos <br class='desktop-break' />Neto",
         "subtitle": "Designer Lógico & Dev. Criativo",
-        "text": "Minha missão é tornar idéias complexas em soluções digitais intuitivas e atraentes.",
+        "text": "Minha missão é tornar ideias complexas em soluções digitais intuitivas e atraentes.",
         "button": "MEUS SERVIÇOS",
         "button_resume": "BAIXAR CURRÍCULO"
     },
@@ -38,7 +38,7 @@
     },
     "about": {
         "title": "Sobre",
-        "subtitle": "Paixão, Criatividade, e Código",
+        "subtitle": "Design, Criatividade e Código.",
         "tools": "Proficiência nas seguintes ferramentas e linguagens...",
         "cta_1": "Contato",
         "cta_2": "LINKEDIN",
@@ -46,7 +46,7 @@
     },
     "services": {
         "title": "Serviços",
-        "subtitle": "Sou especializado em transformar idéias criativas em realidades digitais",
+        "subtitle": "Sou especializado em transformar ideias criativas em realidades digitais",
         "text": "Se você está em busca de um site elegante e moderno ou de uma aplicação web complexa, tenho as habilidades e a experiência necessárias para transformar sua visão em realidade.",
         "service_1": {
             "icon": "carlos-icon:graphic-design",
@@ -68,5 +68,10 @@
         "title": "Vamos fazer a mágica acontecer!",
         "subtitle": "Desde o conceito inicial até o produto final, busco a excelência em cada projeto. Vamos criar algo incrível juntos. Entre em contato e vamos dar início ao seu projeto agora mesmo!",
         "cta": "Entre em contato"
+    },
+    "seo": {
+        "title": "Carlos Neto | Developer Fullstack & Designer UI/UX",
+        "description": "Conheça o portfólio de Carlos Neto, Desenvolvedor Fullstack e Designer UI/UX. Especialista em criar soluções digitais de ponta a ponta, unindo design criativo e desenvolvimento robusto para entregar sites e aplicativos que transformam ideias em impacto real.",
+        "keywords": "carlos neto, desenvolvedor fullstack, designer ui ux, portfolio dev, desenvolvimento web, criar sites, design de aplicativos, web designer salvador, freelancer, programação frontend, programação backend, desenvolvedor vuejs, desenvolvedor nuxt, desenvolvedor react, mobile developer, freelancer, desenvolvimento de sistemas, sites responsivos, prototipagem figma, consultoria digital, desenvolvedor javascript, desenvolvedor typescript, api rest, banco de dados supabase, react native developer, criativo digital, desenvolvimento ágil, landing pages profissionais"
     }
 }

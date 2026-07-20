@@ -52,7 +52,7 @@
                     </p>
                     <br />
                     <p>
-                        Combining creativity, logical reasoning, and attention to detail, I deliver solutions that unite purpose, usability, and real impact. Let’s collaborate and transform ideas into projects that make a difference.
+                        More than writing code, I have a product vision to build solutions that generate real business value. Combining creativity, logical reasoning, and attention to detail, I deliver solutions that unite purpose, usability, and real impact. Let's collaborate and transform ideas into projects that make a difference.
                     </p>
                 </div>
                 <div v-else class="about__section__container__columns__text">
@@ -61,11 +61,11 @@
                     </p>
                     <br />
                     <p>
-                        Sou especializado no desenvolvimento de interfaces modernas e responsivas para web e mobile, sempre com foco na experiência do usuário e na clareza visual. Meu olhar cuidadoso para organização da informação e minha mentalidade orientada a resultados me permitem transformar necessidades em produtos funcionais, intuitivos e visualmente harmoniosos.
+                        Sou especializado no desenvolvimento de interfaces modernas e responsivas para <strong>web e mobile</strong>, sempre com foco na experiência do usuário e na clareza visual. Meu olhar cuidadoso para organização da informação e minha mentalidade orientada a resultados me permitem transformar necessidades em produtos funcionais, intuitivos e visualmente harmoniosos.
                     </p>
                     <br />
                     <p>
-                        Combinando criatividade, raciocínio lógico e atenção aos detalhes, entrego soluções que unem propósito, usabilidade e impacto real. Vamos colaborar e transformar ideias em projetos que fazem a diferença.
+                        Mais do que escrever código, tenho <strong>visão de produto</strong> para construir <strong>soluções que gerem valor real ao negocio</strong>. Combinando criatividade, raciocínio lógico e atenção aos detalhes, entrego soluções que unem propósito, usabilidade e impacto real. Vamos colaborar e transformar ideias em projetos que fazem a diferença.
                     </p>
                 </div>
 
@@ -115,7 +115,16 @@ const stackLogos = computed(() => [
     {logo: colorMode.value === 'dark' ? 'simple-icons:openai' : 'logos:openai-icon', name: 'ChatGPT'},
     {logo: 'carlos-icon:claude-color', name: 'Claude Code'},
     {logo: 'simple-icons:cursor', name: 'Cursor'},
-    {logo: 'carlos-icon:antigravity', name: 'Google Antigravity'}
+    {logo: 'carlos-icon:antigravity', name: 'Google Antigravity'},
+    {logo: 'carlos-icon:trae', name: 'TRAE AI'},
+    {logo: 'carlos-icon:lovable', name: 'Lovable'},
+    {logo: 'carlos-icon:replit', name: 'Replit'},
+    {logo: 'simple-icons:githubcopilot', name: 'Github Copilot'},
+    {logo: colorMode.value === 'dark' ? 'simple-icons:vercel' : 'logos:vercel-icon', name: 'Vercel'},
+    {logo: 'carlos-icon:gemini', name: 'Gemini'},
+    {logo: colorMode.value === 'dark' ? 'carlos-icon:app-store-white' : 'carlos-icon:app-store-mono', name: 'Apple Store'},
+    {logo: 'carlos-icon:google-play', name: 'Google Play Store'},
+    {logo: 'carlos-icon:codex', name: 'Codex'},
 ])
 
 const about = reactive({

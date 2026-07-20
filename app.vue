@@ -5,12 +5,15 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta, useI18n } from '#imports';
+import { useHead, useSeoMeta, useI18n } from '#imports';
 
 const { t } = useI18n()
 
-useSeoMeta({
+useHead({
     title: () => t('seo.title'),
+})
+
+useSeoMeta({
     ogTitle: () => t('seo.title'),
     description: () => t('seo.description'),
     ogDescription: () => t('seo.description'),

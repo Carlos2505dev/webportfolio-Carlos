@@ -42,7 +42,7 @@
                             {{ $t(heroHome.button) }}
                             <AppIcon IconName="carlos-icon:arrow-right" />
                         </AppButton>
-                        <AppButton :aria-label="$t(heroHome.buttonResume)" hasLink="/resume.pdf" target="_blank" class="outline">
+                        <AppButton :aria-label="$t(heroHome.buttonResume)" hasLink="/Currículo_CarlosNeto.pdf" download="Currículo_CarlosNeto.pdf" target="_blank" class="outline">
                             {{ $t(heroHome.buttonResume) }}
                             <AppIcon IconName="ph:download-simple-bold" />
                         </AppButton>

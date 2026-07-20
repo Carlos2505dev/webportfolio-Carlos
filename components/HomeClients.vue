@@ -39,6 +39,7 @@ const clients = reactive([
     { name: 'InoveTech - Conectando Ideias Inovadoras', image: 'images/clients/InoveTech.png', active: false },
     { name: 'Meu Maná', image: 'images/clients/Meu-Mana.png', active: false },
     { name: 'Confeitaria Dolce Amore', image: 'images/clients/DolceAmore.png', active: false },
+    { name: 'GoRango', image: 'images/clients/GoRango.png', active: false },
 ])
 
 const client = reactive({
@@ -145,7 +146,7 @@ function toggleClient(client) {
                     
                     img{
                         display: block;
-                        max-height: 100px;
+                        max-height: 140px;
                         width: auto;
                         height: auto;
                         margin: auto;

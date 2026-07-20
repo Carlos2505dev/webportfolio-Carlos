@@ -1,8 +1,18 @@
 <template>
-    <nuxt-link 
-        v-if="hasLink" 
-        :to="hasLink" 
-        class="button" 
+    <a
+        v-if="hasLink && download"
+        :href="hasLink"
+        :download="download"
+        :target="target"
+        class="button"
+    >
+        <slot />
+    </a>
+    <nuxt-link
+        v-else-if="hasLink"
+        :to="hasLink"
+        :target="target"
+        class="button"
     >
         <slot />
     </nuxt-link>
@@ -16,6 +26,14 @@ import { toRefs } from '#imports'
 const props = defineProps({
     hasLink: {
         type: String
+    },
+    download: {
+        type: [Boolean, String],
+        default: false
+    },
+    target: {
+        type: String,
+        default: null
     }
 })
 

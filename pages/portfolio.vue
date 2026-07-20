@@ -1,20 +1,20 @@
 <template>
     <div>
         <section class="hero__section section">
-            <div v-if="locale == 'en'" class="hero__section__container">
+            <div v-if="locale == 'en'" class="hero__section__container container">
                 <h1 class="hero__section__container__title gradient-font">
                     Portfolio
                 </h1>
                 <p class="hero__section__container__subtitle ">
-                    My portfolio showcases a range of projects that highlight my commitment to quality and user-centric design.
+                    My portfolio reflects my work as a <strong>Fullstack Developer & Designer</strong> with end-to-end digital solutions where design, code, and purpose come together.
                 </p>
             </div>
             <div v-else class="hero__section__container container">
                 <h1 class="hero__section__container__title gradient-font">
-                    Portifólio
+                    Portfólio
                 </h1>
                 <p class="hero__section__container__subtitle ">
-                    Meu portfólio exibe uma variedade de projetos que destacam meu compromisso com a qualidade e o design centrado no usuário.
+                    Meu portfólio reflete meu trabalho como <strong>Desenvolvedor Fullstack & Designer</strong> com soluções digitais completas onde design, código e propósito se encontram.
                 </p>
             </div>
         </section>
@@ -54,6 +54,7 @@ const allProjects = computed(() => {
     padding-block: 180px 40px;
     &__container{
         width: 100%;
+        text-align: center;
         &__title{
             margin-block: 4px;
             font-size: $size_72px;
@@ -64,6 +65,7 @@ const allProjects = computed(() => {
         }
         &__subtitle{
             max-width: 500px;
+            margin-inline: auto;
             font-size: $size_20px;
         }
     }

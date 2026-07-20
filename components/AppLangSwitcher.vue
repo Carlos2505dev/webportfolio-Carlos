@@ -6,7 +6,10 @@
             class="language__switcher__button" 
             @click="changeLang"
         >
-            <span v-html="locale == 'pt' ? 'POR' : 'ENG'" />
+            <span class="language__switcher__button__content">
+                <AppIcon :IconName="locale == 'pt' ? 'circle-flags:br' : 'circle-flags:us'" />
+                <span v-html="locale == 'pt' ? 'POR' : 'ENG'" />
+            </span>
             <AppIcon IconName="ph:caret-down-bold" />
         </button>
         <div 
@@ -85,15 +88,22 @@ function closeSwitcher(){
         border: 1px solid var(--text_color_transparent);
         background: var(--bg_color);
         color: var(--text_color);
-        padding: 8px 12px;
+        padding: 6px 10px;
         border-radius: 20px;
         font-size: $size_12px;
-        min-width: 64px;
+        min-width: 50px;
+        gap: 4px;
         &:hover{
             background-color: var(--text_color_transparent);
         }
+        &__content{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
         i{
-            margin-left:8px;
+            margin-left: 6px;
+            font-size: 10px;
         }
     }
     &__menu{

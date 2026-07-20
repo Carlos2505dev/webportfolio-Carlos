@@ -47,7 +47,7 @@
     "services": {
         "title": "Serviços",
         "subtitle": "Sou especializado em transformar ideias criativas em realidades digitais",
-        "text": "Se você está em busca de um site elegante e moderno ou de uma aplicação web complexa, tenho as habilidades e a experiência necessárias para transformar sua visão em realidade.",
+        "text": "Se você está em busca de um site elegante, uma aplicação web robusta ou um aplicativo móvel intuitivo, tenho as habilidades e a experiência necessárias para transformar sua visão em realidade.",
         "service_1": {
             "icon": "carlos-icon:graphic-design",
             "title": "Design Gráfico.",
@@ -70,7 +70,7 @@
         "cta": "Entre em contato"
     },
     "seo": {
-        "title": "Carlos Neto | Developer Fullstack & Designer UI/UX",
+        "title": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web",
         "description": "Conheça o portfólio de Carlos Neto, Desenvolvedor Fullstack e Designer UI/UX. Especialista em criar soluções digitais de ponta a ponta, unindo design criativo e desenvolvimento robusto para entregar sites e aplicativos que transformam ideias em impacto real.",
         "keywords": "carlos neto, desenvolvedor fullstack, designer ui ux, portfolio dev, desenvolvimento web, criar sites, design de aplicativos, web designer salvador, freelancer, programação frontend, programação backend, desenvolvedor vuejs, desenvolvedor nuxt, desenvolvedor react, mobile developer, freelancer, desenvolvimento de sistemas, sites responsivos, prototipagem figma, consultoria digital, desenvolvedor javascript, desenvolvedor typescript, api rest, banco de dados supabase, react native developer, criativo digital, desenvolvimento ágil, landing pages profissionais"
     }

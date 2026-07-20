@@ -112,10 +112,15 @@ let services = reactive({
             &__selection{
                 position: relative;
                 display: flex;
-                
+                justify-content: center;
+
                 &__text{
-                    max-width: 500px;
+                    max-width: 800px;
+                    text-align: center;
                     // padding-block: 40px;
+                    h2, h3 {
+                        text-align: center;
+                    }
                     h3 {
                         position: relative;
                         z-index: 2;

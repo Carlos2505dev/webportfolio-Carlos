@@ -39,8 +39,7 @@ import portfolio from '@/localData/portfolio'
 
 const allProjects = computed(() => {
     const projects = portfolio[locale.value]
-    const projectsOrder = projects.reverse()
-    return projectsOrder
+    return [...projects]
 })
 
 </script>

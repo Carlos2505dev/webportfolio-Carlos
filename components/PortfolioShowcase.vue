@@ -56,8 +56,7 @@ import portfolio from '@/localData/portfolio'
 
 const latestWorks = computed(() => {
     const projects = portfolio[locale.value]
-    const last8Items = projects
-    return last8Items.reverse()
+    return [...projects]
 })
 </script>
 

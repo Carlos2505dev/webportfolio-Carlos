@@ -3,25 +3,25 @@
         <div class="error__page__container container">
 
             <h1 v-if="props.error.statusCode === 404" class="gradient-font">
-                404 Error
+                {{ $t('error.title_404') }}
             </h1>
             <h1 v-else class="gradient-font">
-                Error
+                {{ $t('error.title_generic') }}
             </h1>
             <h2 v-if="props.error.statusCode === 404" class="small-title">
-                Page not found
+                {{ $t('error.subtitle_404') }}
             </h2>
             <h2 v-else-if="props.error.statusMessage" class="small-title">
-                Internal Server Error
+                {{ $t('error.subtitle_generic') }}
             </h2>
             <p>
-                Sorry, we can't find the page you are looking for.
+                {{ $t('error.description') }}
             </p>
             <AppButton 
                 class="primary" 
-                aria-label="Back to Homepage" 
+                :aria-label="$t('error.button')" 
                 @click="handleError" 
-            >Back to Homepage</AppButton>
+            >{{ $t('error.button') }}</AppButton>
         </div>
     </section>
 </template>

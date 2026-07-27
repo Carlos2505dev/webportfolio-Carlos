@@ -12,7 +12,7 @@
             >
                 <NuxtImg 
                     v-if="item.isImage" 
-                    src="/images/logo_cn.png" 
+                    src="/logo_cn.webp"
                     alt="Logo Carlos Neto" 
                     class="menu-logo-img"
                 />

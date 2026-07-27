@@ -2,10 +2,10 @@
     <span class="logo__wrap">
         <svg class="logo__wrap__symbol" width="40" height="38" viewBox="0 0 500 500" fill="none"
             xmlns="http://www.w3.org/2000/svg">
-            <image href="/images/logo_cn.png" width="500" height="500" />
+            <image href="/logo_cn.webp" width="500" height="500" />
         </svg>
         <strong class="logo__wrap__type">
-            <img src="/images/carlosneto_logo.png" alt="Logo Carlos Neto" class="logo__wrap__type__img" />
+            <img src="/carlosneto_logo.webp" alt="Logo Carlos Neto" class="logo__wrap__type__img" />
             <span class="visually-hidden">Carlos Neto</span>
         </strong>
     </span>

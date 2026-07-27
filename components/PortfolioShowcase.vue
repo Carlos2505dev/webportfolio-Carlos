@@ -5,7 +5,7 @@
             <ul class="about__clients__marquee__list container">
                 <li 
                     v-for="client in latestWorks" 
-                    :key="client.name"
+                    :key="client.id"
                     class="about__clients__marquee__list__item"
                 >
                     <figure>
@@ -13,8 +13,8 @@
                             :src="client.image"
                             width="340px"
                             height="340px"
-                            :alt="client.name"
-                            :title="client.name"
+                            :alt="$t(client.name)"
+                            :title="$t(client.name)"
                             format="webp"
                             densities="x1 x2"
                             quality="100"
@@ -26,7 +26,7 @@
             <ul class="about__clients__marquee__list container" aria-hidden="true">
                 <li 
                     v-for="client in latestWorks" 
-                    :key="client.name"
+                    :key="client.id"
                     class="about__clients__marquee__list__item"
                 >
                     <figure>
@@ -34,8 +34,8 @@
                             :src="client.image"
                             width="340px"
                             height="340px"
-                            :alt="client.name"
-                            :title="client.name"
+                            :alt="$t(client.name)"
+                            :title="$t(client.name)"
                             format="webp"
                             densities="x1 x2"
                             quality="100"
@@ -49,15 +49,9 @@
 </template>
 
 <script setup>
-import { reactive, useI18n } from '#imports'
-const { locale } = useI18n()
-
 import portfolio from '@/localData/portfolio'
 
-const latestWorks = computed(() => {
-    const projects = portfolio[locale.value]
-    return [...projects]
-})
+const latestWorks = portfolio
 </script>
 
 <style lang="scss" scoped>

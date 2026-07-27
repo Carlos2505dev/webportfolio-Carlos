@@ -173,15 +173,6 @@ Durante o desenvolvimento deste projeto, aprofundei conhecimentos em:
 
 ---
 
-## Próximos Passos
-
-- [ ] **Otimização de Asset Loading**: Implementar carregamento progressivo de imagens (blur-up).
-- [ ] **Seção de FAQ/Dúvidas**: Para pré-vender serviços de consultoria de forma automatizada.
-- [ ] **Integração com Strapi**: Migrar dados estáticos para um CMS, facilitando atualizações de projetos.
-- [ ] **Core Web Vitals**: Refinamento final para atingir score 100/100 em todas as métricas do Lighthouse.
-
----
-
 ## 👨‍💻 Autor
 
 <div align="left">

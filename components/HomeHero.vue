@@ -5,7 +5,7 @@
             <div class="hero__section__container__greetings">
                 <div class="hero__section__container__greetings__avatar">
                     <NuxtLink :aria-label="$t(heroHome.cta)" to="/#about">
-                        <NuxtImg alt="Foto de Carlos Neto" src="/images/carlosbezerra.png" width="200"
+                        <NuxtImg alt="Foto de Carlos Neto" src="/carlosbezerra.webp" width="200"
                             height="200" format="webp" quality="100" densities="x1 x2" />
                     </NuxtLink>
                 </div>
@@ -16,26 +16,15 @@
                 </div>
                 <div class="hero__section__container__text__wrapper">
                     <h2 class="hero__section__container__text__wrapper__title gradient-font">
-                        <template v-if="locale === 'pt'">
-                            Designer 
-                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
-                                <TextType :text="logicTermsPt" :typingSpeed="70" :pauseDuration="3000" showCursor cursorCharacter="|" />
-                            </ShinyText>
-                            & Dev. 
-                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
-                                <TextType :text="creativeTermsPt" :typingSpeed="70" :pauseDuration="3000" :initialDelay="1000" showCursor cursorCharacter="|" />
-                            </ShinyText>
-                        </template>
-                        <template v-else>
-                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
-                                <TextType :text="logicTermsEn" :typingSpeed="70" :pauseDuration="3000" showCursor cursorCharacter="|" />
-                            </ShinyText>
-                            Designer & 
-                            <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
-                                <TextType :text="creativeTermsEn" :typingSpeed="70" :pauseDuration="3000" :initialDelay="1000" showCursor cursorCharacter="|" />
-                            </ShinyText>
-                            Developer
-                        </template>
+                        {{ $t('hero.before_logic') }}
+                        <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
+                            <TextType :text="logicTerms" :typingSpeed="70" :pauseDuration="3000" showCursor cursorCharacter="|" />
+                        </ShinyText>
+                        {{ $t('hero.between_terms') }}
+                        <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
+                            <TextType :text="creativeTerms" :typingSpeed="70" :pauseDuration="3000" :initialDelay="1000" showCursor cursorCharacter="|" />
+                        </ShinyText>
+                        {{ $t('hero.after_creative') }}
                     </h2>
                     <div class="hero__section__container__text__wrapper__buttons">
                         <AppButton :aria-label="$t(heroHome.button)" hasLink="/#services" class="primary">
@@ -54,14 +43,12 @@
 </template>
   
 <script setup>
-import { reactive, ref, useI18n } from '#imports'
+import { reactive, ref, computed, useI18n } from '#imports'
 
-const { locale } = useI18n()
+const { t } = useI18n()
 
-const logicTermsPt = ["Visionário", "Focado", "Metódico", "Lógico"]
-const creativeTermsPt = ["Prático", "Inovador", "Criativo", "Funcional"]
-const logicTermsEn = ["Visionary", "Focused", "Methodical", "Logical"]
-const creativeTermsEn = ["Practical", "Innovative", "Creative", "Functional"]
+const logicTerms = computed(() => t('hero.logic_terms').split(','))
+const creativeTerms = computed(() => t('hero.creative_terms').split(','))
 
 const stackLogos = ref([
     { logo: 'devicon:figma', name: 'Figma' },

@@ -37,7 +37,7 @@
                                 <ul class="services__section__container__column__details__item__contain__content__tags">
                                     <li v-for="tag in service.tags" :key="tag"
                                         class="services__section__container__column__details__item__contain__content__tags__item">
-                                        {{ tag }}
+                                        {{ $t(tag) }}
                                     </li>
                                 </ul>
                             </div>
@@ -66,21 +66,21 @@ let services = reactive({
             icon: 'services.service_1.icon',
             description: 'services.service_1.text',
             image: 'carlos-icon:tablet',
-            tags: ['Branding', 'Visual Identity', 'Digital illustration']
+            tags: ['services.tags.branding', 'services.tags.visual_identity', 'services.tags.digital_illustration']
         },
         {
             title: 'services.service_2.title',
             icon: 'services.service_2.icon',
             description: 'services.service_2.text',
             image: 'carlos-icon:desktop',
-            tags: ['Software', 'Landing Pages', 'Ecommerce', 'Website', 'Responsive Web Design', 'UI/UX Development']
+            tags: ['services.tags.software', 'services.tags.landing_pages', 'services.tags.ecommerce', 'services.tags.website', 'services.tags.responsive_web_design', 'services.tags.ui_ux_development']
         },
         {
             title: 'services.service_3.title',
             icon: 'services.service_3.icon',
             description: 'services.service_3.text',
             image: 'carlos-icon:mobile',
-            tags: ['Mobile App Design', 'Hybrid UI/UX Development']
+            tags: ['services.tags.mobile_app_design', 'services.tags.hybrid_ui_ux_development']
         }
     ]
 })

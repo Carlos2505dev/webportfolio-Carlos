@@ -2,13 +2,13 @@
     
     <div class="language__switcher" >
         <button 
-            :aria-label="locale == 'pt' ? 'Português' : 'English'"
+            :aria-label="$t(locale == 'pt' ? 'lang.pt' : 'lang.en')"
             class="language__switcher__button" 
             @click="changeLang"
         >
             <span class="language__switcher__button__content">
                 <AppIcon :IconName="locale == 'pt' ? 'circle-flags:br' : 'circle-flags:us'" />
-                <span v-html="locale == 'pt' ? 'POR' : 'ENG'" />
+                <span v-html="$t(locale == 'pt' ? 'lang.pt_short' : 'lang.en_short')" />
             </span>
             <AppIcon IconName="ph:caret-down-bold" />
         </button>
@@ -20,8 +20,8 @@
         >
             <ul>
                 <li :class="locale == 'en' ? 'active' : 'inactive' ">
-                    <label for="en" title="English">
-                        ENG
+                    <label for="en" :title="$t('lang.en')">
+                        {{ $t('lang.en_short') }}
                         <AppIcon IconName="circle-flags:us" />
                         <input 
                             id="en" 
@@ -34,8 +34,8 @@
                     </label>
                 </li>
                 <li :class="locale == 'pt' ? 'active' : 'inactive'">
-                    <label for="pt" title="Português">
-                        POR
+                    <label for="pt" :title="$t('lang.pt')">
+                        {{ $t('lang.pt_short') }}
                         <AppIcon IconName="circle-flags:br" />
                         <input 
                             id="pt" 

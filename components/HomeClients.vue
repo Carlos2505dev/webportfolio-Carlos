@@ -8,7 +8,7 @@
                 <li v-for="client in clients" :key="client.name" class="about__clients__marquee__list__item" @click="toggleClient(client)">
                     <div class="client-content">
                         <figure v-if="!client.active">
-                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="'Logo da empresa ' + client.name"
+                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.logo_alt') + ' ' + client.name"
                                 :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder />
                         </figure>
                         <span v-else class="client-name">{{ client.name }}</span>
@@ -19,7 +19,7 @@
                 <li v-for="client in clients" :key="client.name" class="about__clients__marquee__list__item" @click="toggleClient(client)">
                     <div class="client-content">
                         <figure v-if="!client.active">
-                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="'Logo da empresa ' + client.name"
+                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.logo_alt') + ' ' + client.name"
                                 :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder />
                         </figure>
                         <span v-else class="client-name">{{ client.name }}</span>
@@ -31,8 +31,7 @@
 </template>
 
 <script setup>
-import { reactive, useI18n } from '#imports'
-const { locale } = useI18n()
+import { reactive } from '#imports'
 const clients = reactive([
     { name: 'AME - Academia Ministerial do Espírito', image: 'images/clients/AME.png', active: false },
     { name: 'Enjoy Brasil', image: 'images/clients/Enjoy Brasil.png', active: false },

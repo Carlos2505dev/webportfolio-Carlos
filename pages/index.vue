@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { useI18n, useHead, computed } from '#imports'
+import { useI18n, useHead } from '#imports'
 const { locale } = useI18n()
 useHead({
     htmlAttrs: {
@@ -27,11 +27,7 @@ useHead({
 
 import portfolio from '@/localData/portfolio'
 
-const latestWorks = computed(() => {
-    const projects = portfolio[locale.value]
-    const last12Items = projects.slice(-12)
-    return last12Items
-})
+const latestWorks = portfolio
 
 
 

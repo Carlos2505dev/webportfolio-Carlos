@@ -18,7 +18,7 @@ useSeoMeta({
     description: () => t('seo.description'),
     ogDescription: () => t('seo.description'),
     keywords: () => t('seo.keywords'),
-    ogImage: '/images/avatar_website.png',
+    ogImage: '/avatar_website.webp',
     twitterCard: 'summary_large_image',
     ogType: 'website',
     author: 'Carlos Neto',

@@ -1,25 +1,10 @@
 {
     "menu": {
-        "item1": {
-            "title": "Início",
-            "route": "#home"
-        },
-        "item2": {
-            "title": "Portfólio",
-            "route": "#portfolio"
-        },
-        "item3": {
-            "title": "Sobre",
-            "route": "#about"
-        },
-        "item4": {
-            "title": "Serviços",
-            "route": "#services"
-        },
-        "item5": {
-            "title": "Contato",
-            "route": "#contact"
-        }
+        "item1": { "title": "Início", "route": "#home" },
+        "item2": { "title": "Portfólio", "route": "#portfolio" },
+        "item3": { "title": "Sobre", "route": "#about" },
+        "item4": { "title": "Serviços", "route": "#services" },
+        "item5": { "title": "Contato", "route": "#contact" }
     },
     "hero": {
         "cta": "Sobre",
@@ -27,14 +12,12 @@
         "subtitle": "Designer Lógico & Dev. Criativo",
         "text": "Minha missão é tornar ideias complexas em soluções digitais intuitivas e atraentes.",
         "button": "MEUS SERVIÇOS",
-        "button_resume": "BAIXAR CURRÍCULO"
-    },
-    "portfolio": {
-        "title": "Últimos Trabalhos",
-        "button": "Veja Mais"
-    },
-    "clients": {
-        "title": "Parceiros que confiam no meu trabalho"
+        "button_resume": "BAIXAR CURRÍCULO",
+        "before_logic": "Designer ",
+        "between_terms": " & Dev. ",
+        "after_creative": "",
+        "logic_terms": "Visionário,Focado,Metódico,Lógico",
+        "creative_terms": "Prático,Inovador,Criativo,Funcional"
     },
     "about": {
         "title": "Sobre",
@@ -42,7 +25,184 @@
         "tools": "Proficiência nas seguintes ferramentas e linguagens...",
         "cta_1": "Contato",
         "cta_2": "LINKEDIN",
-        "cta_2_link": "https://www.linkedin.com/in/carlosbezerraneto/"
+        "cta_2_link": "https://www.linkedin.com/in/carlosbezerraneto/",
+        "logic_label": "Lógica",
+        "creativity_label": "Criatividade",
+        "paragraph_1": "Olá, eu sou o Carlos Neto, um <strong>Desenvolvedor Fullstack e Designer</strong>, com experiência prática no <strong>desenvolvimento de soluções digitais de ponta a ponta</strong>. Minha paixão por unir design e código me permite criar soluções digitais que não apenas funcionam, mas também encantam e resolvem problemas reais, ajudando projetos a ganharem vida no ambiente digital.",
+        "paragraph_2": "Sou especializado no desenvolvimento de interfaces modernas e responsivas para <strong>web e mobile</strong>, sempre com foco na experiência do usuário e na clareza visual. Meu olhar cuidadoso para organização da informação e minha mentalidade orientada a resultados me permitem transformar necessidades em produtos funcionais, intuitivos e visualmente harmoniosos.",
+        "paragraph_3": "Mais do que escrever código, tenho <strong>visão de produto</strong> para construir <strong>soluções que gerem valor real ao negocio</strong>. Combinando criatividade, raciocínio lógico e atenção aos detalhes, entrego soluções que unem propósito, usabilidade e impacto real. Vamos colaborar e transformar ideias em projetos que fazem a diferença."
+    },
+    "portfolio": {
+        "title": "Últimos Trabalhos",
+        "button": "Veja Mais",
+        "tags": {
+            "mobile_application": "Aplicativo Móvel",
+            "ux_ui": "UX/UI",
+            "digital_bible": "Bíblia Digital",
+            "christian": "Cristão",
+            "educational_platform": "Plataforma Educacional",
+            "e_learning": "E-learning",
+            "web_application": "Aplicação Web",
+            "tourism": "Turismo",
+            "travel": "Viagens",
+            "institutional_website": "Site Institucional",
+            "web_design": "Web Design",
+            "landing_page": "Landing Page",
+            "menu_design": "Design de Cardápio",
+            "branding": "Branding",
+            "food_and_beverage": "Alimentos e Bebidas",
+            "mvp": "MVP",
+            "admin_panel": "Painel Administrativo",
+            "dashboard": "Dashboard",
+            "members_area": "Área de Membros",
+            "church": "Igreja"
+        },
+        "projects": {
+            "1": {
+                "name": "Aplicativo Móvel Cristão Meu Maná - Sua Bíblia de Bolso",
+                "client": "Meu Maná | InoveTech",
+                "description": "<p>Meu Maná é o aplicativo mobile que vai além da leitura da Bíblia para nutrir uma jornada de fé completa com disciplinas espirituais interativas e transformadoras.</p><h3>Visão Geral</h3><p>Os aplicativos cristãos limitam-se à Bíblia como única funcionalidade. O Meu Maná inova com um ecossistema que guia o cristão em crescimento espiritual por meio de oração, jejum, testemunhos e reflexões, de forma leve e interativa.</p><h3>Principais Funcionalidades</h3><p><strong>Biblioteca Bíblica Offline:</strong> Nove traduções completas em JSON para leitura, navegação, favoritos e compartilhamento como imagem offline, com alternância instantânea entre versões.</p><p><strong>Assistente Espiritual com IA:</strong> O Sabedoria usa Groq Llama 3.1 8B com streaming e cache. Treinada para orientar disciplinas espirituais, reconhece o usuário, sugere módulos e responde conforme base de conhecimento específica.</p><p><strong>Ecossistema de Disciplinas:</strong> Jejuns com temporizador, alarmes de oração em background, intercessões e testemunhos com referência. Sincronizado via Supabase com fila offline.</p><h3>Vantagens</h3><p><strong>Arquitetura Offline First:</strong> Operações enfileiradas localmente e sincronizadas ao Supabase quando online, essencial para conectividade intermitente.</p><p><strong>IA Contextualizada:</strong> O Sabedoria conhece o usuário e o app, seguindo a teologia do ministério. Streaming e chaves redundantes garantem fluidez em conexões lentas.</p><p><strong>Monetização Híbrida e Design Premium:</strong> RevenueCat gerencia assinaturas em dois níveis, Start.io exibe anúncios. Glassmorphism, gradientes, fontes customizadas e modo escuro entregam experiência premium.</p><p>O Meu Maná inspira cristãos a organizar as disciplinas espirituais e ter uma jornada guiada com propósito.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
+                "gallery": {
+                    "0": "Tela de abertura",
+                    "1": "Etapa de integração 1",
+                    "2": "Etapa de integração 2",
+                    "3": "Etapa de integração 3",
+                    "4": "Etapa de integração 4",
+                    "5": "Primeiro acesso",
+                    "6": "Galeria PECS (Palavras)",
+                    "7": "Adicionar nova PEC (Palavra)",
+                    "8": "Galeria de Frases",
+                    "9": "Adicionar nova frase",
+                    "10": "Aprender",
+                    "11": "Jogo educativo",
+                    "12": "Rotina",
+                    "13": "Adicionar nova rotina",
+                    "14": "Configurações",
+                    "15": "Perfil",
+                    "16": "Modal de bloqueio",
+                    "17": "Diretrizes de marca",
+                    "18": "Sistema de Design"
+                }
+            },
+            "2": {
+                "name": "Plataforma Vector Learn para aprendizado de Vetores",
+                "client": "Unijorge (projeto acadêmico)",
+                "description": "<p>Vector Learn é uma plataforma educacional interativa open-source que ensina matemática vetorial com simulações 3D, gamificação e conteúdo gratuito para estudantes de exatas.</p><h3>Visão Geral</h3><p>O ensino de vetores foi dominado por fórmulas abstratas, deixando estudantes de engenharias, computação, física e matemática sem intuição geométrica. Vector Learn preenche essa lacuna transformando abstrações em experiências interativas e tangíveis.</p><h3>Principais Funcionalidades</h3><p><strong>Simuladores 2D e 3D:</strong> canvas 2D com sliders em tempo real e cena Three.js com orbit controls permitem manipular vetores e visualizar operações instantaneamente, desenvolvendo intuição geométrica concreta.</p><p><strong>Sistema de Gamificação:</strong> motor de progressão com XP, níveis, streaks, badges e certificados PDF com QR code. Progresso persiste no navegador sem cadastro.</p><p><strong>Questionário ENEM:</strong> mais de 60 questões reais de vestibulares com modo prova cronometrado, gráficos radar de desempenho e relatórios PDF exportáveis.</p><h3>Vantagens</h3><p><strong>Facilidade de Aprendizado:</strong> a abordagem visual e interativa reduz o atrito entre teoria e compreensão, permitindo que alunos assimilem conceitos complexos em minutos. <strong>Mais de 20 estudantes</strong> já foram beneficiados e usam a plataforma diariamente no estudo de vetores.</p><p><strong>Experiência Mobile Premium:</strong> layout responsivo com gestos de swipe, bottom sheets com vaul, feedback háptico e modo zen para estudo sem distrações, tudo otimizado para celulares, onde a maioria dos estudantes acessa.</p><p><strong>Curso Gratuito:</strong> do vetor no plano às integrais de linha, com aplicações em machine learning, computação gráfica e física, 100% gratuito.</p><p>Vector Learn muda a forma como você enxerga vetores: de fórmulas no papel para ferramentas que você pode ver, manipular e aplicar. A plataforma está em constantes melhorias com contribuições inovadoras da comunidade.</p>",
+                "gallery": {
+                    "0": "Tela de login",
+                    "1": "Painel",
+                    "2": "Histórico",
+                    "3": "Relatórios"
+                }
+            },
+            "3": {
+                "name": "Aplicativo Móvel de Turismo Enjoy Brasil",
+                "client": "Enjoy Brasil | InoveTech",
+                "description": "<p>Enjoy Brasil transforma como turistas descobrem, planejam e vivem experiências pelo Brasil com inteligência artificial.</p><h3>Visão Geral</h3><p>Planejar uma viagem pelo Brasil exige dezenas de fontes: guias desatualizados, reviews soltos e buscadores genéricos. Enjoy Brasil elimina esse ruído com um ecossistema que planeja roteiros, recomenda lugares e conecta viajantes de forma inteligente.</p><h3>Principais Funcionalidades</h3><p><strong>Assistente IA Zé Turi:</strong> Chatbot que cria roteiros personalizados por destino, dias e orçamento. Um planejador de viagens completo no app.</p><p><strong>Feed Conexão Viajante:</strong> Feed social com abas curadas que agrega postagens multimídia, roteiros e avaliações. Curtidas, comentários e compartilhamentos criam uma comunidade ativa em torno do turismo.</p><p><strong>Gamificação:</strong> 15 níveis com badges de raridade, missões e placar de liderança. Cada interação rende pontos e conquistas, transformando exploração em experiência envolvente.</p><h3>Vantagens</h3><p><strong>Experiência Nativa:</strong> Animações na thread nativa com Reanimated e renderização com Skia. Cada transição responde com fluidez de app nativo.</p><p><strong>Notificações Contextuais:</strong> Motor próprio para boas-vindas, lembretes, interações sociais e verificação de perfil. Cada notificação chega no momento certo.</p><p><strong>Multilíngue Nativo:</strong> Português, inglês e espanhol com detecção automática e fallback para PT-BR. Cada tela é traduzida sem configuração manual.</p><p>Seu próximo guia de viagem não é um app de mapa. É o Enjoy Brasil.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
+                "gallery": {
+                    "0": "Página inicial",
+                    "1": "Página inicial logada",
+                    "2": "Opções de perfil",
+                    "3": "Página de serviço - Consulta rápida",
+                    "4": "Página de serviço"
+                }
+            },
+            "4": {
+                "name": "Site Institucional InoveTech",
+                "client": "InoveTech",
+                "description": "<p>Site institucional da software house InoveTech, que transforma visitantes em leads e apresenta seu portfólio com excelência.</p><h3>Visão Geral</h3><p>Fundada recentemente, a InoveTech não tinha presença digital à altura do seu potencial. Sem um site profissional, perdia credibilidade e oportunidades. Precisava de uma vitrine que comunicasse a proposta, exibisse cases e gerasse leads.</p><h3>Principais Funcionalidades</h3><p><strong>Portfólio Interativo com Casos Reais:</strong> Três projetos (Enjoy Brasil, Meu Maná, AME) são apresentados com mockups, pilha tecnológica e página dedicada com galeria de telas, provando a competência da empresa.</p><p><strong>Formulário de Contato com Captura Estruturada:</strong> Formulário completo com nome, empresa, tipo de projeto e prazo, enviado via EmailJS com ID único de lead rastreável no funil de vendas.</p><p><strong>Metodologia R.E.D.E. com Demonstração Visual:</strong> Quatro etapas apresentadas com slider interativo antes/depois que transforma um conceito abstrato em evidência concreta para o visitante.</p><h3>Vantagens</h3><p><strong>Experiência que Vende:</strong> Animações com Framer Motion e GSAP, roteamento SPA com View Transitions e suporte a três idiomas criam navegação fluida.</p><p><strong>Portfólio com Resultados Reais:</strong> Os três cases possuem aplicações publicadas na Google Play e App Store, com links funcionais e pilha tecnológica detalhada que comprovam a entrega de ponta a ponta.</p><p><strong>SEO e Alcance Orgânico:</strong> Marcação semântica especializada ajuda mecanismos de busca a entenderem e destacarem o site nos resultados, enquanto o carregamento inteligente entrega velocidade em qualquer dispositivo. O resultado é um site encontrado por clientes no Brasil e no mundo.</p><p>Cada seção, animação e componente foi pensado para converter visitantes em leads. Esse site não apenas representa a InoveTech, ele vende.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
+                "gallery": {
+                    "0": "Versão desktop da landing page",
+                    "1": "Versão mobile da landing page"
+                }
+            },
+            "5": {
+                "name": "Cardápio Dolce Amore Confeitaria",
+                "client": "Dolce Amore",
+                "description": "<p>Esse projeto é um cardápio descritivo que traduz a arte da confeiteira Thais Nascimento em informações objetivas e afetivas, guiando clientes na escolha do doce perfeito para suas celebrações.</p><h3>Visão Geral</h3><p>A Dolce Amore tinha um cardápio pouco profissional que não convertia o interesse dos clientes em pedidos reais. Atuei junto com a marca para estruturar um novo cardápio totalmente reformulado, com preços claros, categorias organizadas e condições de compra que geram confiança e aceleram a decisão.</p><h3>Principais Funcionalidades</h3><p><strong>Orçamento Personalizado para Bolos Autorais:</strong> O cliente descreve sua visão do bolo pelos canais de atendimento, garantindo que o trabalho manual seja precificado com precisão.</p><p><strong>Catálogo de Preços por Tamanho e Rendimento:</strong> Diâmetros de 12cm a 22cm com rendimento exato em fatias e preços fixos para cálculo instantâneo de custo-benefício.</p><p><strong>Guia de Sabores e Decorações:</strong> Massas, recheios e itens decorativos organizados com acréscimos claros e preços a partir para montagem do bolo ideal dentro do orçamento.</p><h3>Vantagens</h3><p><strong>Transparência e Exatidão:</strong> Rendimento por fatia, prazos claros e condições de entrada eliminam surpresas, reduzindo cancelamentos e retrabalho.</p><p><strong>Arquitetura Centrada no Usuário:</strong> A confeiteira é apresentada antes dos produtos, humanizando a marca, enquanto uma checklist guia o cliente da dúvida à ação.</p><p><strong>Conversão por Design Sensorial:</strong> Texturas e afetos com nomes como \"Moranguinho\" transformam o cardápio em um vendedor silencioso que eleva a taxa de fechamento.</p><p>A Dolce Amore agora tem um cardápio que não apenas exibe produtos, ele converte olhares em compradores e dúvidas em pedidos.</p>",
+                "gallery": {
+                    "0": "Tela de abertura",
+                    "1": "Tela inicial",
+                    "2": "Tela inicial com scroll",
+                    "3": "Pergunta 1",
+                    "4": "Pergunta 2",
+                    "5": "Pergunta 3",
+                    "6": "Pergunta 4",
+                    "7": "Pergunta 5",
+                    "8": "Pergunta 6",
+                    "9": "Pergunta 7",
+                    "10": "Finalizando Quiz",
+                    "11": "Resultado - Você é Rico",
+                    "12": "Resultado - Você Não é Rico",
+                    "13": "Informações sobre o desenvolvedor"
+                }
+            },
+            "6": {
+                "name": "Sistema Administrativo do GoRango",
+                "client": "InoveTech",
+                "description": "<p>GoRango Admin é o MVP de um painel administrativo do GoRango, sistema de delivery multi-categoria que unifica parceiros, entregadores, pedidos e finanças no Brasil.</p><h3>Visão Geral</h3><p>Comerciantes brasileiros carecem de uma plataforma integrada para gerir entregas. Este MVP entrega o núcleo do GoRango para restaurantes, mercados e farmácias controlarem pedidos, acompanharem entregadores e visualizarem métricas, validando a proposta.</p><h3>Principais Funcionalidades</h3><p><strong>Gestão de Pedidos e Operação:</strong> Unifica o ciclo de vida com filtros, busca e exportação. Entregadores usam gamificação em níveis Bronze a Diamante, provando engajamento.</p><p><strong>Monitoramento e Analytics:</strong> Mapa com Leaflet exibe parceiros e entregadores. Gráficos de receita e volume se somam a métricas de conversão, retenção e NPS.</p><p><strong>Gestão Financeira e Marketing:</strong> Visibilidade sobre GMV, take rate e comissões com relatórios em PDF e CSV. Campanhas com ROI, cupons e o programa GoClub testam monetização e fidelização.</p><h3>Vantagens</h3><p><strong>Validação Rápida:</strong> As tecnologias modernas utilizadas entregam experiência profissional com tema customizável e desenvolvimento assistido por inteligência artificial que agilizou prototipagem e reduziu o tempo entre iterações, acelerando a validação com usuários.</p><p><strong>Arquitetura Preparada para Escala:</strong> O sistema carrega conteúdo sob demanda com rapidez. A comunicação com o servidor está pronta para uso real, trocando dados de teste por dados reais sem recomeçar.</p><p><strong>Conformidade Regulatória Embutida:</strong> LGPD no frontend com banner de cookies e páginas de privacidade eliminam risco regulatório desde a primeira entrega.</p><p>Num mercado onde cada minuto de atraso custa clientes, o GoRango Admin prova que é possível entregar valor real com um MVP sólido antes de escalar.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
+                "gallery": {
+                    "0": "Tela de login",
+                    "1": "Painel",
+                    "2": "Lista de produtos",
+                    "3": "Detalhes do produto",
+                    "4": "Lista de concorrentes",
+                    "5": "Detalhes do concorrente",
+                    "6": "Biblioteca de mídia",
+                    "7": "Configurações",
+                    "8": "Blocos de layout",
+                    "9": "Modais de feedback",
+                    "10": "Componentes personalizados",
+                    "11": "Componentes de navegação",
+                    "12": "Componente de mídia",
+                    "13": "Paleta do sistema",
+                    "14": "Paleta de feedback",
+                    "15": "Paleta personalizada",
+                    "16": "Ícones",
+                    "17": "Estilos de campos de entrada",
+                    "18": "Estilos de botões",
+                    "19": "Estilos de alertas Toast"
+                }
+            },
+            "7": {
+                "name": "Landing Page e Área de Membros da CRE 2026",
+                "client": "Igreja Verbo da Vida Cabula",
+                "description": "<p>Conferencia Rios do Espirito e o ecossistema digital de evento cristão que une landing page a portal exclusivo para participantes.</p><h3>Visão Geral</h3><p>Eventos religiosos perdem contato com o público depois de vender ingressos. Eu, como um voluntário do departamento de Mídia e Comunicação da Igreja Verbo da Vida Cabula, ajudei a evitar esse problema construindo dois produtos: uma landing page de vendas e um site restrito aos participantes.</p><h3>Principais Funcionalidades</h3><p><strong>Landing Page com Venda:</strong> Site com vídeo, contagem regressiva, carrossel 3D dos ministros, programação, mapa, FAQ e ingressos integrados ao Tiketo. Preparado para aparecer no Google e converter visitantes.</p><p><strong>Site Restrito para Participantes:</strong> Portal onde quem está na conferência acessa as fotos oficiais, as transmissões completas, as playlists e o grupo no WhatsApp durante todo o evento, desde o primeiro dia.</p><p><strong>Feedback e Testemunhos:</strong> Os participantes avaliam o que acharam de bom e o que pode melhorar na conferência, além de enviar depoimentos sobre a experiência durante a conferência.</p><h3>Vantagens</h3><p><strong>Jornada do Pré ao Pós:</strong> O ecossistema entrega uma experiência contínua: compra pela landing page e acesso ao portal restrito a partir do primeiro dia da conferência.</p><p><strong>Produto Completo e Profissional:</strong> Dois sites com identidade visual única, logo, paleta e tipografia exclusivos. A landing page vende o sonho do evento, e o portal entrega o conteúdo que só quem participou merece ter.</p><p><strong>Facilidade de Acesso:</strong> <strong>Mais de 300 pessoas</strong> usaram a aplicação da landing page ao site exclusivo. Não precisa instalar nada, não precisa criar conta, é só acessar o link e pronto. Tudo funciona direto do navegador, no celular ou no computador.</p><p>A Conferência Rios do Espírito nasce digital para viver além dos dias do evento.</p>",
+                "gallery": {
+                    "0": "Tela de login",
+                    "1": "Painel",
+                    "2": "Lista de produtos",
+                    "3": "Detalhes do produto",
+                    "4": "Lista de concorrentes",
+                    "5": "Detalhes do concorrente",
+                    "6": "Biblioteca de mídia",
+                    "7": "Configurações",
+                    "8": "Blocos de layout",
+                    "9": "Modais de feedback",
+                    "10": "Componentes personalizados",
+                    "11": "Componentes de navegação",
+                    "12": "Componente de mídia",
+                    "13": "Paleta do sistema",
+                    "14": "Paleta de feedback",
+                    "15": "Paleta personalizada",
+                    "16": "Ícones",
+                    "17": "Estilos de campos de entrada",
+                    "18": "Estilos de botões",
+                    "19": "Estilos de alertas Toast"
+                },
+                "link": {
+                    "landing_page": "Landing Page",
+                    "restricted_site": "Site Restrito"
+                }
+            }
+        }
+    },
+    "portfolio_page": {
+        "title": "Portfólio",
+        "subtitle": "Meu portfólio reflete meu trabalho como <strong>Desenvolvedor Fullstack & Designer</strong> com soluções digitais completas onde design, código e propósito se encontram."
+    },
+    "clients": {
+        "title": "Parceiros que confiam no meu trabalho"
     },
     "services": {
         "title": "Serviços",
@@ -62,12 +222,61 @@
             "icon": "carlos-icon:mobile-apps",
             "title": "Aplicativos Móveis.",
             "text": "Design e Desenvolvimento de Aplicativos."
+        },
+        "tags": {
+            "branding": "Branding",
+            "visual_identity": "Identidade Visual",
+            "digital_illustration": "Ilustração Digital",
+            "software": "Software",
+            "landing_pages": "Landing Pages",
+            "ecommerce": "Ecommerce",
+            "website": "Website",
+            "responsive_web_design": "Design Responsivo",
+            "ui_ux_development": "Desenvolvimento UI/UX",
+            "mobile_app_design": "Design de Apps Mobile",
+            "hybrid_ui_ux_development": "Desenvolvimento UI/UX Híbrido"
         }
     },
     "contact": {
         "title": "Vamos fazer a mágica acontecer!",
         "subtitle": "Desde o conceito inicial até o produto final, busco a excelência em cada projeto. Vamos criar algo incrível juntos. Entre em contato e vamos dar início ao seu projeto agora mesmo!",
-        "cta": "Entre em contato"
+        "cta": "Entre em contato",
+        "whatsapp_message": "Olá! Vim através do seu portfólio e gostaria de saber mais sobre seus serviços."
+    },
+    "lang": {
+        "en": "Inglês",
+        "pt": "Português",
+        "en_short": "ENG",
+        "pt_short": "POR"
+    },
+    "footer": {
+        "copyright": "Orgulhosamente criado e desenvolvido por"
+    },
+    "common": {
+        "stacks_and_tools": "Stacks & Tools:",
+        "see_more": "Veja Mais",
+        "loading": "Carregando...",
+        "content_not_found": "Conteúdo não encontrado",
+        "logo_alt": "Logo da empresa",
+        "view_github": "Ver no GitHub",
+        "view_live": "Ver Projeto",
+        "download_menu": "Baixar Cardápio Completo",
+        "view_app_store": "Ver na Apple Store",
+        "view_play_store": "Ver na Play Store"
+    },
+    "chatbot": {
+        "title": "Assistente IA",
+        "status": "Online • Pergunte sobre mim",
+        "placeholder": "Digite sua pergunta...",
+        "suggested": "Perguntas rápidas:"
+    },
+    "error": {
+        "title_404": "Erro 404",
+        "title_generic": "Erro",
+        "subtitle_404": "Página não encontrada",
+        "subtitle_generic": "Erro Interno do Servidor",
+        "description": "Desculpe, não encontramos a página que você está procurando.",
+        "button": "Voltar ao Início"
     },
     "seo": {
         "title": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web",

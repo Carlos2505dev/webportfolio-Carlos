@@ -2,7 +2,7 @@
     <footer class="footer section">
         <div class="footer__copyright container">
             <p>
-                {{ locale == 'en' ? 'Proudly designed and developed by' : 'Orgulhosamente criado e desenvolvido por' }}
+                {{ $t('footer.copyright') }}
                 <NuxtLink aria-label="About" to="/#about">Carlos Neto</NuxtLink>
             </p>
             <p>
@@ -13,15 +13,7 @@
 </template>
 
 <script setup>
-import { reactive, useI18n } from '#imports'
-const { locale } = useI18n()
 const currentYear = new Date().getFullYear()
-
-const contact = reactive({
-    title: 'contact.title',
-    subtitle: 'contact.subtitle',
-    button: 'contact.cta'
-})
 </script>
 
 <style lang="scss" scoped>

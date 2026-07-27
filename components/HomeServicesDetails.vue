@@ -4,7 +4,7 @@
             <div class="about__skills__container__image">
                 <picture class="about__skills__container__image__picture">
 
-                    <NuxtImg src="/images/logo_cn.png" alt="Logo Carlos Neto" />
+                    <NuxtImg src="/logo_cn.webp" alt="Logo Carlos Neto" />
                     
 
                 </picture>
@@ -17,9 +17,6 @@
 </template>
 
 <script setup>
-import { useI18n } from '#imports'
-const { locale } = useI18n()
-
 </script>
 
 <style lang="scss" scoped>

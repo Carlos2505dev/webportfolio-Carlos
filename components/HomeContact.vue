@@ -2,7 +2,7 @@
     <section class="contact section">
         <div class="contact__cta">
             <div class="contact__cta__logo">
-                <NuxtImg src="/images/logo_cn.png" alt="Logo Carlos Neto" width="100" height="100" />
+                <NuxtImg src="/logo_cn.webp" alt="Logo Carlos Neto" width="100" height="100" />
             </div>
             <h2 class="contact__cta__title large-title">
                 {{ $t(contact.title) }}
@@ -36,7 +36,7 @@
                     </NuxtLink>
                 </li>
                 <li class="contact__cta__social__item">
-                    <NuxtLink aria-label="Whatsapp" to="https://wa.me/5571987848522" target="_new">
+                    <NuxtLink aria-label="Whatsapp" :to="whatsappUrl" target="_new">
                         <AppIcon IconName="bxl:whatsapp" /> <span class="visually-hidden">Whatsapp</span>
                     </NuxtLink>
                 </li>
@@ -46,8 +46,14 @@
 </template>
 
 <script setup>
-import { reactive, useI18n } from '#imports'
-const { locale } = useI18n()
+import { reactive, computed } from '#imports'
+
+const { t } = useI18n()
+
+const whatsappUrl = computed(() => {
+    const message = encodeURIComponent(t('contact.whatsapp_message'))
+    return `https://wa.me/5571987848522?text=${message}`
+})
 
 const contact = reactive({
     title: 'contact.title',
@@ -65,6 +71,10 @@ const contact = reactive({
     position: relative;
     background-color: var(--primary);
     overflow: hidden;
+    ::selection {
+        background-color: var(--pure_black);
+        color: var(--primary);
+    }
     &__cta{
         padding-block: 120px;
         text-align: center;

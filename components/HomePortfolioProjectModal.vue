@@ -1,39 +1,86 @@
 <template>
     <AppModal class="modal__project" :openedModal="openedModal" @close:modal="closeModal">
-        <div class="modal__project__body">
+        <div v-if="projectDetails" class="modal__project__body">
             <div class="modal__project__body__description">
                 <header class="modal__project__body__description__header">
-                    <h2 class="modal__project__body__description__header__title">{{ projectDetails.name }}</h2>
+                    <h2 class="modal__project__body__description__header__title">{{ $t(projectDetails.name) }}</h2>
                     <h3 class="modal__project__body__description__header__subtitle">
-                        {{ projectDetails.client }}
+                        {{ $t(projectDetails.client) }}
                     </h3>
                     <ul class="modal__project__body__description__header__tags">
                         <li v-for="tag in projectDetails.tags" :key="tag"
                             class="modal__project__body__description__header__tags__item">
-                            {{ tag }}
+                            {{ $t(tag) }}
                         </li>
                     </ul>
 
                 </header>
-                <div class="modal__project__body__description__content" v-html="projectDetails.description" />
+                <div class="modal__project__body__description__content" v-html="$t(projectDetails.description)" />
+                <div v-if="projectDetails.github_url || projectDetails.multi_github || projectDetails.download_url || projectDetails.live_url || projectDetails.app_store_url || projectDetails.play_store_url" class="modal__project__body__description__actions">
+                    <div v-if="projectDetails.multi_github" ref="githubDropdownRef" class="dropdown-wrapper">
+                        <AppButton class="outline" @click.prevent="toggleGithubDropdown" style="text-transform: uppercase">
+                            <AppIcon IconName="ph:github-logo-bold" />
+                            {{ $t('common.view_github') }}
+                        </AppButton>
+                        <Transition name="dropdown-fade">
+                            <div v-if="showGithubDropdown" class="dropdown-menu">
+                                <a v-for="link in projectDetails.multi_github" :key="link.label" :href="link.url" target="_blank" rel="noopener noreferrer" @click="showGithubDropdown = false">
+                                    <AppIcon :IconName="link.icon" />
+                                    {{ $t(link.label) }}
+                                </a>
+                            </div>
+                        </Transition>
+                    </div>
+                    <AppButton v-else-if="projectDetails.github_url" class="outline" :hasLink="projectDetails.github_url" target="_blank" style="text-transform: uppercase">
+                        <AppIcon IconName="ph:github-logo-bold" />
+                        {{ $t('common.view_github') }}
+                    </AppButton>
+                    <div v-if="projectDetails.multi_live" ref="liveDropdownRef" class="dropdown-wrapper">
+                        <AppButton class="primary" @click.prevent="toggleLiveDropdown" style="text-transform: uppercase">
+                            <AppIcon IconName="ph:globe-bold" />
+                            {{ $t('common.view_live') }}
+                        </AppButton>
+                        <Transition name="dropdown-fade">
+                            <div v-if="showLiveDropdown" class="dropdown-menu">
+                                <a v-for="link in projectDetails.multi_live" :key="link.label" :href="link.url" target="_blank" rel="noopener noreferrer" @click="showLiveDropdown = false">
+                                    <AppIcon :IconName="link.icon" />
+                                    {{ $t(link.label) }}
+                                </a>
+                            </div>
+                        </Transition>
+                    </div>
+                    <AppButton v-else-if="projectDetails.live_url" class="primary" :hasLink="projectDetails.live_url || '#'" target="_blank" style="text-transform: uppercase">
+                        <AppIcon IconName="ph:globe-bold" />
+                        {{ $t('common.view_live') }}
+                    </AppButton>
+                    <div v-if="projectDetails.app_store_url || projectDetails.play_store_url" class="store-buttons">
+                        <AppButton v-if="projectDetails.app_store_url" class="outline" :hasLink="projectDetails.app_store_url" target="_blank" style="text-transform: uppercase">
+                            <AppIcon IconName="carlos-icon:app-store-white" />
+                            {{ $t('common.view_app_store') }}
+                        </AppButton>
+                        <AppButton v-if="projectDetails.play_store_url" class="outline" :hasLink="projectDetails.play_store_url" target="_blank" style="text-transform: uppercase">
+                            <AppIcon IconName="carlos-icon:google-play" />
+                            {{ $t('common.view_play_store') }}
+                        </AppButton>
+                    </div>
+                    <AppButton v-if="projectDetails.download_url" class="primary" :hasLink="projectDetails.download_url" :download="projectDetails.download_url.split('/').pop()" style="text-transform: uppercase">
+                        <AppIcon IconName="ph:download-bold" />
+                        {{ $t('common.download_menu') }}
+                    </AppButton>
+                </div>
                 <footer class="modal__project__body__description__footer">
                     <small>
-                        Stacks & Tools:
+                        {{ $t('common.stacks_and_tools') }}
                         <AppStackSkills small :stacks="projectDetails.stacks" />
                     </small>
-                    <AppButton v-if="projectDetails.live_url" aria-label="See More" class="outline small full-width"
-                        :hasLink="projectDetails.live_url" target="_blank">
-                        See More
-                        <AppIcon IconName="ph:arrow-up-right-bold" />
-                    </AppButton>
                 </footer>
             </div>
             <ul class="modal__project__body__gallery">
-                <li v-for="item in projectDetails.gallery" :key="item.title"
+                <li v-for="item in projectDetails.gallery" :key="item.image"
                     class="modal__project__body__gallery__item">
                     <figure>
                         
-                        <NuxtImg :alt="item.name" :src="item.image" sizes="100vw sm:600px md:600px lg:1280px"
+                        <NuxtImg :alt="$t(item.title)" :src="item.image" sizes="100vw sm:600px md:600px lg:1280px"
                             quality="100" densities="x1 x2" :custom="true" loading="lazy"
                             v-slot="{ src, isLoaded, imgAttrs }">
                             <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
@@ -45,7 +92,7 @@
                             />
                         </NuxtImg>
                         <figcaption>
-                            {{ item.title }}
+                            {{ $t(item.title) }}
                         </figcaption>
                     </figure>
                 </li>
@@ -55,7 +102,9 @@
 </template>
 
 <script setup>
-import { toRefs } from '#imports'
+import { toRefs, ref } from '#imports'
+import { onClickOutside } from '@vueuse/core'
+
 const props = defineProps({
     projectDetails: {
         type: Object,
@@ -68,6 +117,28 @@ const props = defineProps({
 })
 
 const { projectDetails, openedModal } = toRefs(props)
+
+const showGithubDropdown = ref(false)
+const showLiveDropdown = ref(false)
+const githubDropdownRef = ref(null)
+const liveDropdownRef = ref(null)
+
+function toggleGithubDropdown() {
+    showGithubDropdown.value = !showGithubDropdown.value
+    showLiveDropdown.value = false
+}
+
+function toggleLiveDropdown() {
+    showLiveDropdown.value = !showLiveDropdown.value
+    showGithubDropdown.value = false
+}
+
+onClickOutside(githubDropdownRef, () => {
+    showGithubDropdown.value = false
+})
+onClickOutside(liveDropdownRef, () => {
+    showLiveDropdown.value = false
+})
 
 const emits = defineEmits(['close:modal'])
 function closeModal(){
@@ -131,6 +202,69 @@ function closeModal(){
                 padding-inline: 40px;
                 @media(max-width: $br_mobile) {
                     padding-inline: 20px;
+                }
+            }
+            :deep(.proprietary-notice) {
+                color: var(--primary_dark);
+                font-style: italic;
+                font-size: $size_14px;
+                margin-top: 24px;
+            }
+            &__actions {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+                padding-block: 16px 0;
+                padding-inline: 40px;
+                @media(max-width: $br_mobile) {
+                    padding-inline: 20px;
+                }
+
+                .store-buttons {
+                    display: flex;
+                    gap: 12px;
+                }
+
+                .dropdown-wrapper {
+                    position: relative;
+
+                    .dropdown-menu {
+                        position: absolute;
+                        top: calc(100% + 8px);
+                        left: 50%;
+                        transform: translateX(-50%);
+                        min-width: 220px;
+                        background: var(--bg_color);
+                        border: 2px solid var(--text_color);
+                        border-radius: 12px;
+                        overflow: hidden;
+                        z-index: 10;
+                        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            padding: 14px 20px;
+                            text-decoration: none;
+                            color: var(--text_color);
+                            font-family: $font_secondary;
+                            font-size: $size_14px;
+                            font-weight: 500;
+                            transition: $transition_default;
+                            border-bottom: 1px solid var(--text_color_transparent);
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+
+                            &:hover {
+                                background-color: var(--text_color);
+                                color: var(--bg_color);
+                            }
+                        }
+                    }
                 }
             }
             &__footer {
@@ -210,5 +344,15 @@ function closeModal(){
         
     }
     
+}
+
+:deep(.dropdown-fade-enter-active),
+:deep(.dropdown-fade-leave-active) {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+:deep(.dropdown-fade-enter-from),
+:deep(.dropdown-fade-leave-to) {
+    opacity: 0;
+    transform: translateY(-4px);
 }
 </style>

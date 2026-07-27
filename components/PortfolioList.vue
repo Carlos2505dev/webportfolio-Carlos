@@ -9,8 +9,8 @@
                         class="portfolio__section__container__projects__item__contain" @click="goToProj(project.id)">
                         <header class="portfolio__section__container__projects__item__contain__header project-image">
                             <picture class="portfolio__section__container__projects__item__contain__header__picture"
-                                @click="viewDetails(index, project.name)">
-                                <NuxtImg :alt="project.name" :src="project.image"
+                                @click="viewDetails(index, project.slug)">
+                                <NuxtImg :alt="$t(project.name)" :src="project.image"
                                     sizes="100vw sm:380px md:400px lg:800px" quality="100" densities="x1 x2"
                                     :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
                                     <!-- Show the actual image when loaded -->
@@ -21,7 +21,7 @@
                                         v-else 
                                         src="~/assets/carlos-icons/logo-symbol-outline.png" 
                                         class="placeholder-logo" 
-                                        alt="Carregando..."
+                                        :alt="$t('common.loading')"
                                     />
                                     <!-- <img v-else src="https://placehold.co/400x400" alt="placeholder" /> -->
                                 </NuxtImg>
@@ -31,17 +31,17 @@
 
                         <div class="portfolio__section__container__projects__item__contain__body project-titles">
                             <h3 class="portfolio__section__container__projects__item__contain__body__title">
-                                {{ project.name }}
+                                {{ $t(project.name) }}
                             </h3>
                             <h4 class="portfolio__section__container__projects__item__contain__body__subtitle">
-                                {{ project.client }}
+                                {{ $t(project.client) }}
                             </h4>
                         </div>
                         <footer class="portfolio__section__container__projects__item__contain__footer project-titles">
                             <ul class="portfolio__section__container__projects__item__contain__footer__tags">
                                 <li v-for="tag in project.tags" :key="tag"
                                     class="portfolio__section__container__projects__item__contain__footer__tags__item">
-                                    {{ tag }}
+                                    {{ $t(tag) }}
                                 </li>
                             </ul>
 
@@ -58,11 +58,12 @@
 </template>
 
 <script setup>
-import { ref, toRefs, computed, watch } from '#imports'
+import { ref, toRefs, computed, watch, useI18n } from '#imports'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
+const { t } = useI18n()
 
 const props = defineProps({
     projects: {
@@ -105,17 +106,13 @@ const modalName = ref(null)
 const showModal = computed(() => modalName.value !== null)
 const modalContent = ref(null)
 
-const openedDetails = ref(projects.value)
+const openedDetails = ref(null)
 
-const sanitizeName = (name) =>  name.toLowerCase().replace(/\s+/g, '-')
+function viewDetails(index, slug) {
+    modalName.value = slug
 
-function viewDetails(index, name) {
-    const sanitizedName = sanitizeName(name)
-    modalName.value = sanitizedName
-
-    // Find the project by matching sanitizedName
     const project = projects.value.find(
-        (proj) => sanitizeName(proj.name) === sanitizedName
+        (proj) => proj.slug === slug
     )
 
     if (project) {
@@ -123,10 +120,10 @@ function viewDetails(index, name) {
         openedDetails.value = project
         selectedProj.value = index
     } else {
-        modalContent.value = 'Content not found'
+        modalContent.value = t('common.content_not_found')
     }
 
-    router.push({ query: { project: sanitizedName } })
+    router.push({ query: { project: slug } })
 }
 
 function closeModal() {
@@ -143,9 +140,8 @@ const initializeModalFromQuery = () => {
     if (route.query.project) {
         const modalFromQuery = route.query.project
 
-        // Find the project by matching sanitizedName
         const project = projects.value.find(
-            (proj) => sanitizeName(proj.name) === modalFromQuery
+            (proj) => proj.slug === modalFromQuery
         )
 
         if (project) {
@@ -163,7 +159,7 @@ watch(
     (newModal) => {
         if (newModal) {
             const project = projects.value.find(
-                (proj) => sanitizeName(proj.name) === newModal
+                (proj) => proj.slug === newModal
             )
 
             if (project) {

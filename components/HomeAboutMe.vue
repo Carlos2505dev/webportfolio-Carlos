@@ -16,22 +16,22 @@
                     <figure class="about__section__container__columns__avatar__image">
 
                         <NuxtImg v-if="colorMode.value == 'dark'" alt="Foto de Carlos Neto"
-                            src="/images/darkmode.png" width="800px" height="800px" format="webp"
+                            src="/darkmode.webp" width="800px" height="800px" format="webp"
                             densities="x1 x2" quality="100" />
 
                         <NuxtImg v-if="colorMode.value == 'light'" alt="Foto de Carlos Neto"
-                            src="/images/lightmode.png" width="800px" height="800px" format="webp"
+                            src="/lightmode.webp" width="800px" height="800px" format="webp"
                             densities="x1 x2" quality="100" />
 
                         <strong class="about__section__container__columns__avatar__image__areas logic">
                             <span>
                                 <AppIcon class="smooth-move" IconName="carlos-icon:logic-side" />
-                                {{ locale == 'en' ? 'Logic' : 'Lógica' }}
+                                {{ $t('about.logic_label') }}
                             </span>
                         </strong>
                         <strong class="about__section__container__columns__avatar__image__areas creativity">
                             <span>
-                                {{ locale == 'en' ? 'Creativity' : 'Criatividade' }}
+                                {{ $t('about.creativity_label') }}
                                 <AppIcon class="slide-top" IconName="carlos-icon:creative-side" />
                             </span>
                         </strong>
@@ -42,31 +42,12 @@
 
 
 
-                <div v-if="locale == 'en'" class="about__section__container__columns__text">
-                    <p>
-                        Hello, I’m Carlos Neto, a <strong>Fullstack Developer and Designer</strong>, with practical experience in <strong>end-to-end digital solution development</strong>. My passion for uniting design and code allows me to create digital solutions that not only work but also delight and solve real problems, helping projects come to life in the digital environment.
-                    </p>
+                <div class="about__section__container__columns__text">
+                    <p v-html="$t('about.paragraph_1')" />
                     <br />
-                    <p>
-                        I specialize in developing modern and responsive interfaces for web and mobile, always focusing on user experience and visual clarity. My careful eye for information organization and results-oriented mindset allow me to transform needs into functional, intuitive, and visually harmonious products.
-                    </p>
+                    <p v-html="$t('about.paragraph_2')" />
                     <br />
-                    <p>
-                        More than writing code, I have a product vision to build solutions that generate real business value. Combining creativity, logical reasoning, and attention to detail, I deliver solutions that unite purpose, usability, and real impact. Let's collaborate and transform ideas into projects that make a difference.
-                    </p>
-                </div>
-                <div v-else class="about__section__container__columns__text">
-                    <p>
-                        Olá, eu sou o Carlos Neto, um <strong>Desenvolvedor Fullstack e Designer</strong>, com experiência prática no <strong>desenvolvimento de soluções digitais de ponta a ponta</strong>. Minha paixão por unir design e código me permite criar soluções digitais que não apenas funcionam, mas também encantam e resolvem problemas reais, ajudando projetos a ganharem vida no ambiente digital.
-                    </p>
-                    <br />
-                    <p>
-                        Sou especializado no desenvolvimento de interfaces modernas e responsivas para <strong>web e mobile</strong>, sempre com foco na experiência do usuário e na clareza visual. Meu olhar cuidadoso para organização da informação e minha mentalidade orientada a resultados me permitem transformar necessidades em produtos funcionais, intuitivos e visualmente harmoniosos.
-                    </p>
-                    <br />
-                    <p>
-                        Mais do que escrever código, tenho <strong>visão de produto</strong> para construir <strong>soluções que gerem valor real ao negocio</strong>. Combinando criatividade, raciocínio lógico e atenção aos detalhes, entrego soluções que unem propósito, usabilidade e impacto real. Vamos colaborar e transformar ideias em projetos que fazem a diferença.
-                    </p>
+                    <p v-html="$t('about.paragraph_3')" />
                 </div>
 
             </div>
@@ -93,10 +74,9 @@
 </template>
 
 <script setup>
-import { ref, useI18n, reactive, computed } from '#imports'
+import { ref, reactive, computed } from '#imports'
 
 const colorMode = useColorMode()
-const { locale } = useI18n()
 const stackLogos = computed(() => [
     {logo: 'devicon:figma', name: 'Figma'},
     {logo: 'devicon:canva', name: 'Canva'},
@@ -104,27 +84,27 @@ const stackLogos = computed(() => [
     {logo: 'devicon:typescript', name: 'Typescript'},
     {logo: 'devicon:html5', name: 'HTML 5'},
     {logo: 'devicon:css3', name: 'CSS 3'},
-    {logo: 'devicon:react', name: 'React.JS'},
+    {logo: 'devicon:react', name: 'React.JS | React Native'},
     {logo: colorMode.value === 'dark' ? 'simple-icons:expo' : 'logos:expo-icon', name: 'Expo'},
     {logo: 'devicon:tailwindcss', name: 'Tailwind CSS'},
     {logo: 'devicon:sass', name: 'Sass'},
     {logo: 'logos:supabase-icon', name: 'Supabase'},
+    {logo: colorMode.value === 'dark' ? 'carlos-icon:mysql' : 'devicon:mysql', name: 'MySQL'},
+    {logo: 'carlos-icon:postgresql', name: 'PostgreSQL'},
     {logo: 'logos:visual-studio-code', name: 'Visual Studio Code'},
     {logo: 'devicon:git', name: 'Git'},
     {logo: colorMode.value === 'dark' ? 'simple-icons:github' : 'devicon:github', name: 'GitHub'},
-    {logo: colorMode.value === 'dark' ? 'simple-icons:openai' : 'logos:openai-icon', name: 'ChatGPT'},
+    {logo: 'carlos-icon:vitejs', name: 'Vite'},
     {logo: 'carlos-icon:claude-color', name: 'Claude Code'},
-    {logo: 'simple-icons:cursor', name: 'Cursor'},
+    {logo: 'carlos-icon:codex', name: 'Codex | ChatGPT'},
     {logo: 'carlos-icon:antigravity', name: 'Google Antigravity'},
     {logo: 'carlos-icon:trae', name: 'TRAE AI'},
     {logo: 'carlos-icon:lovable', name: 'Lovable'},
     {logo: 'carlos-icon:replit', name: 'Replit'},
-    {logo: 'simple-icons:githubcopilot', name: 'Github Copilot'},
     {logo: colorMode.value === 'dark' ? 'simple-icons:vercel' : 'logos:vercel-icon', name: 'Vercel'},
-    {logo: 'carlos-icon:gemini', name: 'Gemini'},
     {logo: colorMode.value === 'dark' ? 'carlos-icon:app-store-white' : 'carlos-icon:app-store-mono', name: 'Apple Store'},
     {logo: 'carlos-icon:google-play', name: 'Google Play Store'},
-    {logo: 'carlos-icon:codex', name: 'Codex'},
+    {logo: 'carlos-icon:revenuecat', name: 'RevenueCat'},
 ])
 
 const about = reactive({
@@ -180,15 +160,12 @@ const about = reactive({
                 &__image{
                     border-radius: 20px;
                     background-color: var(--primary);
-                    // background: var(--secondary_gradient);
-                    // overflow: hidden;
                     aspect-ratio: 1;
                     position: relative;
                     display: grid;
                     place-items: center;
                     transition: $transition_default;
                     max-width: 300px;
-                    // animation: pulse 2s ease infinite;
                     &__areas{
                         position: absolute;
                         display: grid;
@@ -203,7 +180,6 @@ const about = reactive({
                             text-align: center;
                             font-family: $font_secondary;
                             text-transform: uppercase;
-                            // font-weight: normal;
                         }
                         i{
                             font-size: 168px;

@@ -1,21 +1,11 @@
 <template>
     <div>
         <section class="hero__section section">
-            <div v-if="locale == 'en'" class="hero__section__container container">
+            <div class="hero__section__container container">
                 <h1 class="hero__section__container__title gradient-font">
-                    Portfolio
+                    {{ $t('portfolio_page.title') }}
                 </h1>
-                <p class="hero__section__container__subtitle ">
-                    My portfolio reflects my work as a <strong>Fullstack Developer & Designer</strong> with end-to-end digital solutions where design, code, and purpose come together.
-                </p>
-            </div>
-            <div v-else class="hero__section__container container">
-                <h1 class="hero__section__container__title gradient-font">
-                    Portfólio
-                </h1>
-                <p class="hero__section__container__subtitle ">
-                    Meu portfólio reflete meu trabalho como <strong>Desenvolvedor Fullstack & Designer</strong> com soluções digitais completas onde design, código e propósito se encontram.
-                </p>
+                <p class="hero__section__container__subtitle" v-html="$t('portfolio_page.subtitle')" />
             </div>
         </section>
 
@@ -27,7 +17,7 @@
 </template>
 
 <script setup>
-import { useI18n, useHead, computed } from '#imports'
+import { useI18n, useHead } from '#imports'
 const { locale } = useI18n()
 useHead({
     htmlAttrs: {
@@ -37,10 +27,7 @@ useHead({
 
 import portfolio from '@/localData/portfolio'
 
-const allProjects = computed(() => {
-    const projects = portfolio[locale.value]
-    return [...projects]
-})
+const allProjects = portfolio
 
 </script>
 

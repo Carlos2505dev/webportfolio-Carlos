@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://carlosnetodev.vercel.app/sitemap.xml

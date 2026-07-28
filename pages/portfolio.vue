@@ -17,12 +17,18 @@
 </template>
 
 <script setup>
-import { useI18n, useHead } from '#imports'
-const { locale } = useI18n()
+import { useI18n, useHead, useSeoMeta } from '#imports'
+const { t, locale } = useI18n()
 useHead({
     htmlAttrs: {
         lang: locale
     }
+})
+useSeoMeta({
+    title: () => t('seo.title_portfolio'),
+    description: () => t('seo.description_portfolio'),
+    ogTitle: () => t('seo.title_portfolio'),
+    ogDescription: () => t('seo.description_portfolio'),
 })
 
 import portfolio from '@/localData/portfolio'

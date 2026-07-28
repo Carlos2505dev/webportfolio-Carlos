@@ -3,7 +3,7 @@
         <div class="footer__copyright container">
             <p>
                 {{ $t('footer.copyright') }}
-                <NuxtLink aria-label="About" to="/#about">Carlos Neto</NuxtLink>
+                <NuxtLink :aria-label="$t('common.aria.about')" to="/#about">Carlos Neto</NuxtLink>
             </p>
             <p>
                 © {{ currentYear }} carlosbezerrajr2007@gmail.com

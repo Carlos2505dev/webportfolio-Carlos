@@ -27,13 +27,26 @@
 </template>
 
 <script setup>
-import { clearError } from '#imports'
+import { clearError, useHead, useI18n, computed } from '#imports'
+
+const { t } = useI18n()
 
 const props = defineProps({
     error: Object
 })
 
 const handleError = () => clearError({ redirect: '/' })
+
+const pageTitle = computed(() =>
+    `${t(props.error?.statusCode === 404 ? 'error.title_404' : 'error.title_generic')} | Carlos Neto`
+)
+
+useHead({
+    title: pageTitle,
+    meta: [
+        { name: 'robots', content: 'noindex' }
+    ]
+})
 
 </script>
 

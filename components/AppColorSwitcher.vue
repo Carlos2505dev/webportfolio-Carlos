@@ -2,7 +2,7 @@
     <div class="theme-switcher">
         <button
             type="button"
-            aria-label="Toggle Theme"
+            :aria-label="$t('common.aria.toggle_theme')"
             :class="[colorMode.value, 'theme-toggle-btn']"
             @click="toggleDarkMode"
         >

@@ -74,7 +74,7 @@ const portfolio = [
             'portfolio.tags.e_learning',
             'portfolio.tags.web_application'
         ],
-        live_url: 'http://vectorslearn.vercel.app/'
+        live_url: 'https://vectorslearn.vercel.app/'
     },
     {
         id: 3,

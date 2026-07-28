@@ -262,13 +262,55 @@
         "view_live": "Ver Projeto",
         "download_menu": "Baixar Cardápio Completo",
         "view_app_store": "Ver na Apple Store",
-        "view_play_store": "Ver na Play Store"
+        "view_play_store": "Ver na Play Store",
+        "photo_alt": "Foto de Carlos Neto",
+        "photo_alt_extended": "Foto de Carlos Neto — Desenvolvedor Fullstack e Designer",
+        "client_logo_alt": "{name} — parceiro que confia no trabalho de Carlos Neto",
+        "aria": {
+            "chat": "Chat",
+            "close": "Fechar",
+            "toggle_theme": "Alternar Tema",
+            "previous": "Anterior",
+            "next": "Próximo",
+            "reading_progress": "Progresso de leitura",
+            "about": "Sobre",
+            "homepage": "Página inicial",
+            "less": "Menos",
+            "more": "Mais",
+            "linkedin": "Linkedin",
+            "github": "GitHub",
+            "instagram": "Instagram",
+            "whatsapp": "WhatsApp"
+        }
+    },
+    "testimonials": {
+        "tag": "Depoimentos",
+        "title": "O que os clientes dizem",
+        "subtitle": "Empresas que confiaram no meu trabalho e tiveram resultados reais com soluções digitais de alto impacto.",
+        "items": [
+            { "role": "Diretor, InoveTech", "body": "Site institucional que realmente vende. Design impecável, entregue no prazo e superou todas as nossas expectativas como parceiros." },
+            { "role": "Fundador, Meu Maná", "body": "App espiritual com inteligência artificial e modo offline. Carlos transformou nossa visão em realidade com muita maestria e dedicação." },
+            { "role": "CEO, GoRango", "body": "Painel administrativo completo e robusto entregue em tempo recorde. Código limpo, escalável e muito bem documentado. Profissional exemplar." },
+            { "role": "Proprietária, Dolce Amore", "body": "Cardápio digital que encanta e fideliza clientes. Profissionalismo e sensibilidade de design impressionantes. Resultado imediato nas vendas." },
+            { "role": "CEO, Enjoy Brasil", "body": "App nativo, fluido e extremamente intuitivo. Carlos entregou exatamente o que prometeu e entregou ainda melhor do que imaginávamos." },
+            { "role": "Coordenador, AME", "body": "Plataforma para mais de 300 pessoas funcionando perfeitamente desde o primeiro dia. Qualidade e compromisso que fazem a diferença." }
+        ]
     },
     "chatbot": {
         "title": "Assistente IA",
         "status": "Online • Pergunte sobre mim",
         "placeholder": "Digite sua pergunta...",
-        "suggested": "Perguntas rápidas:"
+        "greeting": "Olá! Sou o assistente virtual do Carlos. Pergunte sobre a carreira, skills e projetos dele — vou responder com base no que sei sobre ele!",
+        "errors": {
+            "noKey": "O assistente IA ainda não foi configurado. O desenvolvedor precisa definir a chave de API nas variáveis de ambiente para que eu possa responder.",
+            "invalidKey": "A chave de API configurada é inválida para este endpoint. Verifique se a chave e o provedor estão corretos.",
+            "timeout": "A IA demorou muito para responder. Pode ser um problema de conexão — tente novamente!",
+            "network": "Não foi possível conectar ao servidor da IA. Verifique sua conexão com a internet e tente novamente.",
+            "cors": "O navegador bloqueou a requisição para o servidor da IA por política de segurança (CORS). Se estiver em desenvolvimento local, talvez seja necessário usar um proxy ou extensão CORS.",
+            "api": "O servidor da IA retornou um erro. Pode ser um problema temporário — tente novamente em alguns instantes.",
+            "empty": "A IA retornou uma resposta vazia. Tente perguntar de outra forma!",
+            "unknown": "Ocorreu um erro inesperado ao consultar a IA: {detail}. Se o problema persistir, avise o desenvolvedor."
+        },
     },
     "error": {
         "title_404": "Erro 404",
@@ -281,6 +323,15 @@
     "seo": {
         "title": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web",
         "description": "Conheça o portfólio de Carlos Neto, Desenvolvedor Fullstack e Designer UI/UX. Especialista em criar soluções digitais de ponta a ponta, unindo design criativo e desenvolvimento robusto para entregar sites e aplicativos que transformam ideias em impacto real.",
+        "title_home": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web — Portfólio",
+        "title_portfolio": "Portfólio | Carlos Neto — Desenvolvedor Fullstack & Designer",
+        "description_home": "Conheça o portfólio de Carlos Neto, Desenvolvedor Fullstack e Designer UI/UX. Especialista em criar soluções digitais de ponta a ponta, unindo design criativo e desenvolvimento robusto para entregar sites e aplicativos que transformam ideias em impacto real.",
+        "description_portfolio": "Veja os projetos de Carlos Neto: aplicativos mobile, plataformas web, landing pages e sistemas completos. Desenvolvedor Fullstack especializado em React Native, Vue.js, Nuxt e Supabase.",
         "keywords": "carlos neto, desenvolvedor fullstack, designer ui ux, portfolio dev, desenvolvimento web, criar sites, design de aplicativos, web designer salvador, freelancer, programação frontend, programação backend, desenvolvedor vuejs, desenvolvedor nuxt, desenvolvedor react, mobile developer, freelancer, desenvolvimento de sistemas, sites responsivos, prototipagem figma, consultoria digital, desenvolvedor javascript, desenvolvedor typescript, api rest, banco de dados supabase, react native developer, criativo digital, desenvolvimento ágil, landing pages profissionais"
+    },
+    "jsonLd": {
+        "personDescription": "Desenvolvedor Fullstack e Designer UI/UX especializado em soluções digitais de ponta a ponta.",
+        "websiteName": "Carlos Neto | Fullstack Developer & Designer",
+        "websiteDescription": "Portfólio de Carlos Neto — Desenvolvedor Fullstack e Designer UI/UX."
     }
 }

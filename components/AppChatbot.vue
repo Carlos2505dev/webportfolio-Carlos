@@ -2,8 +2,11 @@
   <div class="app-chatbot">
     <button
       class="app-chatbot__toggle"
-      :class="{ 'app-chatbot__toggle--active': isOpen }"
-      aria-label="Chat"
+      :class="{ 
+        'app-chatbot__toggle--active': isOpen,
+        'app-chatbot__toggle--over-contact': isOverContact
+      }"
+      :aria-label="$t('common.aria.chat')"
       @click="toggleChat"
     >
       <span v-if="!isOpen" class="app-chatbot__toggle__icon">
@@ -42,15 +45,19 @@
           v-for="(msg, idx) in messages"
           :key="idx"
           class="app-chatbot__window__message"
-          :class="`app-chatbot__window__message--${msg.role}`"
+          :class="[
+            `app-chatbot__window__message--${msg.role}`,
+            { 'app-chatbot__window__message--error': msg.isError },
+          ]"
         >
           <div class="app-chatbot__window__message__bubble">
+            <p v-if="msg.isError" class="app-chatbot__window__message__error-icon">⚠️</p>
             <p v-if="msg.title" class="app-chatbot__window__message__title">{{ msg.title }}</p>
-            <p v-html="msg.content" />
+            <p v-html="msg.content" /><span v-if="isTyping && idx === messages.length - 1 && msg.content" class="app-chatbot__window__message__cursor"></span>
           </div>
         </div>
 
-        <div v-if="isTyping" class="app-chatbot__window__message app-chatbot__window__message--bot">
+        <div v-if="isTyping && !messages[messages.length - 1]?.content" class="app-chatbot__window__message app-chatbot__window__message--bot">
           <div class="app-chatbot__window__message__bubble app-chatbot__window__message__bubble--typing">
             <span class="dot"></span>
             <span class="dot"></span>
@@ -58,22 +65,7 @@
           </div>
         </div>
 
-        <div
-          v-if="showSuggestions && !isTyping"
-          class="app-chatbot__window__suggestions"
-        >
-          <p class="app-chatbot__window__suggestions__label">{{ $t('chatbot.suggested') }}</p>
-          <div class="app-chatbot__window__suggestions__list">
-            <button
-              v-for="(q, idx) in currentSuggestions"
-              :key="idx"
-              class="app-chatbot__window__suggestions__item"
-              @click="sendQuestion(q)"
-            >
-              {{ q }}
-            </button>
-          </div>
-        </div>
+
       </div>
 
       <div class="app-chatbot__window__input">
@@ -98,19 +90,34 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick } from '#imports'
+import { ref, watch, nextTick } from '#imports'
 import { chatbotService } from '@/services/chatbot'
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+const LOG = '[Chatbot]'
 
 const isOpen = ref(false)
 const isTyping = ref(false)
 const inputText = ref('')
 const messages = ref([])
-const showSuggestions = ref(true)
 const messagesRef = ref(null)
+const isOverContact = ref(false)
 
-const currentSuggestions = computed(() => {
-  return chatbotService.getSuggestedQuestions(locale.value)
+function checkContactSection() {
+    const contact = document.querySelector('#contact')
+    if (contact) {
+        const rect = contact.getBoundingClientRect()
+        isOverContact.value = rect.top < window.innerHeight && rect.bottom > 0
+    }
+}
+
+onMounted(() => {
+    checkContactSection()
+    window.addEventListener('scroll', checkContactSection, { passive: true })
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', checkContactSection)
 })
 
 const scrollToBottom = async () => {
@@ -128,12 +135,11 @@ const toggleChat = () => {
 }
 
 const startChat = () => {
-  const greeting = chatbotService.getGreeting(locale.value)
+  console.log(`${LOG} session started (${locale.value})`)
   messages.value.push({
     role: 'bot',
-    content: greeting
+    content: t('chatbot.greeting'),
   })
-  showSuggestions.value = true
   scrollToBottom()
 }
 
@@ -141,33 +147,34 @@ const sendMessage = async () => {
   const text = inputText.value.trim()
   if (!text) return
 
+  console.log(`${LOG} user:`, text)
   messages.value.push({ role: 'user', content: text })
   inputText.value = ''
-  showSuggestions.value = false
-  scrollToBottom()
 
+  const botIdx = messages.value.length
+  messages.value.push({ role: 'bot', content: '' })
   isTyping.value = true
   scrollToBottom()
 
-  const answer = await chatbotService.getAnswerWithAI(text, locale.value)
-  messages.value.push({
-    role: 'bot',
-    title: answer.found ? answer.title : null,
-    content: answer.content
+  const answer = await chatbotService.getAnswer(text, t, (partial) => {
+    messages.value[botIdx].content = partial
+    scrollToBottom()
   })
 
-  isTyping.value = false
-  showSuggestions.value = true
-  scrollToBottom()
-}
+  console.log(`${LOG} answer:`, answer.error ? 'error' : 'ok', answer.content.slice(0, 80))
 
-const sendQuestion = (question) => {
-  inputText.value = question
-  sendMessage()
+  if (answer.error) {
+    messages.value[botIdx].content = answer.content
+    messages.value[botIdx].isError = true
+  }
+
+  isTyping.value = false
+  scrollToBottom()
 }
 
 watch(locale, () => {
   if (isOpen.value) {
+    console.log(`${LOG} locale changed to ${locale.value}, restarting`)
     messages.value = []
     startChat()
   }
@@ -219,6 +226,18 @@ watch(locale, () => {
 
       &:hover {
         transform: rotate(90deg) scale(1.08);
+      }
+    }
+
+    &--over-contact {
+      background: var(--pure_black);
+      color: var(--primary);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        background: var(--pure_black);
+        color: var(--primary);
+        box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
       }
     }
 
@@ -386,6 +405,28 @@ watch(locale, () => {
         }
       }
 
+      &--error {
+        .app-chatbot__window__message__bubble {
+          border-color: var(--color_error, #e74c3c);
+          background: color-mix(in srgb, var(--color_error, #e74c3c) 8%, var(--bg_color));
+        }
+      }
+
+      &__error-icon {
+        font-size: $size_16px;
+        margin-bottom: 4px;
+      }
+
+      &__cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        background: var(--text_color);
+        margin-left: 2px;
+        vertical-align: text-bottom;
+        animation: blink 0.7s steps(1) infinite;
+      }
+
       &__title {
         font-family: $font_primary;
         font-weight: 600;
@@ -394,43 +435,6 @@ watch(locale, () => {
         letter-spacing: 0.05em;
         color: var(--primary_dark);
         margin-bottom: 4px !important;
-      }
-    }
-
-    &__suggestions {
-      padding: 4px 16px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-
-      &__label {
-        margin: 0;
-        font-size: $size_12px;
-        color: var(--text_color_smooth);
-      }
-
-      &__list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      &__item {
-        padding: 6px 12px;
-        border-radius: 16px;
-        border: 1px solid var(--text_color_transparent);
-        background: transparent;
-        color: var(--text_color);
-        font-size: $size_12px;
-        font-family: $font_secondary;
-        cursor: pointer;
-        transition: all 0.2s ease;
-
-        &:hover {
-          background: var(--primary);
-          border-color: var(--primary);
-          color: var(--pure_black);
-        }
       }
     }
 
@@ -499,5 +503,10 @@ watch(locale, () => {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 </style>

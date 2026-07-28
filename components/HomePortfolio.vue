@@ -58,12 +58,12 @@
                 <div class="portfolio__section__container__projects__navigation container">
                     <ul class="portfolio__section__container__projects__navigation__arrows">
                         <li class="portfolio__section__container__projects__navigation__arrows__item left-arrow">
-                            <AppButton aria-label="Previous" class="primary" @click="prevProj">
+                            <AppButton :aria-label="$t('common.aria.previous')" class="primary" @click="prevProj">
                                 <AppIcon IconName="ph:arrow-left" />
                             </AppButton>
                         </li>
                         <li class="portfolio__section__container__projects__navigation__arrows__item right-arrow">
-                            <AppButton aria-label="Next" class="primary" @click="nextProj">
+                            <AppButton :aria-label="$t('common.aria.next')" class="primary" @click="nextProj">
                                 <AppIcon IconName="ph:arrow-right" />
                             </AppButton>
                         </li>
@@ -96,6 +96,8 @@
 <script setup>
 import { ref, toRefs, computed, watch } from '#imports'
 import { useRouter, useRoute } from 'vue-router'
+
+const { t } = useI18n()
 
 const router = useRouter()
 const route = useRoute()
@@ -176,7 +178,7 @@ function viewDetails(index, slug) {
         openedDetails.value = project
         selectedProj.value = index
     } else {
-        modalContent.value = 'Content not found'
+        modalContent.value = t('common.content_not_found')
     }
 
     router.push({ query: { project: slug } })

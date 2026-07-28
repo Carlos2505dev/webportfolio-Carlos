@@ -4,12 +4,13 @@
         <div 
             v-show="!isModalOpen"
             class="reading-progress" 
+            :class="{ 'reading-progress--over-contact': isOverContact }"
             :style="{ '--progress': scrollProgress + '%' }"
             role="progressbar"
             :aria-valuenow="Math.round(scrollProgress)"
             aria-valuemin="0"
             aria-valuemax="100"
-            aria-label="Reading progress"
+            :aria-label="$t('common.aria.reading_progress')"
         />
         <TheHeader />
         <main>
@@ -30,11 +31,21 @@ const route = useRoute()
 const isModalOpen = computed(() => !!route.query.project)
 
 const scrollProgress = ref(0)
+const isOverContact = ref(false)
+
+function checkContactCta() {
+    const contactCta = document.querySelector('#contact-cta-title')
+    if (contactCta) {
+        const rect = contactCta.getBoundingClientRect()
+        isOverContact.value = rect.top < window.innerHeight && rect.bottom > 0
+    }
+}
 
 function updateProgress() {
     const scrollTop = window.scrollY
     const docHeight = document.documentElement.scrollHeight - window.innerHeight
     scrollProgress.value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
+    checkContactCta()
 }
 
 onMounted(() => {
@@ -69,7 +80,7 @@ onUnmounted(() => {
     background-size: 200% auto;
     animation: shimmer 2s ease-in-out infinite;
     z-index: 1000;
-    transition: width 100ms ease-out;
+    transition: width 100ms ease-out, background 300ms ease, box-shadow 300ms ease;
     
     /* Glow effect */
     box-shadow: 
@@ -84,6 +95,14 @@ onUnmounted(() => {
     @media (prefers-reduced-motion: reduce) {
         transition: none;
         animation: none;
+    }
+
+    &--over-contact {
+        background: var(--pure_black);
+        animation: none;
+        box-shadow: 
+            0 0 6px var(--pure_black),
+            0 0 20px rgba(0, 0, 0, 0.3);
     }
 }
 </style>

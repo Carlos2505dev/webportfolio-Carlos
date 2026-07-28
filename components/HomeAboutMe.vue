@@ -15,13 +15,13 @@
                 <div class="about__section__container__columns__avatar">
                     <figure class="about__section__container__columns__avatar__image">
 
-                        <NuxtImg v-if="colorMode.value == 'dark'" alt="Foto de Carlos Neto"
+                        <NuxtImg v-if="colorMode.value == 'dark'" :alt="$t('common.photo_alt_extended')"
                             src="/darkmode.webp" width="800px" height="800px" format="webp"
-                            densities="x1 x2" quality="100" />
+                            densities="x1 x2" quality="100" loading="lazy" />
 
-                        <NuxtImg v-if="colorMode.value == 'light'" alt="Foto de Carlos Neto"
+                        <NuxtImg v-if="colorMode.value == 'light'" :alt="$t('common.photo_alt_extended')"
                             src="/lightmode.webp" width="800px" height="800px" format="webp"
-                            densities="x1 x2" quality="100" />
+                            densities="x1 x2" quality="100" loading="lazy" />
 
                         <strong class="about__section__container__columns__avatar__image__areas logic">
                             <span>

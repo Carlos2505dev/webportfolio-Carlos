@@ -5,14 +5,14 @@
             <AppIcon :IconName="stack.logo" />
         </li>
         <li v-if="maxItems && stacks.length > maxItems" class="skills__stacks__button">
-            <AppButton :aria-label="stackList.length > maxItems ? 'Less' : 'More'" class="secondary icononly"
+            <AppButton :aria-label="stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more')" class="secondary icononly"
                 :class="stackList.length > maxItems ? 'opened' : ''" @click="showAll">
                 <AppIcon IconName="ph:plus-bold" />
                 <span v-if="stackList.length == maxItems">
                     {{ stacks.length - maxItems }}
                 </span>
                 <span class="visually-hidden">
-                    {{ stackList.length > maxItems ? 'Less' : 'More' }}
+                    {{ stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more') }}
                 </span>
             </AppButton>
         </li>
@@ -24,7 +24,7 @@
         </li>
         <li v-if="maxItems && stacks.length > maxItems" class="skills__stacks__button">
             <AppButton 
-                :aria-label="stackList.length > maxItems ? 'Less' : 'More'" 
+                :aria-label="stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more')" 
                 class="secondary icononly"
                 :class="stackList.length > maxItems ? 'opened' : ''" @click="showAll"
             >
@@ -33,7 +33,7 @@
                     {{ stacks.length - maxItems }}
                 </span>
                 <span class="visually-hidden">
-                    {{ stackList.length > maxItems ? 'Less' : 'More' }}
+                    {{ stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more') }}
                 </span>
             </AppButton>
         </li>

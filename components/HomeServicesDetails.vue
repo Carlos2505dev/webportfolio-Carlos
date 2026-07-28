@@ -4,7 +4,7 @@
             <div class="about__skills__container__image">
                 <picture class="about__skills__container__image__picture">
 
-                    <NuxtImg src="/logo_cn.webp" alt="Logo Carlos Neto" />
+                    <NuxtImg src="/logo_cn.webp" :alt="$t('common.logo_alt')" />
                     
 
                 </picture>

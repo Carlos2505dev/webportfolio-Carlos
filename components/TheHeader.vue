@@ -3,7 +3,7 @@
         :class="[onScroll.scrollTop ? 'show' : 'hide', onScroll.position > 60 ? 'scrolled' : '']">
         <div class="container__fluid">
             <div class="container__fluid__logo">
-                <NuxtLink aria-label="Homepage" to="/">
+                <NuxtLink :aria-label="$t('common.aria.homepage')" to="/">
                     <TheLogo />
                 </NuxtLink>
             </div>

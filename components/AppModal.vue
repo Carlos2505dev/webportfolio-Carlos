@@ -8,14 +8,12 @@
             <article class="app__modal__container__content">
                 <div class="app__modal__container__content__wrap__close">
                     <AppButton 
-                        aria-label="Close"
+                        :aria-label="$t('common.aria.close')"
                         class="icononly outline close-modal" 
                         @click="closeModal"
                     >
                         <AppIcon IconName="ph:x-bold" />
-                        <span class="visually-hidden">
-                            Close
-                        </span>
+                        <span class="visually-hidden">{{ $t('common.aria.close') }}</span>
                     </AppButton>
                 </div>
                 <slot />

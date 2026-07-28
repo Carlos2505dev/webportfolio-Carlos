@@ -8,8 +8,8 @@
                 <li v-for="client in clients" :key="client.name" class="about__clients__marquee__list__item" @click="toggleClient(client)">
                     <div class="client-content">
                         <figure v-if="!client.active">
-                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.logo_alt') + ' ' + client.name"
-                                :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder />
+                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.client_logo_alt', { name: client.name })"
+                                :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder loading="lazy" />
                         </figure>
                         <span v-else class="client-name">{{ client.name }}</span>
                     </div>
@@ -19,8 +19,8 @@
                 <li v-for="client in clients" :key="client.name" class="about__clients__marquee__list__item" @click="toggleClient(client)">
                     <div class="client-content">
                         <figure v-if="!client.active">
-                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.logo_alt') + ' ' + client.name"
-                                :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder />
+                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.client_logo_alt', { name: client.name })"
+                                :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder loading="lazy" />
                         </figure>
                         <span v-else class="client-name">{{ client.name }}</span>
                     </div>

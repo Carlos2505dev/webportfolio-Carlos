@@ -88,7 +88,7 @@
                                 v-else 
                                 src="~/assets/carlos-icons/logo-symbol-outline.png" 
                                 class="placeholder-logo" 
-                                alt="Carregando..."
+                                :alt="$t('common.loading')"
                             />
                         </NuxtImg>
                         <figcaption>

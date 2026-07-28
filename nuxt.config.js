@@ -39,7 +39,7 @@ export default defineNuxtConfig({
         compatibility: false, // Will add `async` and `defer` to the script tag to not block requests for old browsers that do not support `async`
         nonce: '2726c7f26c', // Will add `nonce` to the script tag
         enabled: true, // defaults to true. Plugin can be disabled by setting this to false for Ex: enabled: !!GDPR_Cookie (optional)
-        debug: true, // Whether or not display console logs debugs (optional)
+        debug: false, // Whether or not display console logs debugs (optional)
         loadScript: true, // Whether or not to load the GTM Script (Helpful if you are including GTM manually, but need the dataLayer functionality in your components) (optional)
         enableRouterSync: true, // Pass the router instance of your app to automatically sync with router (optional)
         trackOnNextTick: false, // Whether or not call trackView in Vue.nextTick
@@ -79,7 +79,22 @@ export default defineNuxtConfig({
     ],
 
     i18n: {
-        vueI18n: './i18n.config.ts'
+        vueI18n: './i18n.config.ts',
+        strategy: 'prefix_except_default',
+        defaultLocale: 'pt',
+        detectBrowserLanguage: {
+            useCookie: true,
+            cookieKey: 'i18n_redirected',
+            redirectOn: 'root',
+            alwaysRedirect: true,
+            fallbackLocale: 'pt'
+        },
+        baseUrl: 'https://carlosnetodev.vercel.app',
+        locales: [
+            { code: 'pt', iso: 'pt-BR', name: 'Português' },
+            { code: 'en', iso: 'en-US', name: 'English' }
+        ],
+        seo: true
     },
 
     //color mode

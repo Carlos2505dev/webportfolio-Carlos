@@ -16,32 +16,37 @@
 | GitHub | https://github.com/Carlos2505dev |
 | LinkedIn | https://www.linkedin.com/in/carlosbezerraneto/ |
 | Idade | 19 anos |
+| Esportes Preferios | Futebol e Corrida |
+| Times de futebol preferidos | Esporte Clube Bahia e Manchester City |
+| Jogador favorito | Lionel Messi |
+| Corrida favorita | Fórmula 1 |
+| Piloto favorito | Max Verstappen |
 
 ---
 
 ## Filosofia de Trabalho
 
-Acredito que **tecnologia só faz sentido quando resolve problemas reais de pessoas reais**. Minha filosofia combina três pilares que se reforçam mutuamente: **visão de produto, execução orientada por dados e design centrado no usuário**.
+Carlos acredita que **tecnologia só faz sentido quando resolve problemas reais de pessoas reais**. Sua filosofia combina três pilares que se reforçam mutuamente: **visão de produto, execução orientada por dados e design centrado no usuário**.
 
 ### Produto antes de código
 
-Antes de escrever uma linha de código, invisto tempo em entender o problema, o público, o mercado e o impacto esperado. Não vejo meu papel como apenas "entregar funcionalidades" — atuo como um parceiro que **colabora na concepção da solução**, fazendo perguntas, propondo alternativas e garantindo que cada entrega gere valor real de negócio.
+Antes de escrever uma linha de código, ele investe tempo em entender o problema, o público, o mercado e o impacto esperado. Não vê seu papel como apenas "entregar funcionalidades" — atua como um parceiro que **colabora na concepção da solução**, fazendo perguntas, propondo alternativas e garantindo que cada entrega gere valor real de negócio.
 
 ### Decisões guiadas por dados
 
-Aprendi cedo, na minha atuação como Analista de Dados, que **boas intenções não substituem métricas**. Levo essa mentalidade para o desenvolvimento: valido hipóteses com dados, mensuro resultados e uso KPIs para orientar melhorias contínuas. Cada escolha — de uma cor a uma arquitetura — tem uma razão fundamentada.
+Aprendeu cedo, na sua atuação como Analista de Dados, que **boas intenções não substituem métricas**. Leva essa mentalidade para o desenvolvimento: valida hipóteses com dados, mensura resultados e usa KPIs para orientar melhorias contínuas. Cada escolha — de uma cor a uma arquitetura — tem uma razão fundamentada.
 
 ### Design que conecta, código que entrega
 
-Minha formação em Engenharia da Computação aliada à prática em UI/UX me permite **transitar naturalmente entre a estética e a lógica**. Projeto interfaces que comunicam e desenvolvemos sistemas que performam. Essa ponte entre design e engenharia reduz retrabalho, acelera entregas e eleva a experiência do usuário a um nível profissional.
+Sua formação em Engenharia da Computação aliada à prática em UI/UX permite que ele **transite naturalmente entre a estética e a lógica**. Projeta interfaces que comunicam e desenvolve sistemas que performam. Essa ponte entre design e engenharia reduz retrabalho, acelera entregas e eleva a experiência do usuário a um nível profissional.
 
 ### IA como amplificadora, não substituta
 
-Enquanto muitos enxergam a Inteligência Artificial como ameaça ou modismo, eu a vejo como **a maior ferramenta de produtividade da minha geração**. Aplico engenharia de prompt, automação e integração de APIs de IA em todos os estágios do desenvolvimento — da prototipação ao deploy — para fazer mais em menos tempo, sem sacrificar qualidade.
+Enquanto muitos enxergam a Inteligência Artificial como ameaça ou modismo, ele a vê como **a maior ferramenta de produtividade da sua geração**. Aplica engenharia de prompt, automação e integração de APIs de IA em todos os estágios do desenvolvimento — da prototipação ao deploy — para fazer mais em menos tempo, sem sacrificar qualidade.
 
 ### Colaboração e crescimento contínuo
 
-Liderança para mim não é hierarquia, é **responsabilidade com o resultado do time**. Minhas experiências liderando equipes (de 5 a 12 pessoas) e coordenando projetos me ensinaram que os melhores produtos nascem de ambientes onde há comunicação clara, feedback construtivo e confiança mútua. Estou sempre estudando algo novo — seja SQL, System Design ou Arquitetura de Software — porque sei que **o mercado muda, e a melhor vantagem competitiva é a capacidade de aprender**.
+Liderança para ele não é hierarquia, é **responsabilidade com o resultado do time**. Suas experiências liderando equipes (de 5 a 12 pessoas) e coordenando projetos o ensinaram que os melhores produtos nascem de ambientes onde há comunicação clara, feedback construtivo e confiança mútua. Está sempre estudando algo novo — seja SQL, System Design ou Arquitetura de Software — porque sabe que **o mercado muda, e a melhor vantagem competitiva é a capacidade de aprender**.
 
 ## Formação Acadêmica
 
@@ -375,6 +380,9 @@ Comunicação · Comunicação técnica · Redação técnica · Elaboração de
 | Idioma | Nível |
 |--------|-------|
 | Português | Nativo |
+| Inglês | Estudando (nível básico) |
+
+Carlos está atualmente estudando inglês com foco em leitura técnica, conversação e vocabulário voltado à tecnologia. Ele reconhece o domínio do inglês como uma competência essencial para acessar documentações oficiais, colaborar em projetos globais, consumir conteúdo técnico de ponta e avançar na carreira de tecnologia. Seu objetivo é tornar-se proficiente para atuar em equipes internacionais e acompanhar referências da área sem barreiras linguísticas.
 
 ---
 

@@ -13,7 +13,7 @@
                 <NuxtImg 
                     v-if="item.isImage" 
                     src="/logo_cn.webp"
-                    alt="Logo Carlos Neto" 
+                    :alt="$t('common.logo_alt')" 
                     class="menu-logo-img"
                 />
                 <AppIcon v-else :IconName="item.icon" />

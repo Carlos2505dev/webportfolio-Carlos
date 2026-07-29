@@ -18,26 +18,24 @@
                                 <NuxtImg :alt="$t(project.name)" :src="project.image"
                                     sizes="100vw sm:380px md:400px lg:800px" quality="100" densities="x1 x2"
                                     :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
-                                    <!-- Show the actual image when loaded -->
                                     <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
-
-                                    <!-- Show a placeholder while loading -->
                                     <img 
                                         v-else 
                                         src="~/assets/carlos-icons/logo-symbol-outline.png" 
                                         class="placeholder-logo" 
                                         :alt="$t('common.loading')"
                                     />
-                                    <!-- <img v-else src="https://placehold.co/400x400" alt="placeholder" /> -->
                                 </NuxtImg>
                             </picture>
 
                         </header>
 
                         <div class="portfolio__section__container__projects__item__contain__body project-titles">
-                            <h2 class="portfolio__section__container__projects__item__contain__body__title">
-                                {{ $t(project.name) }}
-                            </h2>
+                            <NuxtLink :to="'/portfolio/' + project.slug" class="project-title-link">
+                                <h2 class="portfolio__section__container__projects__item__contain__body__title">
+                                    {{ $t(project.name) }}
+                                </h2>
+                            </NuxtLink>
                             <h3 class="portfolio__section__container__projects__item__contain__body__subtitle">
                                 {{ $t(project.client) }}
                             </h3>
@@ -514,5 +512,11 @@ initializeModalFromQuery()
             }
         }
     }
+}
+
+.project-title-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline;
 }
 </style>

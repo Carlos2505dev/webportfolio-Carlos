@@ -11,6 +11,10 @@
                 <AppMenu />
             </nav>
             <div class="container__fluid__actions">
+                <div class="container__fluid__actions__available">
+                    <span class="container__fluid__actions__available__dot"></span>
+                    <span class="container__fluid__actions__available__text">{{ $t('common.available_short') }}</span>
+                </div>
                 <AppColorSwitcher />
                 <AppLangSwitcher />
             </div>
@@ -116,6 +120,40 @@ onMounted(() => {
                 align-items: center;
                 justify-content: flex-end;
                 grid-gap: 16px;
+
+                &__available{
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 4px 10px;
+                    border-radius: 20px;
+                    border: 1px solid var(--text_color_transparent);
+                    background: var(--bg_color_transparent);
+                    backdrop-filter: blur(4px);
+
+                    &__dot{
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background: var(--primary);
+                        animation: pulse 2s infinite ease;
+                        flex-shrink: 0;
+                    }
+
+                    &__text{
+                        font-size: 0.6875rem;
+                        font-family: $font_secondary;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        font-weight: 500;
+                        color: var(--text_color_smooth);
+                        white-space: nowrap;
+                    }
+
+                    @media(max-width: $br_mobile){
+                        display: none;
+                    }
+                }
             }
         }
     }

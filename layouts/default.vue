@@ -17,7 +17,7 @@
             <slot />
         </main>
         <TheFooter />
-        <AppChatbot />
+        <AppChatbot v-if="!isProjectPage" />
     </div>
 </template>
 
@@ -29,6 +29,8 @@ const route = useRoute()
 
 /* Hide progress bar when portfolio detail modal is open */
 const isModalOpen = computed(() => !!route.query.project)
+
+const isProjectPage = computed(() => route.path.startsWith('/portfolio/') || route.path.startsWith('/project/'))
 
 const scrollProgress = ref(0)
 const isOverContact = ref(false)

@@ -4,7 +4,8 @@
         "item2": { "title": "Portfólio", "route": "#portfolio" },
         "item3": { "title": "Sobre", "route": "#about" },
         "item4": { "title": "Serviços", "route": "#services" },
-        "item5": { "title": "Contato", "route": "#contact" }
+        "item5": { "title": "Contato", "route": "#contact" },
+        "item6": { "title": "FAQ", "route": "#faq" }
     },
     "hero": {
         "cta": "Sobre",
@@ -199,7 +200,57 @@
     },
     "portfolio_page": {
         "title": "Portfólio",
-        "subtitle": "Meu portfólio reflete meu trabalho como <strong>Desenvolvedor Fullstack & Designer</strong> com soluções digitais completas onde design, código e propósito se encontram."
+        "subtitle": "Meu portfólio reflete meu trabalho como <strong>Desenvolvedor Fullstack & Designer</strong> com soluções digitais completas onde design, código e propósito se encontram.",
+        "search_placeholder": "Buscar projetos por nome ou cliente...",
+        "filter_all": "Todos",
+        "filter_mobile": "Mobile",
+        "filter_web": "Web",
+        "filter_ux_ui": "UX/UI",
+        "no_results": "Nenhum projeto encontrado com os filtros atuais.",
+        "filter_toggle": "Alternar filtros",
+        "filter_category_label": "Categoria",
+        "filter_tech_label": "Ferramentas e Tecnologias",
+        "filter_done": "Pronto",
+        "filter_clear_all": "Limpar tudo"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Perguntas Frequentes",
+        "text": "Dúvidas comuns sobre carreira, serviços, tecnologia e orçamento. Clique em cada pergunta para ver a resposta.",
+        "categories": {
+            "career": "Carreira",
+            "services": "Serviços",
+            "tech": "Tecnologia",
+            "budget": "Orçamento"
+        },
+        "items": {
+            "career_1_q": "O que faz um desenvolvedor fullstack?",
+            "career_1_a": "Um desenvolvedor fullstack projeta e constrói soluções digitais completas, atuando tanto no frontend (interface visual com o usuário) quanto no backend (lógica, banco de dados e servidores). Carlos Neto é Desenvolvedor Fullstack e Designer, capaz de criar aplicativos mobile, sites institucionais, landing pages e plataformas web do zero ao deploy: incluindo design, prototipação no Figma, desenvolvimento responsivo e integração com APIs. Essa versatilidade reduz custos e prazos, pois um único profissional acompanha o projeto inteiro, da concepção à entrega.",
+            "career_2_q": "Qual a diferença entre designer e desenvolvedor?",
+            "career_2_a": "Um designer cria soluções visuais para diversos formatos: identidade visual, artes para redes sociais, cardápios, cartões, banners, branding e também interfaces de sites e aplicativos. Um desenvolvedor transforma essas criações em produtos funcionais por meio de código. Carlos Neto acumula ambas as competências: ele cria o design visual de qualquer natureza no Figma, Canva ou Illustrator, e também desenvolve o produto com tecnologias como React, Vue.js, React Native e Supabase. Essa integração elimina ruídos de comunicação e garante que o resultado final seja fiel ao que foi projetado.",
+            "career_3_q": "O Carlos está disponível para novos projetos?",
+            "career_3_a": "Sim, Carlos Neto está disponível para novos projetos freelance de desenvolvimento web, aplicativos mobile, design de interfaces e consultoria digital. O status atual de disponibilidade aparece no topo do site. Para contratar, basta entrar em contato pelo formulário, WhatsApp ou e-mail para discutir sua ideia e receber uma proposta personalizada.",
+
+            "services_1_q": "Qual a diferença entre landing page e site institucional?",
+            "services_1_a": "A landing page é uma página única e focada em conversão: ideal para campanhas de marketing, lançamento de produtos ou captura de leads. O site institucional é um conjunto de páginas (home, sobre, serviços, blog, contato) que apresenta a empresa de forma completa e profissional. Carlos Neto desenvolve ambos: landing pages a partir de R$ 300 e sites institucionais complexos a partir de R$ 700, sempre com design responsivo e SEO básico incluído.",
+            "services_2_q": "Vale a pena criar um aplicativo mobile para meu negócio?",
+            "services_2_a": "Sim, se seu negócio precisa de engajamento contínuo, notificações push, funcionalidades offline ou integração com recursos do celular (câmera, GPS, pagamento), um aplicativo mobile é o melhor caminho. Carlos Neto desenvolve apps para iOS e Android simultaneamente com React Native e Expo, reduzindo custo e tempo de desenvolvimento. Aplicativos simples começam em torno de R$ 2.000, enquanto soluções completas podem chegar a R$ 25.000+. Ele também cria MVPs para validar sua ideia antes de investir pesado.",
+            "services_3_q": "Um site profissional precisa de SEO?",
+            "services_3_a": "Sim, SEO (Search Engine Optimization) é essencial para qualquer site profissional que queira ser encontrado no Google. Carlos Neto aplica SEO técnico em todos os projetos: marcação semântica, meta tags otimizadas, carregamento rápido, estrutura de dados estruturados (JSON-LD) e conteúdo relevante. Um site otimizado para SEO atrai visitantes orgânicos de forma contínua, reduzindo a dependência de anúncios pagos e gerando resultados de longo prazo para seu negócio.",
+            "services_4_q": "Como funciona o processo de criação de um site?",
+            "services_4_a": "O processo segue 5 etapas: 1) Descoberta: reunião para entender o negócio, público-alvo e objetivos; 2) Prototipação: criação do design no Figma com aprovação do cliente; 3) Desenvolvimento: programação responsiva com tecnologias modernas (Vue.js, Nuxt ou React); 4) SEO e testes: otimização para buscadores e validação em múltiplos dispositivos; 5) Deploy e suporte: publicação no servidor e manutenção contínua. O prazo médio é de 2 a 4 semanas para sites institucionais.",
+            "tech_1_q": "O que é um site responsivo?",
+            "tech_1_a": "Um site responsivo se adapta automaticamente ao tamanho da tela do dispositivo: celular, tablet ou desktop. Com mais de 60% do tráfego da internet vindo de dispositivos móveis, ter um site responsivo não é opcional: o Google prioriza sites mobile-friendly nos resultados de busca, e usuários abandonam sites que não funcionam bem no celular. Carlos Neto desenvolve todos os projetos com abordagem mobile-first, garantindo experiência consistente em qualquer tela.",
+            "tech_2_q": "React Native ou Flutter: qual a melhor opção?",
+            "tech_2_a": "React Native e Flutter são as principais tecnologias para desenvolvimento mobile híbrido. Carlos Neto prefere React Native com Expo por três razões: ecossistema maduro e estável, integração nativa com serviços como Supabase e RevenueCat, e a possibilidade de compartilhar lógica e componentes com projetos web em React. Mas ele também desenvolve com Flutter se o cliente desejar, garantindo flexibilidade na escolha da tecnologia ideal para cada projeto.",
+
+            "tech_4_q": "Como a inteligência artificial está sendo usada no desenvolvimento?",
+            "tech_4_a": "A inteligência artificial vem sendo integrada em apps e sites de diversas formas: chatbots inteligentes para atendimento ao cliente, assistentes virtuais com processamento de linguagem natural, recomendações personalizadas, automação de tarefas e análise de dados preditiva. Carlos Neto já desenvolveu soluções com IA como assistentes espirituais com Llama 3.1 e chatbots turísticos, integrando APIs como Groq, OpenAI e Claude em produtos reais publicados nas lojas de aplicativos.",
+            "budget_1_q": "Como funciona o pagamento de um projeto?",
+            "budget_1_a": "O pagamento é dividido em duas etapas: 65% no início do projeto e 35% na entrega final. Essa divisão garante segurança tanto para o cliente quanto para o desenvolvedor.",
+            "budget_2_q": "Quanto tempo leva para desenvolver um site ou app?",
+            "budget_2_a": "Landing pages e sites simples: 1 a 2 semanas. Sites institucionais completos: 2 a 4 semanas. Aplicativos mobile: 4 a 12 semanas, dependendo da complexidade. O prazo é definido no cronograma da proposta e o cliente recebe atualizações semanais do progresso. Carlos Neto trabalha com metodologias ágeis, o que permite ajustes durante o processo sem comprometer o prazo final."
+        }
     },
     "clients": {
         "title": "Parceiros que confiam no meu trabalho"
@@ -263,9 +314,15 @@
         "download_menu": "Baixar Cardápio Completo",
         "view_app_store": "Ver na Apple Store",
         "view_play_store": "Ver na Play Store",
+        "available": "Disponível para novos projetos",
+        "available_short": "Disponível",
+        "project_singular": "projeto",
+        "project_plural": "projetos",
         "photo_alt": "Foto de Carlos Neto",
-        "photo_alt_extended": "Foto de Carlos Neto — Desenvolvedor Fullstack e Designer",
-        "client_logo_alt": "{name} — parceiro que confia no trabalho de Carlos Neto",
+        "photo_alt_extended": "Foto de Carlos Neto: Desenvolvedor Fullstack e Designer",
+        "client_logo_alt": "{name}: parceiro que confia no trabalho de Carlos Neto",
+        "back_to_portfolio": "Ver Todos os Projetos",
+        "project_not_found": "Projeto não encontrado",
         "aria": {
             "chat": "Chat",
             "close": "Fechar",
@@ -300,14 +357,14 @@
         "title": "Assistente IA",
         "status": "Online • Pergunte sobre mim",
         "placeholder": "Digite sua pergunta...",
-        "greeting": "Olá! Sou o assistente virtual do Carlos. Pergunte sobre a carreira, skills e projetos dele — vou responder com base no que sei sobre ele!",
+        "greeting": "Olá! Sou o assistente virtual do Carlos. Pergunte sobre a carreira, skills e projetos dele: vou responder com base no que sei sobre ele!",
         "errors": {
             "noKey": "O assistente IA ainda não foi configurado. O desenvolvedor precisa definir a chave de API nas variáveis de ambiente para que eu possa responder.",
             "invalidKey": "A chave de API configurada é inválida para este endpoint. Verifique se a chave e o provedor estão corretos.",
-            "timeout": "A IA demorou muito para responder. Pode ser um problema de conexão — tente novamente!",
+            "timeout": "A IA demorou muito para responder. Pode ser um problema de conexão: tente novamente!",
             "network": "Não foi possível conectar ao servidor da IA. Verifique sua conexão com a internet e tente novamente.",
             "cors": "O navegador bloqueou a requisição para o servidor da IA por política de segurança (CORS). Se estiver em desenvolvimento local, talvez seja necessário usar um proxy ou extensão CORS.",
-            "api": "O servidor da IA retornou um erro. Pode ser um problema temporário — tente novamente em alguns instantes.",
+            "api": "O servidor da IA retornou um erro. Pode ser um problema temporário: tente novamente em alguns instantes.",
             "empty": "A IA retornou uma resposta vazia. Tente perguntar de outra forma!",
             "unknown": "Ocorreu um erro inesperado ao consultar a IA: {detail}. Se o problema persistir, avise o desenvolvedor."
         },
@@ -323,8 +380,8 @@
     "seo": {
         "title": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web",
         "description": "Conheça o portfólio de Carlos Neto, Desenvolvedor Fullstack e Designer UI/UX. Especialista em criar soluções digitais de ponta a ponta, unindo design criativo e desenvolvimento robusto para entregar sites e aplicativos que transformam ideias em impacto real.",
-        "title_home": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web — Portfólio",
-        "title_portfolio": "Portfólio | Carlos Neto — Desenvolvedor Fullstack & Designer",
+        "title_home": "Carlos Neto | Desenvolvedor Fullstack Mobile & Web: Portfólio",
+        "title_portfolio": "Portfólio | Carlos Neto: Desenvolvedor Fullstack & Designer",
         "description_home": "Conheça o portfólio de Carlos Neto, Desenvolvedor Fullstack e Designer UI/UX. Especialista em criar soluções digitais de ponta a ponta, unindo design criativo e desenvolvimento robusto para entregar sites e aplicativos que transformam ideias em impacto real.",
         "description_portfolio": "Veja os projetos de Carlos Neto: aplicativos mobile, plataformas web, landing pages e sistemas completos. Desenvolvedor Fullstack especializado em React Native, Vue.js, Nuxt e Supabase.",
         "keywords": "carlos neto, desenvolvedor fullstack, designer ui ux, portfolio dev, desenvolvimento web, criar sites, design de aplicativos, web designer salvador, freelancer, programação frontend, programação backend, desenvolvedor vuejs, desenvolvedor nuxt, desenvolvedor react, mobile developer, freelancer, desenvolvimento de sistemas, sites responsivos, prototipagem figma, consultoria digital, desenvolvedor javascript, desenvolvedor typescript, api rest, banco de dados supabase, react native developer, criativo digital, desenvolvimento ágil, landing pages profissionais"
@@ -332,6 +389,6 @@
     "jsonLd": {
         "personDescription": "Desenvolvedor Fullstack e Designer UI/UX especializado em soluções digitais de ponta a ponta.",
         "websiteName": "Carlos Neto | Fullstack Developer & Designer",
-        "websiteDescription": "Portfólio de Carlos Neto — Desenvolvedor Fullstack e Designer UI/UX."
+        "websiteDescription": "Portfólio de Carlos Neto: Desenvolvedor Fullstack e Designer UI/UX."
     }
 }

@@ -134,7 +134,6 @@ const heroHome = reactive({
                 place-items: center;
                 overflow: hidden;
     
-                // animation: pulse 2s infinite ease;
                 a {
                     display: grid;
                     place-items: center;
@@ -167,6 +166,7 @@ const heroHome = reactive({
                     }
                 }
             }
+
         }
         &__text{
         position: relative;

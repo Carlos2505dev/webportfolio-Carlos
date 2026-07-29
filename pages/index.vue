@@ -10,6 +10,8 @@
 
         <HomeServices id="services" />
 
+        <HomeFaq />
+
         <HomeTestimonials />
 
         <HomeContact id="contact" />

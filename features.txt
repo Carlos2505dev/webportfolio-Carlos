@@ -1,82 +1,25 @@
-RELATORIO DE OPORTUNIDADES DE PRODUTO — Portfolio-CN (Webportfolio)
+RELATORIO DE OPORTUNIDADES DE PRODUTO — Portfolio-CN (webportfolio)
 
-VISAO GERAL DO PROJETO
-Portfolio pessoal de Carlos Neto, desenvolvedor fullstack e designer. O site funciona
-como uma vitrine profissional com secoes de hero, portfolio interativo, clientes, servicos
-e contato. Construido em Nuxt 3 (Vue 3 + TypeScript) com SCSS, GSAP, i18n (PT/EN),
-modo escuro/claro e deploy via Vercel. O conteudo dos projetos e estatico, armazenado
-em um arquivo JavaScript local (localData/portfolio.js).
+1. Formulario de Contato com Captura de Leads
+   O que e: Um formulario completo na secao de contato com campos de nome, email,
+   empresa, tipo de projeto e mensagem, que envia os dados via EmailJS (servico de email
+   sem backend) e exibe modal de confirmacao na tela.
+   Por que agora: A secao de contato e o ponto de conversao mais importante do site,
+   mas hoje obriga o visitante a sair da pagina — um formulario inline aumenta a taxa
+   de conversao porque reduz o atrito entre "querer contratar" e "enviar uma mensagem".
+   Como se encaixa: O proprio Carlos ja usou EmailJS no projeto InoveTech (descrito no
+   portfolio), entao a solucao e conhecida. O layout da secao de contato ja tem espaco
+   estrutural para o formulario. Nao requer backend — e uma integracao 100% frontend.
 
-O QUE JA FUNCIONA BEM
-- Arquitetura limpa seguindo convencoes do Nuxt 3 com componentizacao bem definida
-- Experiencia visual refinada: animacoes GSAP, transicoes de pagina, modo escuro/claro
-- Internacionalizacao completa (PT/EN) com estrutura de locales organizada
-- Modal de detalhes do projeto com deep linking por query param, permitindo
-  compartilhamento de URL direta para cada projeto
-- SEO basico implementado (meta tags, og tags, sitemap) e GTM integrado
-
-LACUNAS IDENTIFICADAS
-- Secao de contato se limita a um link de email e redes sociais; nao ha formulario
-  que mantenha o visitante no site, o que gera alta taxa de abandono no funil
-- Galeria de portfolio nao tem filtros por tecnologia ou categoria — conforme cresce,
-  fica dificil para recrutadores encontrarem projetos especificos
-- Nao ha depoimentos de clientes, mesmo tendo uma secao de clientes com logos
-- Componente HomeServicesDetails existe mas esta vazio e comentado no template,
-  indicando uma funcionalidade de detalhamento de servicos que ficou pela metade
-- Portfolio nao tem indicacao de disponibilidade para novos projetos freelance
-- Nao ha um blog ou espaco de estudos de caso para construir autoridade e SEO
-
-FUNCIONALIDADES SUGERIDAS
-
-1. Formulario de Contato Integrado
-   O que e: um formulario multipropósito na secao de contato com campos de nome,
-   email, tipo de projeto e mensagem, que envia diretamente via EmailJS sem
-   precisar abrir o cliente de email do usuario.
-   Por que agora: o funil atual quebra no exato momento da conversao — o visitante
-   se interessa, clica em "Entre em contato" e e levado para fora do site (cliente
-   de email), onde a chance de abandono e altissima. Um formulario mantem o lead
-   no site e estrutura a informacao recebida.
-   Como se encaixa: Carlos ja usou EmailJS no projeto InoveTech (citado no portfolio),
-   entao a tecnologia ja e conhecida. O componente HomeContact ja existe e pode ser
-   estendido. Dados como nome e tipo de projeto podem ser salvos via Pinia ou
-   localStorage para enriquecimento futuro.
-
-2. Filtros e Busca no Portfolio
-   O que e: na pagina /portfolio, filtros por categoria (Mobile, Web, UX/UI),
-   tecnologia (React, Nuxt, Flutter) ou cliente, com busca por nome do projeto.
-   Por que agora: o portfolio tem 7 projetos e tende a crescer. Sem filtro, um
-   recrutador interessado em apps mobile precisa olhar projeto por projeto. Isso
-   gera atrito direto no objetivo principal do site: mostrar o trabalho certo
-   para a pessoa certa rapidamente.
-   Como se encaixa: os dados ja contem os campos `tags` e `stacks` por projeto,
-   que podem alimentar os filtros sem nenhuma alteracao no backend. E puramente
-   uma adicao de UI no componente PortfolioList.vue.
-
-3. Secao de Depoimentos de Clientes
-   O que e: uma secao entre portfolio e contato com citacoes reais de clientes,
-   com foto, nome e empresa. Pequenos cards com avaliacao e texto.
-   Por que agora: a secao de clientes atual mostra apenas logos. Um recrutador
-   ou contratante ve que Carlos trabalhou com essas marcas, mas nao sabe qual
-   foi a experiencia. Depoimentos sao a ponte entre "ele fez" e "e bom no que faz".
-   Como se encaixa: os dados de clientes ja existem em HomeClients.vue. Basta
-   adicionar um array de depoimentos no localData ou diretamente no componente,
-   sem necessidade de CMS ou backend.
-
-4. Indicador de Disponibilidade
-   O que e: um badge sutil no header e/ou na secao hero que mostra se Carlos
-   esta "Disponivel para novos projetos".
-   Por que agora: recrutadores e clientes em potencial frequentemente hesitam em
-   contatar um freelancer sem saber se ele esta aceitando trabalho. Um indicador
-   remove essa duvida e aumenta a taxa de contato.
-
-5. Blog / Estudos de Caso
-   O que e: uma pagina de artigos tecnicos e estudos de caso detalhando processos
-   de design e desenvolvimento de projetos do portfolio.
-   Por que agora: o README menciona aprendizados, mas eles estao enterrados no
-   repositório, nao no site. Conteudo escrito melhora o SEO dramaticamente,
-   posiciona Carlos como autoridade e da aos recrutadores uma amostra real de
-   como ele pensa e resolve problemas.
-   Como se encaixa: o proprio projeto ja tem estrutura para renderizar conteudo
-   HTML nas descricoes dos projetos (v-html). Daria para usar @nuxt/content com
-   arquivos .md para gerenciar os posts, ou manter um array estatico como ja e
-   feito com o portfolio. Uma nova pagina /blog e links no footer resolvem.
+5. Secao "Como Funciona" (Processo de Trabalho)
+   O que e: Uma secao visual que mostra as etapas do processo de contratacao e
+   desenvolvimento desde o primeiro contato ate a entrega, com estimativas de prazo
+   para cada fase. Tipo: Descoberta (2-3 dias) -> Prototipagem (1 semana) ->
+   Desenvolvimento (2-6 semanas) -> testes -> deploy.
+   Por que agora: Um dos maiores travamentos na contratacao de freelancers e a
+   incerteza sobre prazos e processo. Uma secao que desmistifica "como e trabalhar
+   com o Carlos" reduz a objecao e acelera a decisao do lead.
+   Como se encaixa: O layout de servicos ja tem um componente HomeServicesDetails
+   criado mas vazio e comentado no template. Esse componente pode ser preenchido
+   com o fluxo de trabalho. Nao requer dados externos — e conteudo estatico que
+   se traduz via i18n como todo o resto do site.

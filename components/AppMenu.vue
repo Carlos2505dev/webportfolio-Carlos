@@ -7,8 +7,8 @@
         >
             <nuxt-link 
                 class="menu__list__item__link" 
-                :class="{ 'active' : sectionVisible == $t(item.route) }" 
-                :to="{ path: '/', hash: $t(item.route)}"
+                :class="{ 'active' : item.route.startsWith('/') ? $route.path == $t(item.route) : sectionVisible == $t(item.route) }" 
+                :to="item.route.startsWith('/') ? $t(item.route) : { path: '/', hash: $t(item.route)}"
             >
                 <NuxtImg 
                     v-if="item.isImage" 
@@ -75,6 +75,11 @@ const menuItems = reactive([
         icon: 'carlos-icon:services',
         title: 'menu.item4.title', 
         route: 'menu.item4.route'
+    },
+    {
+        icon: 'carlos-icon:about',
+        title: 'menu.item6.title', 
+        route: 'menu.item6.route'
     },
     {
         isImage: true,

@@ -4,7 +4,8 @@
         "item2": { "title": "Portfolio", "route": "#portfolio" },
         "item3": { "title": "About", "route": "#about" },
         "item4": { "title": "Services", "route": "#services" },
-        "item5": { "title": "Contact", "route": "#contact" }
+        "item5": { "title": "Contact", "route": "#contact" },
+        "item6": { "title": "FAQ", "route": "#faq" }
     },
     "hero": {
         "cta": "About me",
@@ -199,7 +200,57 @@
     },
     "portfolio_page": {
         "title": "Portfolio",
-        "subtitle": "My portfolio reflects my work as a <strong>Fullstack Developer & Designer</strong> with end-to-end digital solutions where design, code, and purpose come together."
+        "subtitle": "My portfolio reflects my work as a <strong>Fullstack Developer & Designer</strong> with end-to-end digital solutions where design, code, and purpose come together.",
+        "search_placeholder": "Search projects by name or client...",
+        "filter_all": "All",
+        "filter_mobile": "Mobile",
+        "filter_web": "Web",
+        "filter_ux_ui": "UX/UI",
+        "no_results": "No projects found matching your filters.",
+        "filter_toggle": "Toggle filters",
+        "filter_category_label": "Type",
+        "filter_tech_label": "Tools & Technologies",
+        "filter_done": "Done",
+        "filter_clear_all": "Clear all"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Frequently Asked Questions",
+        "text": "Common questions about career, services, technology, and budget. Click each question to see the answer.",
+        "categories": {
+            "career": "Career",
+            "services": "Services",
+            "tech": "Technology",
+            "budget": "Budget"
+        },
+        "items": {
+            "career_1_q": "What does a fullstack developer do?",
+            "career_1_a": "A fullstack developer designs and builds complete digital solutions, working on both the frontend (visual interface) and backend (logic, databases, and servers). Carlos Neto is a Fullstack Developer and Designer capable of creating mobile apps, institutional websites, landing pages, and web platforms from scratch to deploy: including design, Figma prototyping, responsive development, and API integration. This versatility reduces costs and deadlines since a single professional oversees the entire project from concept to delivery.",
+            "career_2_q": "What's the difference between a designer and a developer?",
+            "career_2_a": "A designer creates visual solutions for many formats: visual identity, social media creatives, menus, cards, banners, branding, and also website and app interfaces. A developer turns those creations into functional products through code. Carlos Neto masters both skills: he creates visual design of any kind in Figma, Canva, or Illustrator, and also develops the product using technologies like React, Vue.js, React Native, and Supabase. This integration eliminates communication friction and ensures the final result matches the original design.",
+            "career_3_q": "Is Carlos available for new projects?",
+            "career_3_a": "Yes, Carlos Neto is available for new freelance projects including web development, mobile apps, interface design, and digital consulting. His current availability status is displayed at the top of the site. To hire him, simply reach out via the contact form, WhatsApp, or email to discuss your idea and receive a custom proposal.",
+
+            "services_1_q": "What's the difference between a landing page and an institutional website?",
+            "services_1_a": "A landing page is a single, conversion-focused page: ideal for marketing campaigns, product launches, or lead capture. An institutional website is a set of pages (home, about, services, blog, contact) that presents a company completely and professionally. Carlos Neto develops both: landing pages starting at $300 USD and complex institutional websites starting at $700 USD, always with responsive design and basic SEO included.",
+            "services_2_q": "Is it worth creating a mobile app for my business?",
+            "services_2_a": "Yes, if your business needs continuous engagement, push notifications, offline functionality, or integration with device features (camera, GPS, payments), a mobile app is the best path. Carlos Neto develops apps for iOS and Android simultaneously using React Native and Expo, reducing cost and development time. Simple apps start around $2,000 USD, while complete solutions can reach $5,000+. He also builds MVPs to validate your idea before heavy investment.",
+            "services_3_q": "Does a professional website need SEO?",
+            "services_3_a": "Yes, SEO (Search Engine Optimization) is essential for any professional website that wants to be found on Google. Carlos Neto applies technical SEO to every project: semantic markup, optimized meta tags, fast loading, structured data (JSON-LD), and relevant content. An SEO-optimized website attracts organic visitors continuously, reducing dependence on paid ads and delivering long-term results for your business.",
+            "services_4_q": "How does the website creation process work?",
+            "services_4_a": "The process follows 5 stages: 1) Discovery: meeting to understand the business, target audience, and goals; 2) Prototyping: Figma design with client approval; 3) Development: responsive programming with modern technologies (Vue.js, Nuxt, or React); 4) SEO and testing: search engine optimization and multi-device validation; 5) Deploy and support: server publication and ongoing maintenance. Average timeline is 2 to 4 weeks for institutional websites.",
+            "tech_1_q": "What is a responsive website?",
+            "tech_1_a": "A responsive website automatically adapts to the screen size of any device: mobile, tablet, or desktop. With over 60% of internet traffic coming from mobile devices, having a responsive site isn't optional: Google prioritizes mobile-friendly sites in search results, and users abandon sites that don't work well on phones. Carlos Neto develops all projects with a mobile-first approach, ensuring a consistent experience on every screen.",
+            "tech_2_q": "React Native or Flutter: which is the best choice?",
+            "tech_2_a": "React Native and Flutter are the leading hybrid mobile development technologies. Carlos Neto prefers React Native with Expo for three reasons: mature and stable ecosystem, native integration with services like Supabase and RevenueCat, and the ability to share logic and components with web React projects. But he also works with Flutter if the client prefers, ensuring flexibility in choosing the ideal technology for each project.",
+
+            "tech_4_q": "How is artificial intelligence being used in development?",
+            "tech_4_a": "Artificial intelligence is being integrated into apps and websites in many ways: intelligent chatbots for customer support, virtual assistants with natural language processing, personalized recommendations, task automation, and predictive data analysis. Carlos Neto has developed AI solutions including spiritual assistants with Llama 3.1 and tourism chatbots, integrating APIs like Groq, OpenAI, and Claude into real products published on app stores.",
+            "budget_1_q": "How does project payment work?",
+            "budget_1_a": "Payment is split into two stages: 65% at project start and 35% upon final delivery. This division ensures security for both client and developer.",
+            "budget_2_q": "How long does it take to develop a website or app?",
+            "budget_2_a": "Simple landing pages and websites: 1 to 2 weeks. Complete institutional websites: 2 to 4 weeks. Mobile apps: 4 to 12 weeks, depending on complexity. The timeline is defined in the proposal's schedule, and the client receives weekly progress updates. Carlos Neto works with agile methodologies, allowing adjustments during the process without compromising the final deadline."
+        }
     },
     "clients": {
         "title": "Partners who trust me"
@@ -263,9 +314,15 @@
         "download_menu": "Download Full Menu",
         "view_app_store": "View on App Store",
         "view_play_store": "View on Play Store",
+        "available": "Available for new projects",
+        "available_short": "Available",
+        "project_singular": "project",
+        "project_plural": "projects",
         "photo_alt": "Photo of Carlos Neto",
-        "photo_alt_extended": "Photo of Carlos Neto — Fullstack Developer and Designer",
-        "client_logo_alt": "{name} — partner who trusts Carlos Neto's work",
+        "photo_alt_extended": "Photo of Carlos Neto: Fullstack Developer and Designer",
+        "client_logo_alt": "{name}: partner who trusts Carlos Neto's work",
+        "back_to_portfolio": "View All Projects",
+        "project_not_found": "Project not found",
         "aria": {
             "chat": "Chat",
             "close": "Close",
@@ -300,14 +357,14 @@
         "title": "AI Assistant",
         "status": "Online • Ask about me",
         "placeholder": "Type your question...",
-        "greeting": "Hello! I'm Carlos' virtual assistant. Ask about his career, skills, and projects — I'll answer based on what I know about him!",
+        "greeting": "Hello! I'm Carlos' virtual assistant. Ask about his career, skills, and projects: I'll answer based on what I know about him!",
         "errors": {
             "noKey": "The AI assistant has not been configured yet. The developer needs to set the API key in environment variables so I can answer.",
             "invalidKey": "The configured API key is invalid for this endpoint. Please verify the key and provider are correct.",
-            "timeout": "The AI took too long to respond. It might be a connection issue — please try again!",
+            "timeout": "The AI took too long to respond. It might be a connection issue: please try again!",
             "network": "Could not connect to the AI server. Check your internet connection and try again.",
             "cors": "The browser blocked the request to the AI server due to CORS policy. If running locally, you may need a proxy or CORS extension.",
-            "api": "The AI server returned an error. It might be a temporary issue — try again in a moment.",
+            "api": "The AI server returned an error. It might be a temporary issue: try again in a moment.",
             "empty": "The AI returned an empty response. Try asking in a different way!",
             "unknown": "An unexpected error occurred while querying the AI: {detail}. If the problem persists, let the developer know."
         },
@@ -323,8 +380,8 @@
     "seo": {
         "title": "Carlos Neto | Fullstack Mobile & Web Developer",
         "description": "Explore the portfolio of Carlos Neto, Fullstack Developer and UI/UX Designer. Specialist in end-to-end digital solutions, blending creative design and robust development to deliver websites and apps that turn ideas into real impact.",
-        "title_home": "Carlos Neto | Fullstack Mobile & Web Developer — Portfolio",
-        "title_portfolio": "Portfolio | Carlos Neto — Fullstack Developer & Designer",
+        "title_home": "Carlos Neto | Fullstack Mobile & Web Developer: Portfolio",
+        "title_portfolio": "Portfolio | Carlos Neto: Fullstack Developer & Designer",
         "description_home": "Explore the portfolio of Carlos Neto, Fullstack Developer and UI/UX Designer. Specialist in end-to-end digital solutions, blending creative design and robust development to deliver websites and apps that turn ideas into real impact.",
         "description_portfolio": "View Carlos Neto's projects: mobile apps, web platforms, landing pages, and complete systems. Fullstack Developer specialized in React Native, Vue.js, Nuxt, and Supabase.",
         "keywords": "carlos neto, fullstack developer, ui ux designer, dev portfolio, web development, website creation, app design, freelancer developer, ui ux portfolio, frontend development, backend development, vuejs developer, nuxt developer, react developer, mobile development, freelancer, system development, responsive design, figma prototyping, digital consulting, javascript developer, typescript developer, rest api, supabase developer, react native developer, digital creative, agile development, professional landing pages"
@@ -332,6 +389,6 @@
     "jsonLd": {
         "personDescription": "Fullstack Developer and UI/UX Designer specialized in end-to-end digital solutions.",
         "websiteName": "Carlos Neto | Fullstack Developer & Designer",
-        "websiteDescription": "Carlos Neto Portfolio — Fullstack Developer and UI/UX Designer."
+        "websiteDescription": "Carlos Neto Portfolio: Fullstack Developer and UI/UX Designer."
     }
 }

@@ -13,20 +13,33 @@
                 </p>
             </div>
 
-            <div ref="marqueeRef" class="testimonials__section__marquee"
-                @pointerenter="pause"
-                @pointerleave="resume">
+            <div ref="marqueeRef"
+                 class="testimonials__section__marquee"
+                 @pointerenter="pause"
+                 @pointerleave="resume"
+            >
                 <div class="testimonials__section__marquee__track">
-                    <div v-for="n in 3" :key="'l-' + n"
-                        class="testimonials__section__marquee__track__group"
-                        :class="{ 'is-paused': isPaused }">
-                        <article v-for="(item, i) in items" :key="'l-' + n + '-' + i"
-                            class="testimonials__card">
+                    <div v-for="n in 3"
+                         :key="'l-' + n"
+                         class="testimonials__section__marquee__track__group"
+                         :class="{ 'is-paused': isPaused }"
+                    >
+                        <article v-for="(item, i) in items"
+                                 :key="'l-' + n + '-' + i"
+                                 class="testimonials__card"
+                        >
                             <p class="testimonials__card__body">&ldquo;{{ $t(item.body) }}&rdquo;</p>
                             <div class="testimonials__card__author">
                                 <figure class="testimonials__card__author__avatar">
-                                    <NuxtImg :src="item.image" :alt="item.name" width="80" height="80"
-                                        format="webp" densities="x1 x2" quality="100" loading="lazy" />
+                                    <NuxtImg :src="item.image"
+                                             :alt="item.name"
+                                             width="80"
+                                             height="80"
+                                             format="webp"
+                                             densities="x1 x2"
+                                             quality="100"
+                                             loading="lazy"
+                                    />
                                 </figure>
                                 <div class="testimonials__card__author__info">
                                     <strong class="testimonials__card__author__info__name">{{ item.name }}</strong>
@@ -65,7 +78,7 @@ const items = [
     { name: 'GoRango', role: 'testimonials.items.2.role', image: '/images/clients/GoRango.png', body: 'testimonials.items.2.body' },
     { name: 'Dolce Amore', role: 'testimonials.items.3.role', image: '/images/clients/DolceAmore.png', body: 'testimonials.items.3.body' },
     { name: 'Enjoy Brasil', role: 'testimonials.items.4.role', image: '/images/clients/Enjoy Brasil.png', body: 'testimonials.items.4.body' },
-    { name: 'AME', role: 'testimonials.items.5.role', image: '/images/clients/AME.png', body: 'testimonials.items.5.body' },
+    { name: 'AME', role: 'testimonials.items.5.role', image: '/images/clients/AME.png', body: 'testimonials.items.5.body' }
 ]
 </script>
 

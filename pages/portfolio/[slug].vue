@@ -9,11 +9,11 @@
             </div>
         </section>
 
-        <section class="project-page__content section" v-if="project">
+        <section v-if="project" class="project-page__content section">
             <ProjectDetailContent :project="project" />
         </section>
 
-        <section class="project-page__not-found section" v-else>
+        <section v-else class="project-page__not-found section">
             <div class="container">
                 <h1>{{ $t('common.project_not_found') }}</h1>
                 <AppButton class="primary" hasLink="/portfolio">
@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, computed, useI18n, useHead, useSeoMeta } from '#imports'
+import { computed, useI18n, useHead, useSeoMeta } from '#imports'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -71,7 +71,7 @@ useSeoMeta({
     ogImage: pageImage,
     ogUrl: projectUrl,
     ogType: 'article',
-    twitterCard: 'summary_large_image',
+    twitterCard: 'summary_large_image'
 })
 </script>
 

@@ -18,8 +18,10 @@
                     <!-- <HomeServicesDetails /> -->
                 </div>
                 <ul ref="container" class="services__section__container__column__details">
-                    <li v-for="service in services.list" :key="service.id"
-                        class="services__section__container__column__details__item">
+                    <li v-for="service in services.list"
+                        :key="service.id"
+                        class="services__section__container__column__details__item"
+                    >
                         <article class="services__section__container__column__details__item__contain" to="/services">
                             <header class="services__section__container__column__details__item__contain__header">
                                 <figure>
@@ -35,8 +37,10 @@
                                     {{ $t(service.description) }}
                                 </p>
                                 <ul class="services__section__container__column__details__item__contain__content__tags">
-                                    <li v-for="tag in service.tags" :key="tag"
-                                        class="services__section__container__column__details__item__contain__content__tags__item">
+                                    <li v-for="tag in service.tags"
+                                        :key="tag"
+                                        class="services__section__container__column__details__item__contain__content__tags__item"
+                                    >
                                         {{ $t(tag) }}
                                     </li>
                                 </ul>
@@ -56,7 +60,7 @@
 <script setup>
 import { reactive} from '#imports'
 
-let services = reactive({
+const services = reactive({
     title: 'services.title',
     subTitle: 'services.subtitle',
     text: 'services.text',

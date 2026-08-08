@@ -32,7 +32,7 @@ useSeoMeta({
     title: () => t('seo.title_home'),
     description: () => t('seo.description_home'),
     ogTitle: () => t('seo.title_home'),
-    ogDescription: () => t('seo.description_home'),
+    ogDescription: () => t('seo.description_home')
 })
 
 import HomeTestimonials from '@/components/HomeTestimonials.vue'

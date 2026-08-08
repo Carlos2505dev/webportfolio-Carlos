@@ -1,100 +1,133 @@
 <template>
-  <div class="app-chatbot">
-    <button
-      class="app-chatbot__toggle"
-      :class="{ 
-        'app-chatbot__toggle--active': isOpen,
-        'app-chatbot__toggle--over-contact': isOverContact
-      }"
-      :aria-label="$t('common.aria.chat')"
-      @click="toggleChat"
-    >
-      <span v-if="!isOpen" class="app-chatbot__toggle__icon">
-        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 2C7.373 2 2 6.477 2 12c0 2.438.971 4.676 2.656 6.468L2.376 24.48a.5.5 0 00.64.64l6.012-2.28A11.412 11.412 0 0014 22c6.627 0 12-4.477 12-10S20.627 2 14 2z" fill="currentColor"/>
-        </svg>
-      </span>
-      <span v-else class="app-chatbot__toggle__close">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </button>
-
-    <div
-      class="app-chatbot__window"
-      :class="{ 'app-chatbot__window--open': isOpen }"
-    >
-      <div class="app-chatbot__window__header">
-        <div class="app-chatbot__window__header__info">
-          <div class="app-chatbot__window__header__avatar">
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-              <rect width="20" height="20" rx="6" fill="var(--primary)"/>
-              <path d="M10 5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM5 15c0-2.5 2.24-4.5 5-4.5s5 2 5 4.5" stroke="var(--bg_color)" stroke-width="1.2" fill="none"/>
-            </svg>
-          </div>
-          <div>
-            <p class="app-chatbot__window__header__name">{{ $t('chatbot.title') }}</p>
-            <p class="app-chatbot__window__header__status">{{ $t('chatbot.status') }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="app-chatbot__window__messages" ref="messagesRef">
-        <div
-          v-for="(msg, idx) in messages"
-          :key="idx"
-          class="app-chatbot__window__message"
-          :class="[
-            `app-chatbot__window__message--${msg.role}`,
-            { 'app-chatbot__window__message--error': msg.isError },
-          ]"
-        >
-          <div class="app-chatbot__window__message__bubble">
-            <p v-if="msg.isError" class="app-chatbot__window__message__error-icon">⚠️</p>
-            <p v-if="msg.title" class="app-chatbot__window__message__title">{{ msg.title }}</p>
-            <p v-html="msg.content" /><span v-if="isTyping && idx === messages.length - 1 && msg.content" class="app-chatbot__window__message__cursor"></span>
-          </div>
-        </div>
-
-        <div v-if="isTyping && !messages[messages.length - 1]?.content" class="app-chatbot__window__message app-chatbot__window__message--bot">
-          <div class="app-chatbot__window__message__bubble app-chatbot__window__message__bubble--typing">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div class="app-chatbot__window__input">
-        <input
-          v-model="inputText"
-          type="text"
-          :placeholder="$t('chatbot.placeholder')"
-          @keydown.enter.prevent="sendMessage"
-        />
+    <div class="app-chatbot">
         <button
-          class="app-chatbot__window__input__send"
-          :disabled="!inputText.trim()"
-          @click="sendMessage"
+            class="app-chatbot__toggle"
+            :class="{ 
+                'app-chatbot__toggle--active': isOpen,
+                'app-chatbot__toggle--over-contact': isOverContact
+            }"
+            :aria-label="$t('common.aria.chat')"
+            @click="toggleChat"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M18 2L9 11M18 2l-6 16-3-7-7-3 16-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+            <span v-if="!isOpen" class="app-chatbot__toggle__icon">
+                <svg width="20"
+                     height="20"
+                     viewBox="0 0 28 28"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M14 2C7.373 2 2 6.477 2 12c0 2.438.971 4.676 2.656 6.468L2.376 24.48a.5.5 0 00.64.64l6.012-2.28A11.412 11.412 0 0014 22c6.627 0 12-4.477 12-10S20.627 2 14 2z" fill="currentColor"/>
+                </svg>
+            </span>
+            <span v-else class="app-chatbot__toggle__close">
+                <svg width="16"
+                     height="16"
+                     viewBox="0 0 20 20"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M15 5L5 15M5 5l10 10"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                    />
+                </svg>
+            </span>
         </button>
-      </div>
+
+        <div
+            class="app-chatbot__window"
+            :class="{ 'app-chatbot__window--open': isOpen }"
+        >
+            <div class="app-chatbot__window__header">
+                <div class="app-chatbot__window__header__info">
+                    <div class="app-chatbot__window__header__avatar">
+                        <svg width="16"
+                             height="16"
+                             viewBox="0 0 20 20"
+                             fill="none"
+                        >
+                            <rect width="20"
+                                  height="20"
+                                  rx="6"
+                                  fill="var(--primary)"
+                            />
+                            <path d="M10 5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM5 15c0-2.5 2.24-4.5 5-4.5s5 2 5 4.5"
+                                  stroke="var(--bg_color)"
+                                  stroke-width="1.2"
+                                  fill="none"
+                            />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="app-chatbot__window__header__name">{{ $t('chatbot.title') }}</p>
+                        <p class="app-chatbot__window__header__status">{{ $t('chatbot.status') }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div ref="messagesRef" class="app-chatbot__window__messages">
+                <div
+                    v-for="(msg, idx) in messages"
+                    :key="idx"
+                    class="app-chatbot__window__message"
+                    :class="[
+                        `app-chatbot__window__message--${msg.role}`,
+                        { 'app-chatbot__window__message--error': msg.isError },
+                    ]"
+                >
+                    <div class="app-chatbot__window__message__bubble">
+                        <p v-if="msg.isError" class="app-chatbot__window__message__error-icon">⚠️</p>
+                        <p v-if="msg.title" class="app-chatbot__window__message__title">{{ msg.title }}</p>
+                        <p v-text="msg.content" /><span v-if="isTyping && idx === messages.length - 1 && msg.content" class="app-chatbot__window__message__cursor"/>
+                    </div>
+                </div>
+
+                <div v-if="isTyping && !messages[messages.length - 1]?.content" class="app-chatbot__window__message app-chatbot__window__message--bot">
+                    <div class="app-chatbot__window__message__bubble app-chatbot__window__message__bubble--typing">
+                        <span class="dot"/>
+                        <span class="dot"/>
+                        <span class="dot"/>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="app-chatbot__window__input">
+                <input
+                    v-model="inputText"
+                    type="text"
+                    :placeholder="$t('chatbot.placeholder')"
+                    @keydown.enter.prevent="sendMessage"
+                />
+                <button
+                    class="app-chatbot__window__input__send"
+                    :disabled="!inputText.trim()"
+                    @click="sendMessage"
+                >
+                    <svg width="20"
+                         height="20"
+                         viewBox="0 0 20 20"
+                         fill="none"
+                    >
+                        <path d="M18 2L9 11M18 2l-6 16-3-7-7-3 16-6z"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup>
 import { ref, watch, nextTick } from '#imports'
 import { chatbotService } from '@/services/chatbot'
 const { locale, t } = useI18n()
-
-const LOG = '[Chatbot]'
 
 const isOpen = ref(false)
 const isTyping = ref(false)
@@ -121,63 +154,58 @@ onUnmounted(() => {
 })
 
 const scrollToBottom = async () => {
-  await nextTick()
-  if (messagesRef.value) {
-    messagesRef.value.scrollTop = messagesRef.value.scrollHeight
-  }
+    await nextTick()
+    if (messagesRef.value) {
+        messagesRef.value.scrollTop = messagesRef.value.scrollHeight
+    }
 }
 
 const toggleChat = () => {
-  isOpen.value = !isOpen.value
-  if (isOpen.value && messages.value.length === 0) {
-    startChat()
-  }
+    isOpen.value = !isOpen.value
+    if (isOpen.value && messages.value.length === 0) {
+        startChat()
+    }
 }
 
 const startChat = () => {
-  console.log(`${LOG} session started (${locale.value})`)
-  messages.value.push({
-    role: 'bot',
-    content: t('chatbot.greeting'),
-  })
-  scrollToBottom()
+    messages.value.push({
+        role: 'bot',
+        content: t('chatbot.greeting')
+    })
+    scrollToBottom()
 }
 
 const sendMessage = async () => {
-  const text = inputText.value.trim()
-  if (!text) return
+    const text = inputText.value.trim()
+    if (!text) return
 
-  console.log(`${LOG} user:`, text)
-  messages.value.push({ role: 'user', content: text })
-  inputText.value = ''
+    messages.value.push({ role: 'user', content: text })
+    inputText.value = ''
 
-  const botIdx = messages.value.length
-  messages.value.push({ role: 'bot', content: '' })
-  isTyping.value = true
-  scrollToBottom()
-
-  const answer = await chatbotService.getAnswer(text, t, (partial) => {
-    messages.value[botIdx].content = partial
+    const botIdx = messages.value.length
+    messages.value.push({ role: 'bot', content: '' })
+    isTyping.value = true
     scrollToBottom()
-  })
 
-  console.log(`${LOG} answer:`, answer.error ? 'error' : 'ok', answer.content.slice(0, 80))
+    const answer = await chatbotService.getAnswer(text, t, (partial) => {
+        messages.value[botIdx].content = partial
+        scrollToBottom()
+    })
 
-  if (answer.error) {
-    messages.value[botIdx].content = answer.content
-    messages.value[botIdx].isError = true
-  }
+    if (answer.error) {
+        messages.value[botIdx].content = answer.content
+        messages.value[botIdx].isError = true
+    }
 
-  isTyping.value = false
-  scrollToBottom()
+    isTyping.value = false
+    scrollToBottom()
 }
 
 watch(locale, () => {
-  if (isOpen.value) {
-    console.log(`${LOG} locale changed to ${locale.value}, restarting`)
-    messages.value = []
-    startChat()
-  }
+    if (isOpen.value) {
+        messages.value = []
+        startChat()
+    }
 })
 </script>
 
@@ -256,18 +284,6 @@ watch(locale, () => {
     right: 0;
     width: 340px;
     height: 480px;
-
-    @media(max-width: $br_mobile) {
-      width: calc(100vw - 32px);
-      height: 60vh;
-      max-height: 480px;
-      right: -8px;
-    }
-
-    @media(max-width: $br_smaller) {
-      width: calc(100vw - 24px);
-      right: -6px;
-    }
     background: var(--bg_color);
     border: 1px solid var(--text_color_transparent);
     border-radius: 16px;
@@ -490,6 +506,18 @@ watch(locale, () => {
           cursor: not-allowed;
         }
       }
+    }
+
+    @media(max-width: $br_mobile) {
+      width: calc(100vw - 32px);
+      height: 60vh;
+      max-height: 480px;
+      right: -8px;
+    }
+
+    @media(max-width: $br_smaller) {
+      width: calc(100vw - 24px);
+      right: -6px;
     }
   }
 }

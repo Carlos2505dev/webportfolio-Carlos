@@ -7,61 +7,105 @@
                     {{ $t(project.client) }}
                 </h3>
                 <ul class="project-detail__description__header__tags">
-                    <li v-for="tag in project.tags" :key="tag"
-                        class="project-detail__description__header__tags__item">
+                    <li v-for="tag in project.tags"
+                        :key="tag"
+                        class="project-detail__description__header__tags__item"
+                    >
                         {{ $t(tag) }}
                     </li>
                 </ul>
             </header>
             <div class="project-detail__description__content" v-html="$t(project.description)" />
             <div v-if="hasActions" class="project-detail__description__actions">
-                <div v-if="project.multi_github" ref="githubDropdownRef" class="dropdown-wrapper">
-                    <AppButton class="outline" @click.prevent="toggleGithubDropdown" style="text-transform: uppercase">
+                <div v-if="project.multi_github"
+                     ref="githubDropdownRef"
+                     class="dropdown-wrapper"
+                >
+                    <AppButton class="outline uppercase"
+                               @click.prevent="toggleGithubDropdown"
+                    >
                         <AppIcon IconName="ph:github-logo-bold" />
                         {{ $t('common.view_github') }}
                     </AppButton>
                     <Transition name="dropdown-fade">
                         <div v-if="showGithubDropdown" class="dropdown-menu">
-                            <a v-for="link in project.multi_github" :key="link.label" :href="link.url" target="_blank" rel="noopener noreferrer" @click="showGithubDropdown = false">
+                            <a v-for="link in project.multi_github"
+                               :key="link.label"
+                               :href="link.url"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               @click="showGithubDropdown = false"
+                            >
                                 <AppIcon :IconName="link.icon" />
                                 {{ $t(link.label) }}
                             </a>
                         </div>
                     </Transition>
                 </div>
-                <AppButton v-else-if="project.github_url" class="outline" :hasLink="project.github_url" target="_blank" style="text-transform: uppercase">
+                <AppButton v-else-if="project.github_url"
+                           class="outline uppercase"
+                           :hasLink="project.github_url"
+                           target="_blank"
+                >
                     <AppIcon IconName="ph:github-logo-bold" />
                     {{ $t('common.view_github') }}
                 </AppButton>
-                <div v-if="project.multi_live" ref="liveDropdownRef" class="dropdown-wrapper">
-                    <AppButton class="primary" @click.prevent="toggleLiveDropdown" style="text-transform: uppercase">
+                <div v-if="project.multi_live"
+                     ref="liveDropdownRef"
+                     class="dropdown-wrapper"
+                >
+                    <AppButton class="primary uppercase"
+                               @click.prevent="toggleLiveDropdown"
+                    >
                         <AppIcon IconName="ph:globe-bold" />
                         {{ $t('common.view_live') }}
                     </AppButton>
                     <Transition name="dropdown-fade">
                         <div v-if="showLiveDropdown" class="dropdown-menu">
-                            <a v-for="link in project.multi_live" :key="link.label" :href="link.url" target="_blank" rel="noopener noreferrer" @click="showLiveDropdown = false">
+                            <a v-for="link in project.multi_live"
+                               :key="link.label"
+                               :href="link.url"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               @click="showLiveDropdown = false"
+                            >
                                 <AppIcon :IconName="link.icon" />
                                 {{ $t(link.label) }}
                             </a>
                         </div>
                     </Transition>
                 </div>
-                <AppButton v-else-if="project.live_url" class="primary" :hasLink="project.live_url || '#'" target="_blank" style="text-transform: uppercase">
+                <AppButton v-else-if="project.live_url"
+                           class="primary uppercase"
+                           :hasLink="project.live_url || '#'"
+                           target="_blank"
+                >
                     <AppIcon IconName="ph:globe-bold" />
                     {{ $t('common.view_live') }}
                 </AppButton>
                 <div v-if="project.app_store_url || project.play_store_url" class="store-buttons">
-                    <AppButton v-if="project.app_store_url" class="outline" :hasLink="project.app_store_url" target="_blank" style="text-transform: uppercase">
+                    <AppButton v-if="project.app_store_url"
+                               class="outline uppercase"
+                               :hasLink="project.app_store_url"
+                               target="_blank"
+                    >
                         <AppIcon IconName="carlos-icon:app-store-white" />
                         {{ $t('common.view_app_store') }}
                     </AppButton>
-                    <AppButton v-if="project.play_store_url" class="outline" :hasLink="project.play_store_url" target="_blank" style="text-transform: uppercase">
+                    <AppButton v-if="project.play_store_url"
+                               class="outline uppercase"
+                               :hasLink="project.play_store_url"
+                               target="_blank"
+                    >
                         <AppIcon IconName="carlos-icon:google-play" />
                         {{ $t('common.view_play_store') }}
                     </AppButton>
                 </div>
-                <AppButton v-if="project.download_url" class="primary" :hasLink="project.download_url" :download="project.download_url.split('/').pop()" style="text-transform: uppercase">
+                <AppButton v-if="project.download_url"
+                           class="primary uppercase"
+                           :hasLink="project.download_url"
+                           :download="project.download_url.split('/').pop()"
+                >
                     <AppIcon IconName="ph:download-bold" />
                     {{ $t('common.download_menu') }}
                 </AppButton>
@@ -74,13 +118,24 @@
             </footer>
         </div>
         <ul class="project-detail__gallery">
-            <li v-for="item in project.gallery" :key="item.image"
-                class="project-detail__gallery__item">
+            <li v-for="item in project.gallery"
+                :key="item.image"
+                class="project-detail__gallery__item"
+            >
                 <figure>
-                    <NuxtImg :alt="$t(item.title)" :src="item.image" sizes="100vw sm:600px md:600px lg:1280px"
-                        quality="100" densities="x1 x2" :custom="true" loading="lazy"
-                        v-slot="{ src, isLoaded, imgAttrs }">
-                        <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
+                    <NuxtImg #default="{ src, isLoaded, imgAttrs }"
+                             :alt="item.title ? $t(item.title) : ''"
+                             :src="item.image"
+                             sizes="100vw sm:600px md:600px lg:1280px"
+                             quality="100"
+                             densities="x1 x2"
+                             :custom="true"
+                             loading="lazy"
+                    >
+                        <img v-if="isLoaded"
+                             v-bind="imgAttrs"
+                             :src="src"
+                        />
                         <img 
                             v-else 
                             src="~/assets/carlos-icons/logo-symbol-outline.png" 
@@ -88,7 +143,7 @@
                             :alt="$t('common.loading')"
                         />
                     </NuxtImg>
-                    <figcaption>
+                    <figcaption v-if="item.title">
                         {{ $t(item.title) }}
                     </figcaption>
                 </figure>
@@ -143,6 +198,10 @@ const hasActions = computed(() => {
     grid-template-columns: 440px 1fr;
     @media(max-width: $br_mobile) {
         grid-template-columns: 1fr;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
     }
     &__description{
         display: flex;

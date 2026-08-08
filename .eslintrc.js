@@ -9,14 +9,36 @@ module.exports = {
         'eslint:recommended',
         'plugin:vue/vue3-essential'
     ],
+    'globals': {
+        'useI18n': 'readonly',
+        'useColorMode': 'readonly',
+        'useRoute': 'readonly',
+        'useRouter': 'readonly',
+        'navigateTo': 'readonly',
+        'useFetch': 'readonly',
+        'useSeoMeta': 'readonly',
+        'useHead': 'readonly',
+        'definePageMeta': 'readonly',
+        'onMounted': 'readonly',
+        'onUnmounted': 'readonly'
+    },
     'overrides': [
         {
-            files: ['layouts/*.vue', 'pages/**/*.vue'],
+            files: ['layouts/*.vue', 'pages/**/*.vue', 'error.vue'],
             rules: { 'vue/multi-word-component-names': 'off' }
         },
         {
             files: ['stores/*.js', 'server/api/*.js'],
             rules: {'no-undef': 'off'}
+        },
+        {
+            files: ['*.vue'],
+            parser: 'vue-eslint-parser',
+            parserOptions: {
+                parser: '@typescript-eslint/parser',
+                ecmaVersion: 'latest',
+                sourceType: 'module'
+            }
         }
     ],
     'parserOptions': {

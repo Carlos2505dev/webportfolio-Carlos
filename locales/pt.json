@@ -1,11 +1,29 @@
 {
     "menu": {
-        "item1": { "title": "Início", "route": "#home" },
-        "item2": { "title": "Portfólio", "route": "#portfolio" },
-        "item3": { "title": "Sobre", "route": "#about" },
-        "item4": { "title": "Serviços", "route": "#services" },
-        "item5": { "title": "Contato", "route": "#contact" },
-        "item6": { "title": "FAQ", "route": "#faq" }
+        "item1": {
+            "title": "Início",
+            "route": "#home"
+        },
+        "item2": {
+            "title": "Portfólio",
+            "route": "#portfolio"
+        },
+        "item3": {
+            "title": "Sobre",
+            "route": "#about"
+        },
+        "item4": {
+            "title": "Serviços",
+            "route": "#services"
+        },
+        "item5": {
+            "title": "Contato",
+            "route": "#contact"
+        },
+        "item6": {
+            "title": "FAQ",
+            "route": "#faq"
+        }
     },
     "hero": {
         "cta": "Sobre",
@@ -22,7 +40,7 @@
     },
     "about": {
         "title": "Sobre",
-        "subtitle": "Design, Criatividade e Código.",
+        "subtitle": "Design, Criatividade e Código",
         "tools": "Proficiência nas seguintes ferramentas e linguagens...",
         "cta_1": "Contato",
         "cta_2": "LINKEDIN",
@@ -52,6 +70,7 @@
             "menu_design": "Design de Cardápio",
             "branding": "Branding",
             "food_and_beverage": "Alimentos e Bebidas",
+            "cakes_and_sweets": "Bolos e Doces",
             "mvp": "MVP",
             "admin_panel": "Painel Administrativo",
             "dashboard": "Dashboard",
@@ -64,25 +83,10 @@
                 "client": "Meu Maná | InoveTech",
                 "description": "<p>Meu Maná é o aplicativo mobile que vai além da leitura da Bíblia para nutrir uma jornada de fé completa com disciplinas espirituais interativas e transformadoras.</p><h3>Visão Geral</h3><p>Os aplicativos cristãos limitam-se à Bíblia como única funcionalidade. O Meu Maná inova com um ecossistema que guia o cristão em crescimento espiritual por meio de oração, jejum, testemunhos e reflexões, de forma leve e interativa.</p><h3>Principais Funcionalidades</h3><p><strong>Biblioteca Bíblica Offline:</strong> Nove traduções completas em JSON para leitura, navegação, favoritos e compartilhamento como imagem offline, com alternância instantânea entre versões.</p><p><strong>Assistente Espiritual com IA:</strong> O Sabedoria usa Groq Llama 3.1 8B com streaming e cache. Treinada para orientar disciplinas espirituais, reconhece o usuário, sugere módulos e responde conforme base de conhecimento específica.</p><p><strong>Ecossistema de Disciplinas:</strong> Jejuns com temporizador, alarmes de oração em background, intercessões e testemunhos com referência. Sincronizado via Supabase com fila offline.</p><h3>Vantagens</h3><p><strong>Arquitetura Offline First:</strong> Operações enfileiradas localmente e sincronizadas ao Supabase quando online, essencial para conectividade intermitente.</p><p><strong>IA Contextualizada:</strong> O Sabedoria conhece o usuário e o app, seguindo a teologia do ministério. Streaming e chaves redundantes garantem fluidez em conexões lentas.</p><p><strong>Monetização Híbrida e Design Premium:</strong> RevenueCat gerencia assinaturas em dois níveis, Start.io exibe anúncios. Glassmorphism, gradientes, fontes customizadas e modo escuro entregam experiência premium.</p><p>O Meu Maná inspira cristãos a organizar as disciplinas espirituais e ter uma jornada guiada com propósito.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
                 "gallery": {
-                    "0": "Tela de abertura",
-                    "1": "Etapa de integração 1",
-                    "2": "Etapa de integração 2",
-                    "3": "Etapa de integração 3",
-                    "4": "Etapa de integração 4",
-                    "5": "Primeiro acesso",
-                    "6": "Galeria PECS (Palavras)",
-                    "7": "Adicionar nova PEC (Palavra)",
-                    "8": "Galeria de Frases",
-                    "9": "Adicionar nova frase",
-                    "10": "Aprender",
-                    "11": "Jogo educativo",
-                    "12": "Rotina",
-                    "13": "Adicionar nova rotina",
-                    "14": "Configurações",
-                    "15": "Perfil",
-                    "16": "Modal de bloqueio",
-                    "17": "Diretrizes de marca",
-                    "18": "Sistema de Design"
+                    "0": "Bíblia",
+                    "1": "Dashboard",
+                    "2": "Jejuns",
+                    "3": "Menu"
                 }
             },
             "2": {
@@ -90,10 +94,10 @@
                 "client": "Unijorge (projeto acadêmico)",
                 "description": "<p>Vector Learn é uma plataforma educacional interativa open-source que ensina matemática vetorial com simulações 3D, gamificação e conteúdo gratuito para estudantes de exatas.</p><h3>Visão Geral</h3><p>O ensino de vetores foi dominado por fórmulas abstratas, deixando estudantes de engenharias, computação, física e matemática sem intuição geométrica. Vector Learn preenche essa lacuna transformando abstrações em experiências interativas e tangíveis.</p><h3>Principais Funcionalidades</h3><p><strong>Simuladores 2D e 3D:</strong> canvas 2D com sliders em tempo real e cena Three.js com orbit controls permitem manipular vetores e visualizar operações instantaneamente, desenvolvendo intuição geométrica concreta.</p><p><strong>Sistema de Gamificação:</strong> motor de progressão com XP, níveis, streaks, badges e certificados PDF com QR code. Progresso persiste no navegador sem cadastro.</p><p><strong>Questionário ENEM:</strong> mais de 60 questões reais de vestibulares com modo prova cronometrado, gráficos radar de desempenho e relatórios PDF exportáveis.</p><h3>Vantagens</h3><p><strong>Facilidade de Aprendizado:</strong> a abordagem visual e interativa reduz o atrito entre teoria e compreensão, permitindo que alunos assimilem conceitos complexos em minutos. <strong>Mais de 20 estudantes</strong> já foram beneficiados e usam a plataforma diariamente no estudo de vetores.</p><p><strong>Experiência Mobile Premium:</strong> layout responsivo com gestos de swipe, bottom sheets com vaul, feedback háptico e modo zen para estudo sem distrações, tudo otimizado para celulares, onde a maioria dos estudantes acessa.</p><p><strong>Curso Gratuito:</strong> do vetor no plano às integrais de linha, com aplicações em machine learning, computação gráfica e física, 100% gratuito.</p><p>Vector Learn muda a forma como você enxerga vetores: de fórmulas no papel para ferramentas que você pode ver, manipular e aplicar. A plataforma está em constantes melhorias com contribuições inovadoras da comunidade.</p>",
                 "gallery": {
-                    "0": "Tela de login",
-                    "1": "Painel",
-                    "2": "Histórico",
-                    "3": "Relatórios"
+                    "0": "Tela Principal",
+                    "1": "Simulador",
+                    "2": "Aplicações",
+                    "3": "Operações"
                 }
             },
             "3": {
@@ -102,10 +106,9 @@
                 "description": "<p>Enjoy Brasil transforma como turistas descobrem, planejam e vivem experiências pelo Brasil com inteligência artificial.</p><h3>Visão Geral</h3><p>Planejar uma viagem pelo Brasil exige dezenas de fontes: guias desatualizados, reviews soltos e buscadores genéricos. Enjoy Brasil elimina esse ruído com um ecossistema que planeja roteiros, recomenda lugares e conecta viajantes de forma inteligente.</p><h3>Principais Funcionalidades</h3><p><strong>Assistente IA Zé Turi:</strong> Chatbot que cria roteiros personalizados por destino, dias e orçamento. Um planejador de viagens completo no app.</p><p><strong>Feed Conexão Viajante:</strong> Feed social com abas curadas que agrega postagens multimídia, roteiros e avaliações. Curtidas, comentários e compartilhamentos criam uma comunidade ativa em torno do turismo.</p><p><strong>Gamificação:</strong> 15 níveis com badges de raridade, missões e placar de liderança. Cada interação rende pontos e conquistas, transformando exploração em experiência envolvente.</p><h3>Vantagens</h3><p><strong>Experiência Nativa:</strong> Animações na thread nativa com Reanimated e renderização com Skia. Cada transição responde com fluidez de app nativo.</p><p><strong>Notificações Contextuais:</strong> Motor próprio para boas-vindas, lembretes, interações sociais e verificação de perfil. Cada notificação chega no momento certo.</p><p><strong>Multilíngue Nativo:</strong> Português, inglês e espanhol com detecção automática e fallback para PT-BR. Cada tela é traduzida sem configuração manual.</p><p>Seu próximo guia de viagem não é um app de mapa. É o Enjoy Brasil.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
                 "gallery": {
                     "0": "Página inicial",
-                    "1": "Página inicial logada",
-                    "2": "Opções de perfil",
-                    "3": "Página de serviço - Consulta rápida",
-                    "4": "Página de serviço"
+                    "1": "Felicitômetro",
+                    "2": "Dica do dia",
+                    "3": "Planejamento de viagem"
                 }
             },
             "4": {
@@ -121,48 +124,18 @@
                 "name": "Cardápio Dolce Amore Confeitaria",
                 "client": "Dolce Amore",
                 "description": "<p>Esse projeto é um cardápio descritivo que traduz a arte da confeiteira Thais Nascimento em informações objetivas e afetivas, guiando clientes na escolha do doce perfeito para suas celebrações.</p><h3>Visão Geral</h3><p>A Dolce Amore tinha um cardápio pouco profissional que não convertia o interesse dos clientes em pedidos reais. Atuei junto com a marca para estruturar um novo cardápio totalmente reformulado, com preços claros, categorias organizadas e condições de compra que geram confiança e aceleram a decisão.</p><h3>Principais Funcionalidades</h3><p><strong>Orçamento Personalizado para Bolos Autorais:</strong> O cliente descreve sua visão do bolo pelos canais de atendimento, garantindo que o trabalho manual seja precificado com precisão.</p><p><strong>Catálogo de Preços por Tamanho e Rendimento:</strong> Diâmetros de 12cm a 22cm com rendimento exato em fatias e preços fixos para cálculo instantâneo de custo-benefício.</p><p><strong>Guia de Sabores e Decorações:</strong> Massas, recheios e itens decorativos organizados com acréscimos claros e preços a partir para montagem do bolo ideal dentro do orçamento.</p><h3>Vantagens</h3><p><strong>Transparência e Exatidão:</strong> Rendimento por fatia, prazos claros e condições de entrada eliminam surpresas, reduzindo cancelamentos e retrabalho.</p><p><strong>Arquitetura Centrada no Usuário:</strong> A confeiteira é apresentada antes dos produtos, humanizando a marca, enquanto uma checklist guia o cliente da dúvida à ação.</p><p><strong>Conversão por Design Sensorial:</strong> Texturas e afetos com nomes como \"Moranguinho\" transformam o cardápio em um vendedor silencioso que eleva a taxa de fechamento.</p><p>A Dolce Amore agora tem um cardápio que não apenas exibe produtos, ele converte olhares em compradores e dúvidas em pedidos.</p>",
-                "gallery": {
-                    "0": "Tela de abertura",
-                    "1": "Tela inicial",
-                    "2": "Tela inicial com scroll",
-                    "3": "Pergunta 1",
-                    "4": "Pergunta 2",
-                    "5": "Pergunta 3",
-                    "6": "Pergunta 4",
-                    "7": "Pergunta 5",
-                    "8": "Pergunta 6",
-                    "9": "Pergunta 7",
-                    "10": "Finalizando Quiz",
-                    "11": "Resultado - Você é Rico",
-                    "12": "Resultado - Você Não é Rico",
-                    "13": "Informações sobre o desenvolvedor"
-                }
+                "gallery": {}
             },
             "6": {
                 "name": "Sistema Administrativo do GoRango",
                 "client": "InoveTech",
                 "description": "<p>GoRango Admin é o MVP de um painel administrativo do GoRango, sistema de delivery multi-categoria que unifica parceiros, entregadores, pedidos e finanças no Brasil.</p><h3>Visão Geral</h3><p>Comerciantes brasileiros carecem de uma plataforma integrada para gerir entregas. Este MVP entrega o núcleo do GoRango para restaurantes, mercados e farmácias controlarem pedidos, acompanharem entregadores e visualizarem métricas, validando a proposta.</p><h3>Principais Funcionalidades</h3><p><strong>Gestão de Pedidos e Operação:</strong> Unifica o ciclo de vida com filtros, busca e exportação. Entregadores usam gamificação em níveis Bronze a Diamante, provando engajamento.</p><p><strong>Monitoramento e Analytics:</strong> Mapa com Leaflet exibe parceiros e entregadores. Gráficos de receita e volume se somam a métricas de conversão, retenção e NPS.</p><p><strong>Gestão Financeira e Marketing:</strong> Visibilidade sobre GMV, take rate e comissões com relatórios em PDF e CSV. Campanhas com ROI, cupons e o programa GoClub testam monetização e fidelização.</p><h3>Vantagens</h3><p><strong>Validação Rápida:</strong> As tecnologias modernas utilizadas entregam experiência profissional com tema customizável e desenvolvimento assistido por inteligência artificial que agilizou prototipagem e reduziu o tempo entre iterações, acelerando a validação com usuários.</p><p><strong>Arquitetura Preparada para Escala:</strong> O sistema carrega conteúdo sob demanda com rapidez. A comunicação com o servidor está pronta para uso real, trocando dados de teste por dados reais sem recomeçar.</p><p><strong>Conformidade Regulatória Embutida:</strong> LGPD no frontend com banner de cookies e páginas de privacidade eliminam risco regulatório desde a primeira entrega.</p><p>Num mercado onde cada minuto de atraso custa clientes, o GoRango Admin prova que é possível entregar valor real com um MVP sólido antes de escalar.</p><p class=\"proprietary-notice\"><em>O código-fonte é propriedade da InoveTech e não está disponível publicamente.</em></p>",
                 "gallery": {
-                    "0": "Tela de login",
-                    "1": "Painel",
-                    "2": "Lista de produtos",
-                    "3": "Detalhes do produto",
-                    "4": "Lista de concorrentes",
-                    "5": "Detalhes do concorrente",
-                    "6": "Biblioteca de mídia",
-                    "7": "Configurações",
-                    "8": "Blocos de layout",
-                    "9": "Modais de feedback",
-                    "10": "Componentes personalizados",
-                    "11": "Componentes de navegação",
-                    "12": "Componente de mídia",
-                    "13": "Paleta do sistema",
-                    "14": "Paleta de feedback",
-                    "15": "Paleta personalizada",
-                    "16": "Ícones",
-                    "17": "Estilos de campos de entrada",
-                    "18": "Estilos de botões",
-                    "19": "Estilos de alertas Toast"
+                    "0": "Visão Geral",
+                    "1": "Pedidos",
+                    "2": "Landing Page",
+                    "3": "Documentação",
+                    "4": "Autenticação"
                 }
             },
             "7": {
@@ -170,26 +143,10 @@
                 "client": "Igreja Verbo da Vida Cabula",
                 "description": "<p>Conferencia Rios do Espirito e o ecossistema digital de evento cristão que une landing page a portal exclusivo para participantes.</p><h3>Visão Geral</h3><p>Eventos religiosos perdem contato com o público depois de vender ingressos. Eu, como um voluntário do departamento de Mídia e Comunicação da Igreja Verbo da Vida Cabula, ajudei a evitar esse problema construindo dois produtos: uma landing page de vendas e um site restrito aos participantes.</p><h3>Principais Funcionalidades</h3><p><strong>Landing Page com Venda:</strong> Site com vídeo, contagem regressiva, carrossel 3D dos ministros, programação, mapa, FAQ e ingressos integrados ao Tiketo. Preparado para aparecer no Google e converter visitantes.</p><p><strong>Site Restrito para Participantes:</strong> Portal onde quem está na conferência acessa as fotos oficiais, as transmissões completas, as playlists e o grupo no WhatsApp durante todo o evento, desde o primeiro dia.</p><p><strong>Feedback e Testemunhos:</strong> Os participantes avaliam o que acharam de bom e o que pode melhorar na conferência, além de enviar depoimentos sobre a experiência durante a conferência.</p><h3>Vantagens</h3><p><strong>Jornada do Pré ao Pós:</strong> O ecossistema entrega uma experiência contínua: compra pela landing page e acesso ao portal restrito a partir do primeiro dia da conferência.</p><p><strong>Produto Completo e Profissional:</strong> Dois sites com identidade visual única, logo, paleta e tipografia exclusivos. A landing page vende o sonho do evento, e o portal entrega o conteúdo que só quem participou merece ter.</p><p><strong>Facilidade de Acesso:</strong> <strong>Mais de 300 pessoas</strong> usaram a aplicação da landing page ao site exclusivo. Não precisa instalar nada, não precisa criar conta, é só acessar o link e pronto. Tudo funciona direto do navegador, no celular ou no computador.</p><p>A Conferência Rios do Espírito nasce digital para viver além dos dias do evento.</p>",
                 "gallery": {
-                    "0": "Tela de login",
-                    "1": "Painel",
-                    "2": "Lista de produtos",
-                    "3": "Detalhes do produto",
-                    "4": "Lista de concorrentes",
-                    "5": "Detalhes do concorrente",
-                    "6": "Biblioteca de mídia",
-                    "7": "Configurações",
-                    "8": "Blocos de layout",
-                    "9": "Modais de feedback",
-                    "10": "Componentes personalizados",
-                    "11": "Componentes de navegação",
-                    "12": "Componente de mídia",
-                    "13": "Paleta do sistema",
-                    "14": "Paleta de feedback",
-                    "15": "Paleta personalizada",
-                    "16": "Ícones",
-                    "17": "Estilos de campos de entrada",
-                    "18": "Estilos de botões",
-                    "19": "Estilos de alertas Toast"
+                    "0": "Seção Herói - Landing Page",
+                    "1": "Seção Ministros - Landing Page",
+                    "2": "Seção Mídia - Participantes",
+                    "3": "Seção Hashtag - Participantes"
                 },
                 "link": {
                     "landing_page": "Landing Page",
@@ -230,7 +187,6 @@
             "career_2_a": "Um designer cria soluções visuais para diversos formatos: identidade visual, artes para redes sociais, cardápios, cartões, banners, branding e também interfaces de sites e aplicativos. Um desenvolvedor transforma essas criações em produtos funcionais por meio de código. Carlos Neto acumula ambas as competências: ele cria o design visual de qualquer natureza no Figma, Canva ou Illustrator, e também desenvolve o produto com tecnologias como React, Vue.js, React Native e Supabase. Essa integração elimina ruídos de comunicação e garante que o resultado final seja fiel ao que foi projetado.",
             "career_3_q": "O Carlos está disponível para novos projetos?",
             "career_3_a": "Sim, Carlos Neto está disponível para novos projetos freelance de desenvolvimento web, aplicativos mobile, design de interfaces e consultoria digital. O status atual de disponibilidade aparece no topo do site. Para contratar, basta entrar em contato pelo formulário, WhatsApp ou e-mail para discutir sua ideia e receber uma proposta personalizada.",
-
             "services_1_q": "Qual a diferença entre landing page e site institucional?",
             "services_1_a": "A landing page é uma página única e focada em conversão: ideal para campanhas de marketing, lançamento de produtos ou captura de leads. O site institucional é um conjunto de páginas (home, sobre, serviços, blog, contato) que apresenta a empresa de forma completa e profissional. Carlos Neto desenvolve ambos: landing pages a partir de R$ 300 e sites institucionais complexos a partir de R$ 700, sempre com design responsivo e SEO básico incluído.",
             "services_2_q": "Vale a pena criar um aplicativo mobile para meu negócio?",
@@ -243,7 +199,6 @@
             "tech_1_a": "Um site responsivo se adapta automaticamente ao tamanho da tela do dispositivo: celular, tablet ou desktop. Com mais de 60% do tráfego da internet vindo de dispositivos móveis, ter um site responsivo não é opcional: o Google prioriza sites mobile-friendly nos resultados de busca, e usuários abandonam sites que não funcionam bem no celular. Carlos Neto desenvolve todos os projetos com abordagem mobile-first, garantindo experiência consistente em qualquer tela.",
             "tech_2_q": "React Native ou Flutter: qual a melhor opção?",
             "tech_2_a": "React Native e Flutter são as principais tecnologias para desenvolvimento mobile híbrido. Carlos Neto prefere React Native com Expo por três razões: ecossistema maduro e estável, integração nativa com serviços como Supabase e RevenueCat, e a possibilidade de compartilhar lógica e componentes com projetos web em React. Mas ele também desenvolve com Flutter se o cliente desejar, garantindo flexibilidade na escolha da tecnologia ideal para cada projeto.",
-
             "tech_4_q": "Como a inteligência artificial está sendo usada no desenvolvimento?",
             "tech_4_a": "A inteligência artificial vem sendo integrada em apps e sites de diversas formas: chatbots inteligentes para atendimento ao cliente, assistentes virtuais com processamento de linguagem natural, recomendações personalizadas, automação de tarefas e análise de dados preditiva. Carlos Neto já desenvolveu soluções com IA como assistentes espirituais com Llama 3.1 e chatbots turísticos, integrando APIs como Groq, OpenAI e Claude em produtos reais publicados nas lojas de aplicativos.",
             "budget_1_q": "Como funciona o pagamento de um projeto?",
@@ -345,12 +300,30 @@
         "title": "O que os clientes dizem",
         "subtitle": "Empresas que confiaram no meu trabalho e tiveram resultados reais com soluções digitais de alto impacto.",
         "items": [
-            { "role": "Diretor, InoveTech", "body": "Site institucional que realmente vende. Design impecável, entregue no prazo e superou todas as nossas expectativas como parceiros." },
-            { "role": "Fundador, Meu Maná", "body": "App espiritual com inteligência artificial e modo offline. Carlos transformou nossa visão em realidade com muita maestria e dedicação." },
-            { "role": "CEO, GoRango", "body": "Painel administrativo completo e robusto entregue em tempo recorde. Código limpo, escalável e muito bem documentado. Profissional exemplar." },
-            { "role": "Proprietária, Dolce Amore", "body": "Cardápio digital que encanta e fideliza clientes. Profissionalismo e sensibilidade de design impressionantes. Resultado imediato nas vendas." },
-            { "role": "CEO, Enjoy Brasil", "body": "App nativo, fluido e extremamente intuitivo. Carlos entregou exatamente o que prometeu e entregou ainda melhor do que imaginávamos." },
-            { "role": "Coordenador, AME", "body": "Plataforma para mais de 300 pessoas funcionando perfeitamente desde o primeiro dia. Qualidade e compromisso que fazem a diferença." }
+            {
+                "role": "Diretor, InoveTech",
+                "body": "Site institucional que realmente vende. Design impecável, entregue no prazo e superou todas as nossas expectativas como parceiros."
+            },
+            {
+                "role": "Fundador, Meu Maná",
+                "body": "App espiritual com inteligência artificial e modo offline. Carlos transformou nossa visão em realidade com muita maestria e dedicação."
+            },
+            {
+                "role": "CEO, GoRango",
+                "body": "Painel administrativo completo e robusto entregue em tempo recorde. Código limpo, escalável e muito bem documentado. Profissional exemplar."
+            },
+            {
+                "role": "Proprietária, Dolce Amore",
+                "body": "Cardápio digital que encanta e fideliza clientes. Profissionalismo e sensibilidade de design impressionantes. Resultado imediato nas vendas."
+            },
+            {
+                "role": "CEO, Enjoy Brasil",
+                "body": "App nativo, fluido e extremamente intuitivo. Carlos entregou exatamente o que prometeu e entregou ainda melhor do que imaginávamos."
+            },
+            {
+                "role": "Coordenador, AME",
+                "body": "Plataforma para mais de 300 pessoas funcionando perfeitamente desde o primeiro dia. Qualidade e compromisso que fazem a diferença."
+            }
         ]
     },
     "chatbot": {
@@ -367,7 +340,7 @@
             "api": "O servidor da IA retornou um erro. Pode ser um problema temporário: tente novamente em alguns instantes.",
             "empty": "A IA retornou uma resposta vazia. Tente perguntar de outra forma!",
             "unknown": "Ocorreu um erro inesperado ao consultar a IA: {detail}. Se o problema persistir, avise o desenvolvedor."
-        },
+        }
     },
     "error": {
         "title_404": "Erro 404",

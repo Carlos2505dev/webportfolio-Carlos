@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { toRefs, watch } from '#imports'
+import { toRefs, watch, onUnmounted } from '#imports'
 const props = defineProps({
     openedModal: {
         type: Boolean,
@@ -39,7 +39,15 @@ const closeModal = () => {
 }
 
 watch(openedModal, () => {
-    document.querySelector('body').style.overflow = openedModal.value ? 'hidden' : 'unset'
+    if (typeof document !== 'undefined') {
+        document.body.style.overflow = openedModal.value ? 'hidden' : ''
+    }
+})
+
+onUnmounted(() => {
+    if (typeof document !== 'undefined') {
+        document.body.style.overflow = ''
+    }
 })
 
 </script>

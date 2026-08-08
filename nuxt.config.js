@@ -1,7 +1,10 @@
 import { defineNuxtConfig } from 'nuxt/config'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'url'
+import { randomBytes } from 'node:crypto'
 import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
+
+const gtmNonce = randomBytes(16).toString('hex')
 
 export default defineNuxtConfig({
     app: {
@@ -37,7 +40,7 @@ export default defineNuxtConfig({
         // },
         defer: false, // Script can be set to `defer` to speed up page load at the cost of less accurate results (in case visitor leaves before script is loaded, which is unlikely but possible). Defaults to false, so the script is loaded `async` by default
         compatibility: false, // Will add `async` and `defer` to the script tag to not block requests for old browsers that do not support `async`
-        nonce: '2726c7f26c', // Will add `nonce` to the script tag
+        nonce: gtmNonce, // Will add `nonce` to the script tag
         enabled: true, // defaults to true. Plugin can be disabled by setting this to false for Ex: enabled: !!GDPR_Cookie (optional)
         debug: false, // Whether or not display console logs debugs (optional)
         loadScript: true, // Whether or not to load the GTM Script (Helpful if you are including GTM manually, but need the dataLayer functionality in your components) (optional)
@@ -79,7 +82,10 @@ export default defineNuxtConfig({
     ],
 
     i18n: {
-        vueI18n: './i18n.config.ts',
+        vueI18n: '~/i18n.config.ts',
+        bundle: {
+            optimizeTranslationDirective: false
+        },
         strategy: 'prefix_except_default',
         defaultLocale: 'pt',
         detectBrowserLanguage: {

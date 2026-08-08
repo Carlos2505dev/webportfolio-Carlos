@@ -32,7 +32,7 @@ const faqCategories = computed(() => [
         label: 'faq.categories.career',
         items: [
             { icon: 'material-symbols:code', q: 'faq.items.career_1_q', a: 'faq.items.career_1_a' },
-            { icon: 'material-symbols:palette', q: 'faq.items.career_2_q', a: 'faq.items.career_2_a' },
+            { icon: 'material-symbols:palette', q: 'faq.items.career_2_q', a: 'faq.items.career_2_a' }
         ]
     },
     {
@@ -40,7 +40,7 @@ const faqCategories = computed(() => [
         label: 'faq.categories.services',
         items: [
             { icon: 'material-symbols:web', q: 'faq.items.services_1_q', a: 'faq.items.services_1_a' },
-            { icon: 'material-symbols:smartphone', q: 'faq.items.services_2_q', a: 'faq.items.services_2_a' },
+            { icon: 'material-symbols:smartphone', q: 'faq.items.services_2_q', a: 'faq.items.services_2_a' }
         ]
     },
     {
@@ -48,7 +48,7 @@ const faqCategories = computed(() => [
         label: 'faq.categories.tech',
         items: [
             { icon: 'material-symbols:devices', q: 'faq.items.tech_1_q', a: 'faq.items.tech_1_a' },
-            { icon: 'material-symbols:compare', q: 'faq.items.tech_2_q', a: 'faq.items.tech_2_a' },
+            { icon: 'material-symbols:compare', q: 'faq.items.tech_2_q', a: 'faq.items.tech_2_a' }
         ]
     },
     {
@@ -56,9 +56,9 @@ const faqCategories = computed(() => [
         label: 'faq.categories.budget',
         items: [
             { icon: 'material-symbols:payments', q: 'faq.items.budget_1_q', a: 'faq.items.budget_1_a' },
-            { icon: 'material-symbols:schedule', q: 'faq.items.budget_2_q', a: 'faq.items.budget_2_a' },
+            { icon: 'material-symbols:schedule', q: 'faq.items.budget_2_q', a: 'faq.items.budget_2_a' }
         ]
-    },
+    }
 ])
 </script>
 
@@ -69,25 +69,24 @@ const faqCategories = computed(() => [
         display: flex;
         flex-direction: column;
         gap: 40px;
+    }
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
 
-        &__header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .small-title, .large-title {
             text-align: center;
+            max-width: 600px;
+            margin-inline: auto;
+        }
 
-            .small-title, .large-title {
-                text-align: center;
-                max-width: 600px;
-                margin-inline: auto;
-            }
-
-            p {
-                margin-top: 16px;
-                max-width: 600px;
-                color: var(--text_color);
-                line-height: 1.6;
-            }
+        p {
+            margin-top: 16px;
+            max-width: 600px;
+            color: var(--text_color);
+            line-height: 1.6;
         }
     }
 }

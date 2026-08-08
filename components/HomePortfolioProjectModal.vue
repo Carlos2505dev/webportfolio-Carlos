@@ -1,5 +1,8 @@
 <template>
-    <AppModal class="modal__project" :openedModal="openedModal" @close:modal="closeModal">
+    <AppModal class="modal__project"
+              :openedModal="openedModal"
+              @close:modal="closeModal"
+    >
         <ProjectDetailContent v-if="projectDetails" :project="projectDetails" />
     </AppModal>
 </template>
@@ -10,7 +13,7 @@ import { toRefs } from '#imports'
 const props = defineProps({
     projectDetails: {
         type: Object,
-        required: true
+        default: null
     },
     openedModal: {
         type: Boolean,

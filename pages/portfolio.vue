@@ -28,7 +28,7 @@ useSeoMeta({
     title: () => t('seo.title_portfolio'),
     description: () => t('seo.description_portfolio'),
     ogTitle: () => t('seo.title_portfolio'),
-    ogDescription: () => t('seo.description_portfolio'),
+    ogDescription: () => t('seo.description_portfolio')
 })
 
 import portfolio from '@/localData/portfolio'

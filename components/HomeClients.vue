@@ -5,22 +5,48 @@
         </h2>
         <div class="about__clients__marquee">
             <ul class="about__clients__marquee__list container">
-                <li v-for="client in clients" :key="client.name" class="about__clients__marquee__list__item" @click="toggleClient(client)">
+                <li v-for="client in clients"
+                    :key="client.name"
+                    class="about__clients__marquee__list__item"
+                    @click="toggleClient(client)"
+                >
                     <div class="client-content">
                         <figure v-if="!client.active">
-                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.client_logo_alt', { name: client.name })"
-                                :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder loading="lazy" />
+                            <NuxtImg :src="client.image"
+                                     width="140px"
+                                     height="140px"
+                                     :alt="$t('common.client_logo_alt', { name: client.name })"
+                                     :title="client.name"
+                                     format="webp"
+                                     densities="x1 x2"
+                                     quality="100"
+                                     placeholder
+                                     loading="lazy"
+                            />
                         </figure>
                         <span v-else class="client-name">{{ client.name }}</span>
                     </div>
                 </li>
             </ul>
             <ul class="about__clients__marquee__list container" aria-hidden="true">
-                <li v-for="client in clients" :key="client.name" class="about__clients__marquee__list__item" @click="toggleClient(client)">
+                <li v-for="client in clients"
+                    :key="client.name"
+                    class="about__clients__marquee__list__item"
+                    @click="toggleClient(client)"
+                >
                     <div class="client-content">
                         <figure v-if="!client.active">
-                            <NuxtImg :src="client.image" width="140px" height="140px" :alt="$t('common.client_logo_alt', { name: client.name })"
-                                :title="client.name" format="webp" densities="x1 x2" quality="100" placeholder loading="lazy" />
+                            <NuxtImg :src="client.image"
+                                     width="140px"
+                                     height="140px"
+                                     :alt="$t('common.client_logo_alt', { name: client.name })"
+                                     :title="client.name"
+                                     format="webp"
+                                     densities="x1 x2"
+                                     quality="100"
+                                     placeholder
+                                     loading="lazy"
+                            />
                         </figure>
                         <span v-else class="client-name">{{ client.name }}</span>
                     </div>
@@ -38,7 +64,7 @@ const clients = reactive([
     { name: 'InoveTech - Conectando Ideias Inovadoras', image: 'images/clients/InoveTech.png', active: false },
     { name: 'Meu Maná', image: 'images/clients/Meu-Mana.png', active: false },
     { name: 'Confeitaria Dolce Amore', image: 'images/clients/DolceAmore.png', active: false },
-    { name: 'GoRango', image: 'images/clients/GoRango.png', active: false },
+    { name: 'GoRango', image: 'images/clients/GoRango.png', active: false }
 ])
 
 const client = reactive({

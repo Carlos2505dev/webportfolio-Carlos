@@ -15,13 +15,27 @@
                 <div class="about__section__container__columns__avatar">
                     <figure class="about__section__container__columns__avatar__image">
 
-                        <NuxtImg v-if="colorMode.value == 'dark'" :alt="$t('common.photo_alt_extended')"
-                            src="/darkmode.webp" width="800px" height="800px" format="webp"
-                            densities="x1 x2" quality="100" loading="lazy" />
+                        <NuxtImg v-if="colorMode.value == 'dark'"
+                                 :alt="$t('common.photo_alt_extended')"
+                                 src="/darkmode.webp"
+                                 width="800px"
+                                 height="800px"
+                                 format="webp"
+                                 densities="x1 x2"
+                                 quality="100"
+                                 loading="lazy"
+                        />
 
-                        <NuxtImg v-if="colorMode.value == 'light'" :alt="$t('common.photo_alt_extended')"
-                            src="/lightmode.webp" width="800px" height="800px" format="webp"
-                            densities="x1 x2" quality="100" loading="lazy" />
+                        <NuxtImg v-else
+                                 :alt="$t('common.photo_alt_extended')"
+                                 src="/lightmode.webp"
+                                 width="800px"
+                                 height="800px"
+                                 format="webp"
+                                 densities="x1 x2"
+                                 quality="100"
+                                 loading="lazy"
+                        />
 
                         <strong class="about__section__container__columns__avatar__image__areas logic">
                             <span>
@@ -60,10 +74,17 @@
             </div>
 
             <div class="about__section__container__buttons">
-                <AppButton :aria-label="$t(about.cta1)" class="primary" hasLink="/#contact">
+                <AppButton :aria-label="$t(about.cta1)"
+                           class="primary"
+                           hasLink="/#contact"
+                >
                     {{ $t(about.cta1) }}
                 </AppButton>
-                <AppButton :aria-label="$t(about.cta2)" class="outline" target="_new" :hasLink="$t(about.cta2Link)">
+                <AppButton :aria-label="$t(about.cta2)"
+                           class="outline"
+                           target="_new"
+                           :hasLink="$t(about.cta2Link)"
+                >
                     {{ $t(about.cta2) }}
                     <AppIcon IconName="carlos-icon:arrow-up-right" />
                 </AppButton>
@@ -74,7 +95,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from '#imports'
+import { reactive, computed } from '#imports'
 
 const colorMode = useColorMode()
 const stackLogos = computed(() => [
@@ -104,7 +125,7 @@ const stackLogos = computed(() => [
     {logo: colorMode.value === 'dark' ? 'simple-icons:vercel' : 'logos:vercel-icon', name: 'Vercel'},
     {logo: colorMode.value === 'dark' ? 'carlos-icon:app-store-white' : 'carlos-icon:app-store-mono', name: 'Apple Store'},
     {logo: 'carlos-icon:google-play', name: 'Google Play Store'},
-    {logo: 'carlos-icon:revenuecat', name: 'RevenueCat'},
+    {logo: 'carlos-icon:revenuecat', name: 'RevenueCat'}
 ])
 
 const about = reactive({

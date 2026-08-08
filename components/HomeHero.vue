@@ -5,33 +5,64 @@
             <div class="hero__section__container__greetings">
                 <div class="hero__section__container__greetings__avatar">
                     <NuxtLink :aria-label="$t(heroHome.cta)" to="/#about">
-                        <NuxtImg :alt="$t('common.photo_alt')" src="/carlosbezerra.webp" width="200"
-                            height="200" format="webp" quality="100" densities="x1 x2" />
+                        <NuxtImg :alt="$t('common.photo_alt')"
+                                 src="/carlosbezerra.webp"
+                                 width="200"
+                                 height="200"
+                                 format="webp"
+                                 quality="100"
+                                 densities="x1 x2"
+                        />
                     </NuxtLink>
                 </div>
             </div>
             <div class="hero__section__container__text">
                 <div class="hero__section__container__text">
-                    <h1 class="hero__section__container__text__name small-title" v-html="$t(heroHome.title)"></h1>
+                    <h1 class="hero__section__container__text__name small-title" v-html="$t(heroHome.title)"/>
                 </div>
                 <div class="hero__section__container__text__wrapper">
                     <h2 class="hero__section__container__text__wrapper__title gradient-font">
                         {{ $t('hero.before_logic') }}
-                        <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
-                            <TextType :text="logicTerms" :typingSpeed="70" :pauseDuration="3000" showCursor cursorCharacter="|" />
+                        <ShinyText :speed="1.5"
+                                   color="var(--primary_dark)"
+                                   shineColor="var(--pure_white)"
+                        >
+                            <TextType :text="logicTerms"
+                                      :typingSpeed="70"
+                                      :pauseDuration="3000"
+                                      showCursor
+                                      cursorCharacter="|"
+                            />
                         </ShinyText>
                         {{ $t('hero.between_terms') }}
-                        <ShinyText :speed="1.5" color="var(--primary_dark)" shineColor="var(--pure_white)">
-                            <TextType :text="creativeTerms" :typingSpeed="70" :pauseDuration="3000" :initialDelay="1000" showCursor cursorCharacter="|" />
+                        <ShinyText :speed="1.5"
+                                   color="var(--primary_dark)"
+                                   shineColor="var(--pure_white)"
+                        >
+                            <TextType :text="creativeTerms"
+                                      :typingSpeed="70"
+                                      :pauseDuration="3000"
+                                      :initialDelay="1000"
+                                      showCursor
+                                      cursorCharacter="|"
+                            />
                         </ShinyText>
                         {{ $t('hero.after_creative') }}
                     </h2>
                     <div class="hero__section__container__text__wrapper__buttons">
-                        <AppButton :aria-label="$t(heroHome.button)" hasLink="/#services" class="primary">
+                        <AppButton :aria-label="$t(heroHome.button)"
+                                   hasLink="/#services"
+                                   class="primary"
+                        >
                             {{ $t(heroHome.button) }}
                             <AppIcon IconName="carlos-icon:arrow-right" />
                         </AppButton>
-                        <AppButton :aria-label="$t(heroHome.buttonResume)" hasLink="/Currículo_CarlosNeto.pdf" download="Currículo_CarlosNeto.pdf" target="_blank" class="outline">
+                        <AppButton :aria-label="$t(heroHome.buttonResume)"
+                                   hasLink="/Currículo_CarlosNeto.pdf"
+                                   download="Currículo_CarlosNeto.pdf"
+                                   target="_blank"
+                                   class="outline"
+                        >
                             {{ $t(heroHome.buttonResume) }}
                             <AppIcon IconName="ph:download-simple-bold" />
                         </AppButton>
@@ -43,41 +74,12 @@
 </template>
   
 <script setup>
-import { reactive, ref, computed, useI18n } from '#imports'
+import { reactive, computed, useI18n } from '#imports'
 
 const { t } = useI18n()
 
 const logicTerms = computed(() => t('hero.logic_terms').split(','))
 const creativeTerms = computed(() => t('hero.creative_terms').split(','))
-
-const stackLogos = ref([
-    { logo: 'devicon:figma', name: 'Figma' },
-    // {logo: 'devicon:sketch', name: 'Sketch'},
-    { logo: 'skill-icons:xd', name: 'Adobe Xd' },
-    { logo: 'skill-icons:photoshop', name: 'Adobe Photoshop' },
-    { logo: 'skill-icons:illustrator', name: 'Adobe Illustrator' },
-    { logo: 'devicon:javascript', name: 'Javascript' },
-    { logo: 'devicon:typescript', name: 'Typescript' },
-    { logo: 'devicon:html5', name: 'HTML 5' },
-    { logo: 'devicon:css3', name: 'CSS 3' },
-    { logo: 'devicon:sass', name: 'Sass' },
-    { logo: 'devicon:bootstrap', name: 'Bootstrap' },
-    { logo: 'devicon:jquery', name: 'JQuery' },
-    { logo: 'skill-icons:wordpress', name: 'Wordpress' },
-    { logo: 'logos:shopify', name: 'Shopify' },
-    { logo: 'devicon:vuejs', name: 'Vue.JS' },
-    { logo: 'devicon:vuetify', name: 'Vuetify' },
-    { logo: 'logos:nuxt-icon', name: 'Nuxt.JS' },
-    { logo: 'devicon:react', name: 'React.JS' },
-    { logo: 'devicon:nextjs', name: 'Next.JS' },
-    { logo: 'devicon:tailwindcss', name: 'Tailwind CSS' },
-    { logo: 'devicon:flutter', name: 'Flutter' },
-    { logo: 'logos:visual-studio-code', name: 'Visual Studio Code' },
-    { logo: 'devicon:bitbucket', name: 'Bitbucket' },
-    { logo: 'devicon:github', name: 'GitHub' },
-    { logo: 'devicon:gitlab', name: 'GitLab' }
-    // {logo: 'logos:blender', name: 'Blender'},
-])
 
 
 const heroHome = reactive({

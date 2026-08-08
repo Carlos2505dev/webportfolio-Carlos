@@ -1,12 +1,18 @@
 <template>
     <ul v-if="!small" class="skills__stacks">
-        <li v-for="stack in stackList" :key="stack.name" class="skills__stacks__item">
+        <li v-for="stack in stackList"
+            :key="stack.name"
+            class="skills__stacks__item"
+        >
             <strong>{{ stack.name }}</strong>
             <AppIcon :IconName="stack.logo" />
         </li>
         <li v-if="maxItems && stacks.length > maxItems" class="skills__stacks__button">
-            <AppButton :aria-label="stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more')" class="secondary icononly"
-                :class="stackList.length > maxItems ? 'opened' : ''" @click="showAll">
+            <AppButton :aria-label="stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more')"
+                       class="secondary icononly"
+                       :class="stackList.length > maxItems ? 'opened' : ''"
+                       @click="showAll"
+            >
                 <AppIcon IconName="ph:plus-bold" />
                 <span v-if="stackList.length == maxItems">
                     {{ stacks.length - maxItems }}
@@ -18,7 +24,10 @@
         </li>
     </ul>
     <ul v-else class="skills__stacks small">
-        <li v-for="stack in stackList" :key="stack.name" class="skills__stacks__item">
+        <li v-for="stack in stackList"
+            :key="stack.name"
+            class="skills__stacks__item"
+        >
             <strong>{{ stack.name }}</strong>
             <AppIcon :IconName="stack.logo" />
         </li>
@@ -26,7 +35,8 @@
             <AppButton 
                 :aria-label="stackList.length > maxItems ? $t('common.aria.less') : $t('common.aria.more')" 
                 class="secondary icononly"
-                :class="stackList.length > maxItems ? 'opened' : ''" @click="showAll"
+                :class="stackList.length > maxItems ? 'opened' : ''"
+                @click="showAll"
             >
                 <AppIcon IconName="ph:plus-bold" />
                 <span v-if="stackList.length == maxItems">

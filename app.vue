@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead, useSeoMeta, useI18n, useRoute, computed } from '#imports';
+import { useHead, useSeoMeta, useI18n, useRoute, computed } from '#imports'
 
 const { t, locale } = useI18n()
 const route = useRoute()
@@ -86,7 +86,7 @@ useSeoMeta({
     twitterDescription: () => t('seo.description'),
     twitterImage: '/avatar_website.webp',
     twitterCreator: '@carlosnetodev',
-    author: 'Carlos Neto',
+    author: 'Carlos Neto'
 })
 </script>
 

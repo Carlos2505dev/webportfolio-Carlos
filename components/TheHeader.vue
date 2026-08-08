@@ -1,6 +1,7 @@
 <template>
     <header class="header section"
-        :class="[onScroll.scrollTop ? 'show' : 'hide', onScroll.position > 60 ? 'scrolled' : '']">
+            :class="[onScroll.scrollTop ? 'show' : 'hide', onScroll.position > 60 ? 'scrolled' : '']"
+    >
         <div class="container__fluid">
             <div class="container__fluid__logo">
                 <NuxtLink :aria-label="$t('common.aria.homepage')" to="/">
@@ -12,7 +13,7 @@
             </nav>
             <div class="container__fluid__actions">
                 <div class="container__fluid__actions__available">
-                    <span class="container__fluid__actions__available__dot"></span>
+                    <span class="container__fluid__actions__available__dot"/>
                     <span class="container__fluid__actions__available__text">{{ $t('common.available_short') }}</span>
                 </div>
                 <AppColorSwitcher />
@@ -23,7 +24,7 @@
 </template>
 
 <script setup>
-import {onMounted, reactive} from '#imports'
+import {onMounted, onUnmounted, reactive} from '#imports'
 
 const onScroll = reactive({
     scrollTop: true,
@@ -31,24 +32,29 @@ const onScroll = reactive({
     position: null
 })
 
+function handleScroll() {
+    onScroll.position = window.scrollY.toFixed()
+    if (onScroll.position <= 400 ) {
+        onScroll.scrollTop = true
+    }
+    
+    if (onScroll.position > onScroll.lastScroll && onScroll.position > 400) {
+        onScroll.scrollTop = false
+    } else if (
+        onScroll.position < onScroll.lastScroll || onScroll.position < 400
+    ) {
+        onScroll.scrollTop = true
+    }
+    onScroll.lastScroll = onScroll.position
+}
+
 onMounted(() => {
     onScroll.lastScroll = 0
-    document.addEventListener('scroll', () => {
-        onScroll.position = window.scrollY.toFixed()
-        if (onScroll.position <= 400 ) {
-            onScroll.scrollTop = true
-        }
-        
-        if (onScroll.position > onScroll.lastScroll && onScroll.position > 400) {
-            onScroll.scrollTop = false
-        } else if (
-            onScroll.position < onScroll.lastScroll || onScroll.position < 400
-        ) {
-            onScroll.scrollTop = true
-        }
-        onScroll.lastScroll = onScroll.position
+    window.addEventListener('scroll', handleScroll, { passive: true })
+})
 
-    })
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
 })
 </script>
 

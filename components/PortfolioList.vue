@@ -14,8 +14,8 @@
                         <button
                             v-if="searchQuery"
                             class="search-clear"
-                            @click="searchQuery = ''"
                             :aria-label="$t('common.aria.close')"
+                            @click="searchQuery = ''"
                         >
                             <AppIcon IconName="ph:x-bold" />
                         </button>
@@ -23,8 +23,8 @@
                     <button
                         class="portfolio__section__container__filters__bar__toggle"
                         :class="{ active: showFilters }"
-                        @click="showFilters = !showFilters"
                         :aria-label="$t('portfolio_page.filter_toggle')"
+                        @click="showFilters = !showFilters"
                     >
                         <AppIcon IconName="ph:funnel-bold" />
                         <span v-if="totalActiveFilters > 0" class="badge">{{ totalActiveFilters }}</span>
@@ -75,12 +75,12 @@
                                         :checked="selectedCategories.includes(cat.key)"
                                         @change="toggleCategory(cat.key)"
                                     />
-                                    <span class="check"></span>
+                                    <span class="check"/>
                                     <span class="label">{{ cat.label }}</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="divider"></div>
+                        <div class="divider"/>
                         <div class="portfolio__section__container__filters__panel__section">
                             <h4>{{ $t('portfolio_page.filter_tech_label') }}</h4>
                             <div class="options">
@@ -94,14 +94,17 @@
                                         :checked="selectedTechs.includes(tech)"
                                         @change="toggleTech(tech)"
                                     />
-                                    <span class="check"></span>
+                                    <span class="check"/>
                                     <span class="label">{{ tech }}</span>
                                 </label>
                             </div>
                         </div>
                         <div class="portfolio__section__container__filters__panel__actions">
                             <button class="btn-done" @click="showFilters = false">{{ $t('portfolio_page.filter_done') }}</button>
-                            <button v-if="hasActiveFilters" class="btn-clear-all" @click="clearFilters(); showFilters = false">{{ $t('portfolio_page.filter_clear_all') }}</button>
+                            <button v-if="hasActiveFilters"
+                                    class="btn-clear-all"
+                                    @click="clearFilters(); showFilters = false"
+                            >{{ $t('portfolio_page.filter_clear_all') }}</button>
                         </div>
                     </div>
                 </Transition>
@@ -113,18 +116,33 @@
             </div>
 
             <ul v-if="filteredProjects.length > 0" class="portfolio__section__container__projects">
-                <li v-for="(project, index) in filteredProjects" :id="index" :key="project.id"
-                    class="portfolio__section__container__projects__item" @touchstart="setDragStart"
-                    @touchend="swipeSlider">
+                <li v-for="(project, index) in filteredProjects"
+                    :id="index"
+                    :key="project.id"
+                    class="portfolio__section__container__projects__item"
+                    @touchstart="setDragStart"
+                    @touchend="swipeSlider"
+                >
                     <div :class="{ active : selectedProj == index }"
-                        class="portfolio__section__container__projects__item__contain" @click="goToProj(project.id)">
+                         class="portfolio__section__container__projects__item__contain"
+                         @click="goToProj(project.id)"
+                    >
                         <header class="portfolio__section__container__projects__item__contain__header project-image">
                             <picture class="portfolio__section__container__projects__item__contain__header__picture"
-                                @click="viewDetails(index, project.slug)">
-                                <NuxtImg :alt="$t(project.name)" :src="project.image"
-                                    sizes="100vw sm:380px md:400px lg:800px" quality="100" densities="x1 x2"
-                                    :custom="true" v-slot="{ src, isLoaded, imgAttrs }">
-                                    <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
+                                     @click="viewDetails(index, project.slug)"
+                            >
+                                <NuxtImg #default="{ src, isLoaded, imgAttrs }"
+                                         :alt="$t(project.name)"
+                                         :src="project.image"
+                                         sizes="100vw sm:380px md:400px lg:800px"
+                                         quality="100"
+                                         densities="x1 x2"
+                                         :custom="true"
+                                >
+                                    <img v-if="isLoaded"
+                                         v-bind="imgAttrs"
+                                         :src="src"
+                                    />
                                     <img
                                         v-else
                                         src="~/assets/carlos-icons/logo-symbol-outline.png"
@@ -147,8 +165,10 @@
                         </div>
                         <footer class="portfolio__section__container__projects__item__contain__footer project-titles">
                             <ul class="portfolio__section__container__projects__item__contain__footer__tags">
-                                <li v-for="tag in project.tags" :key="tag"
-                                    class="portfolio__section__container__projects__item__contain__footer__tags__item">
+                                <li v-for="tag in project.tags"
+                                    :key="tag"
+                                    class="portfolio__section__container__projects__item__contain__footer__tags__item"
+                                >
                                     {{ $t(tag) }}
                                 </li>
                             </ul>
@@ -157,8 +177,10 @@
                 </li>
             </ul>
 
-            <HomePortfolioProjectModal :projectDetails="openedDetails" :openedModal="showModal"
-                @close:modal="closeModal" />
+            <HomePortfolioProjectModal :projectDetails="openedDetails"
+                                       :openedModal="showModal"
+                                       @close:modal="closeModal"
+            />
 
         </div>
     </section>
@@ -355,7 +377,9 @@ function viewDetails(index, slug) {
 
 function closeModal() {
     modalName.value = null
-    const { project, ...rest } = route.query
+    const rest = Object.fromEntries(
+        Object.entries(route.query).filter(([key]) => key !== 'project')
+    )
     router.push({ query: rest })
     const projectIndex = projects.value.findIndex(item => item.id === openedDetails.value.id)
     selectedProj.value = projectIndex

@@ -2,7 +2,11 @@
     <section class="contact section">
         <div class="contact__cta">
             <div class="contact__cta__logo">
-                <NuxtImg src="/logo_cn.webp" :alt="$t('common.logo_alt')" width="100" height="100" />
+                <NuxtImg src="/logo_cn.webp"
+                         :alt="$t('common.logo_alt')"
+                         width="100"
+                         height="100"
+                />
             </div>
             <h2 id="contact-cta-title" class="contact__cta__title large-title">
                 {{ $t(contact.title) }}
@@ -21,22 +25,33 @@
             <ul class="contact__cta__social">
                 <li class="contact__cta__social__item">
                     <NuxtLink :aria-label="$t('common.aria.linkedin')"
-                        to="https://www.linkedin.com/in/carlosbezerraneto/" target="_new">
+                              to="https://www.linkedin.com/in/carlosbezerraneto/"
+                              target="_new"
+                    >
                         <AppIcon IconName="bxl:linkedin" /> <span class="visually-hidden">{{ $t('common.aria.linkedin') }}</span>
                     </NuxtLink>
                 </li>
                 <li class="contact__cta__social__item">
-                    <NuxtLink :aria-label="$t('common.aria.github')" to="https://github.com/Carlos2505dev" target="_new">
+                    <NuxtLink :aria-label="$t('common.aria.github')"
+                              to="https://github.com/Carlos2505dev"
+                              target="_new"
+                    >
                         <AppIcon IconName="bxl:github" /> <span class="visually-hidden">{{ $t('common.aria.github') }}</span>
                     </NuxtLink>
                 </li>
                 <li class="contact__cta__social__item">
-                    <NuxtLink :aria-label="$t('common.aria.instagram')" to="https://www.instagram.com/carlos_neto2007/" target="_new">
+                    <NuxtLink :aria-label="$t('common.aria.instagram')"
+                              to="https://www.instagram.com/carlos_neto2007/"
+                              target="_new"
+                    >
                         <AppIcon IconName="bxl:instagram-alt" /> <span class="visually-hidden">{{ $t('common.aria.instagram') }}</span>
                     </NuxtLink>
                 </li>
                 <li class="contact__cta__social__item">
-                    <NuxtLink :aria-label="$t('common.aria.whatsapp')" :to="whatsappUrl" target="_new">
+                    <NuxtLink :aria-label="$t('common.aria.whatsapp')"
+                              :to="whatsappUrl"
+                              target="_new"
+                    >
                         <AppIcon IconName="bxl:whatsapp" /> <span class="visually-hidden">{{ $t('common.aria.whatsapp') }}</span>
                     </NuxtLink>
                 </li>

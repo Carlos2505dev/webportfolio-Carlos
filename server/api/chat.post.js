@@ -69,6 +69,11 @@ export default defineEventHandler(async (event) => {
         clearTimeout(timeoutId)
 
         if (!res.ok) {
+            const text = await res.text().catch(() => '')
+            console.error('[chat.post] AI API error', res.status, text)
+            if (res.status === 401 || res.status === 403) {
+                throw createError({ statusCode: res.status, statusMessage: 'AI API authentication failed' })
+            }
             throw createError({ statusCode: res.status, statusMessage: `AI API error: ${res.status}` })
         }
 

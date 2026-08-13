@@ -13,9 +13,11 @@
             <AppIcon IconName="ph:caret-down-bold" />
         </button>
         <div 
+            v-if="!langOptions"
             v-on-click-outside="closeSwitcher"
             class="language__switcher__menu" 
-            :aria-hidden="langOptions"
+            role="menu"
+            aria-label="Language switcher"
             @click="changeLang"
         >
             <ul>
@@ -26,7 +28,6 @@
                         <input 
                             id="en" 
                             v-model="locale" 
-                            aria-hidden="true"
                             type="radio" 
                             name="language" 
                             value="en"
@@ -40,7 +41,6 @@
                         <input 
                             id="pt" 
                             v-model="locale" 
-                            aria-hidden="true"
                             type="radio" 
                             name="language" 
                             value="pt"
@@ -108,16 +108,12 @@ function closeSwitcher(){
     }
     &__menu{
         width: 100%;
-        top: 50%;
+        top: 0;
         left: 0;
         position: absolute;
-        display: grid;
-        grid-template-rows: 0fr;
+        display: block;
+        grid-template-rows: 1fr;
         transition: $transition_default;
-        &[aria-hidden="false"]{
-            grid-template-rows:1fr;
-            top: 0;
-        }
         ul{
             border-radius: 20px;
             overflow: hidden;

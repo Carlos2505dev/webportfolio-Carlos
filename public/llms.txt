@@ -1,0 +1,34 @@
+# llms.txt
+
+Este documento descreve como o conteúdo público deste site pode ser rastreado, indexado ou usado para treinamento por modelos de linguagem (LLMs). Ele foi escrito em Markdown conforme esperado por ferramentas de auditoria.
+
+## Escopo
+
+Aplica-se a todo conteúdo servido publicamente a partir deste domínio, incluindo páginas HTML, recursos estáticos (imagens, CSS, JavaScript) e arquivos públicos acessíveis sob `/public`.
+
+## Permissões
+
+- Permite-se o rastreamento e indexação para fins de busca e análise técnica.
+- Permite-se o uso de trechos do conteúdo para fins de pesquisa acadêmica e melhoria de modelos, desde que respeitadas as restrições abaixo.
+
+## Restrições
+
+- Não permita a utilização de dados pessoais sensíveis coletados neste site para treinar modelos sem consentimento explícito.
+- Não permita a redistribuição do conteúdo em massa que viole direitos autorais ou termos legais aplicáveis.
+- Se você for um agente automatizado que armazena cópias, mantenha mecanismos para respeitar exclusões e remoções de conteúdo quando solicitado pelo proprietário do site.
+
+## Formato e Exemplos
+
+Este arquivo é um aviso de políticas legível por humanos; agentes automatizados devem respeitar tanto este arquivo quanto `robots.txt` para regras de rastreamento adicionais.
+
+Exemplo curto (resumo legível por máquinas):
+
+```
+Allow: /\n
+Disallow: /private/
+Policy: no-sensitive-personal-data
+```
+
+## Última atualização
+
+2026-08-13

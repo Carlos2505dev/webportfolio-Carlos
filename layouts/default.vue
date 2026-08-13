@@ -17,7 +17,8 @@
             <slot />
         </main>
         <TheFooter />
-        <AppChatbot v-if="!isProjectPage" />
+        <!-- Chatbot toggle temporarily disabled until backend deploy is verified -->
+        <!-- <AppChatbot v-if="!isProjectPage" /> -->
     </div>
 </template>
 

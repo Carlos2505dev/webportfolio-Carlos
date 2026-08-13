@@ -22,6 +22,9 @@ export async function getAnswer(question, t, onChunk) {
             if (res.status === 408) {
                 return { content: t('chatbot.errors.timeout'), error: true }
             }
+            if (res.status === 401 || res.status === 403) {
+                return { content: t('chatbot.errors.invalidKey'), error: true }
+            }
             if (res.status >= 500) {
                 return { content: t('chatbot.errors.api'), error: true }
             }

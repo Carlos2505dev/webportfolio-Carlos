@@ -119,7 +119,7 @@ export default defineEventHandler(async (event) => {
 
         if (!res.ok) {
             const text = await res.text().catch(() => '')
-            console.error('[chat.post] AI API error', res.status, text)
+            console.error('[chat.post] AI API error', res.status, text.slice(0, 500))
             if (res.status === 401 || res.status === 403) {
                 throw createError({ statusCode: res.status, statusMessage: 'AI API authentication failed' })
             }
@@ -203,6 +203,7 @@ export default defineEventHandler(async (event) => {
         if (err.statusCode) {
             throw err
         }
-        throw createError({ statusCode: 500, statusMessage: err.message || 'Internal server error' })
+        console.error('[chat.post] Internal error:', err.message || err)
+        throw createError({ statusCode: 500, statusMessage: 'Internal server error' })
     }
 })

@@ -1,6 +1,4 @@
-const LOG = '[Chatbot]'
-
-export async function getAnswer(question, t, onChunk) {
+export async function getAnswer(question, t, onChunk, locale) {
     if (!question || typeof question !== 'string' || question.trim().length === 0) {
         return { content: t('chatbot.errors.unknown'), error: true }
     }
@@ -13,7 +11,7 @@ export async function getAnswer(question, t, onChunk) {
             method: 'POST',
             signal: controller.signal,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question })
+            body: JSON.stringify({ question, locale })
         })
 
         clearTimeout(timeoutId)

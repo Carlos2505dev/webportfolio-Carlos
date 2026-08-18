@@ -190,7 +190,7 @@ const sendMessage = async () => {
     const answer = await chatbotService.getAnswer(text, t, (partial) => {
         messages.value[botIdx].content = partial
         scrollToBottom()
-    })
+    }, locale.value)
 
     if (answer.error) {
         messages.value[botIdx].content = answer.content

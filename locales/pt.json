@@ -339,6 +339,7 @@
             "cors": "O navegador bloqueou a requisição para o servidor da IA por política de segurança (CORS). Se estiver em desenvolvimento local, talvez seja necessário usar um proxy ou extensão CORS.",
             "api": "O servidor da IA retornou um erro. Pode ser um problema temporário: tente novamente em alguns instantes.",
             "empty": "A IA retornou uma resposta vazia. Tente perguntar de outra forma!",
+            "rateLimited": "Você está enviando mensagens rápido demais. Aguarde um instante e tente novamente.",
             "unknown": "Ocorreu um erro inesperado ao consultar a IA: {detail}. Se o problema persistir, avise o desenvolvedor."
         }
     },

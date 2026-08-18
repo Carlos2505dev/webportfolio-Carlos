@@ -19,6 +19,9 @@ export async function getAnswer(question, t, onChunk) {
         clearTimeout(timeoutId)
 
         if (!res.ok) {
+            if (res.status === 429) {
+                return { content: t('chatbot.errors.rateLimited'), error: true }
+            }
             if (res.status === 408) {
                 return { content: t('chatbot.errors.timeout'), error: true }
             }

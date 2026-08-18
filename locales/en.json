@@ -339,6 +339,7 @@
             "cors": "The browser blocked the request to the AI server due to CORS policy. If running locally, you may need a proxy or CORS extension.",
             "api": "The AI server returned an error. It might be a temporary issue: try again in a moment.",
             "empty": "The AI returned an empty response. Try asking in a different way!",
+            "rateLimited": "You're sending messages too quickly. Wait a moment and try again.",
             "unknown": "An unexpected error occurred while querying the AI: {detail}. If the problem persists, let the developer know."
         }
     },

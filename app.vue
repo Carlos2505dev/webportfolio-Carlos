@@ -64,6 +64,15 @@ useHead({
         {
             type: 'application/ld+json',
             children: () => JSON.stringify(jsonLd.value)
+        },
+        {
+            src: 'https://cdn.jsdelivr.net/gh/decio-afs/da-swarm@1/dist/da-swarm.min.js',
+            defer: true,
+            tagPosition: 'bodyClose',
+            'data-trigger': 'query',
+            'data-agents': '20',
+            'data-speed': '2',
+            'data-names': 'Helio, Ana, Bruno, Carla, Diego, Julia, Rafa'
         }
     ]
 })

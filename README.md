@@ -227,6 +227,15 @@ O GSAP é usado para timelines complexas e scroll-triggered animations; a Motion
 
 </details>
 
+## ⚖️ Limitações técnicas e trade-offs
+
+Estas limitações refletem o escopo atual do projeto e ajudam a deixar claras as decisões de implementação:
+
+| Área | Limitação atual | Impacto e contexto |
+| ---- | --------------- | ------------------ |
+| **Conteúdo** | Projetos e traduções são mantidos em arquivos do repositório (`localData/portfolio.js` e `locales/`). | Atualizar conteúdo exige alterar o código e publicar uma nova versão; ainda não há CMS ou painel editorial. |
+| **Testes automatizados** | O projeto ainda não tem uma suíte de testes automatizados configurada. | O build verifica a compilação, mas não substitui testes de comportamento, integração ou validação visual. |
+
 ## 🗂️ Estrutura do Projeto
 
 ```text

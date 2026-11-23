@@ -4,7 +4,7 @@
         <button 
             :aria-label="$t(locale == 'pt' ? 'lang.pt' : 'lang.en')"
             class="language__switcher__button" 
-            @click="changeLang"
+            @click="toggleSwitcher"
         >
             <span class="language__switcher__button__content">
                 <AppIcon :IconName="locale == 'pt' ? 'circle-flags:br' : 'circle-flags:us'" />
@@ -18,16 +18,16 @@
             class="language__switcher__menu" 
             role="menu"
             aria-label="Language switcher"
-            @click="changeLang"
         >
             <ul>
                 <li :class="locale == 'en' ? 'active' : 'inactive' ">
-                    <label for="en" :title="$t('lang.en')">
+                    <label :title="$t('lang.en')">
                         {{ $t('lang.en_short') }}
                         <AppIcon IconName="circle-flags:us" />
                         <input 
-                            id="en" 
-                            v-model="locale" 
+                            id="en"
+                            :checked="locale == 'en'"
+                            @change="changeLang('en')"
                             type="radio" 
                             name="language" 
                             value="en"
@@ -35,12 +35,13 @@
                     </label>
                 </li>
                 <li :class="locale == 'pt' ? 'active' : 'inactive'">
-                    <label for="pt" :title="$t('lang.pt')">
+                    <label :title="$t('lang.pt')">
                         {{ $t('lang.pt_short') }}
                         <AppIcon IconName="circle-flags:br" />
                         <input 
-                            id="pt" 
-                            v-model="locale" 
+                            id="pt"
+                            :checked="locale == 'pt'"
+                            @change="changeLang('pt')"
                             type="radio" 
                             name="language" 
                             value="pt"
@@ -53,22 +54,22 @@
 </template>
 
 <script setup>
-import { ref, useI18n, useCookie, watch } from '#imports'
+import { ref, useI18n } from '#imports'
 import { vOnClickOutside } from '@vueuse/components'
 
-const { locale } = useI18n()
+const { locale, setLocale } = useI18n()
 
 const langOptions = ref(true)
 
-const langCookie = useCookie('lang')
-
-watch(locale, () => {
-    langCookie.value = locale.value
-})
-
-function changeLang(){
+function toggleSwitcher(){
     langOptions.value = !langOptions.value
 }
+
+async function changeLang(language){
+    await setLocale(language)
+    closeSwitcher()
+}
+
 function closeSwitcher(){
     langOptions.value = true
 }
